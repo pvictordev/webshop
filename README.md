@@ -27,16 +27,15 @@ Webshop offers the following features:
 
 3. **Comprehensive Data**: Altcoinx offers a wide range of data, including current and historical prices, market capitalization, trading volume, and more, allowing users to make informed investment decisions. -->
 
+1. **Wishlist**: Customers can create and manage wishlists, making it convenient for them to save and revisit products they're interested in.
 
-1. **Order History**: Registered customers have access to their order history, simplifying the process of reordering or tracking previous purchases.
+2. **Shopping Cart**: Our website features a user-friendly shopping cart system that allows customers to easily add and remove items, review their order, and proceed to checkout.
+   
+4. **Order History**: Registered customers have access to their order history, simplifying the process of reordering or tracking previous purchases.
 
-2. **Wishlist**: Customers can create and manage wishlists, making it convenient for them to save and revisit products they're interested in.
+5. **Simplified Product Catalog:** Our website focuses on simplicity, offering a minimalistic product catalog that makes it easy for customers to browse and find products quickly.
 
-3. **Shopping Cart**: Our website features a user-friendly shopping cart system that allows customers to easily add and remove items, review their order, and proceed to checkout.
-
-4. **Simplified Product Catalog:** Our website focuses on simplicity, offering a minimalistic product catalog that makes it easy for customers to browse and find products quickly.
-
-5. **Minimalist Aesthetics**: Our website template is designed with a minimalist aesthetic, ensuring a clean and uncluttered interface that focuses on products and ease of use.
+6. **Minimalist Aesthetics**: Our website template is designed with a minimalist aesthetic, ensuring a clean and uncluttered interface that focuses on products and ease of use.
 
 
 
