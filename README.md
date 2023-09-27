@@ -3,7 +3,7 @@
   <img width="200" height="200" src="">
 </p>
 
-## Webshop - E-commerce Website
+## Webshop - Ecommerce Website
 
 Webshop is a minimalist E-commerce Website. It features a modern and intuitive design, with easy-to-use navigation and a simple shopping experience that puts the focus on the products.
 
