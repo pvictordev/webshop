@@ -12,6 +12,10 @@ Webshop is a minimalist E-commerce Website. It features a modern and intuitive d
 ## Technologies Used
 The Webshop Website is built using the following technologies:
 - **React**
+- **React Router**
+- **Redux**
+- **SCSS**
+- **MongoDB**
 <!-- - **Tailwind**
 - **Coingecko API**
 - **Axios**
