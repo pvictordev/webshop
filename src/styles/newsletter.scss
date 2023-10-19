@@ -1,0 +1,35 @@
+.Newsletter {
+  width: 100%;
+    margin-top: 2rem;
+  background-color: rgb(233, 233, 233);
+}
+.Newsletter__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 4rem 2rem;
+  h1 {
+    font-size: 3rem;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+}
+.Newsletter__field {
+  display: flex;
+}
+.Newsletter__field input {
+  width: 30rem;
+  padding: 0.5rem;
+  outline: none;
+  border: 2px solid #333;
+}
+.Newsletter__field button {
+  padding: 0.5rem;
+  background-color: transparent;
+  border: 2px solid #333;
+  border-left: none;
+  font-size: 1rem;
+}

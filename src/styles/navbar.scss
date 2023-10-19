@@ -1,0 +1,59 @@
+.Navbar {
+    width: 100%;
+}
+.Navbar__container {
+    padding: 0 2rem;
+}
+.container__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    gap: 2rem;
+}
+.content__search {
+    width: 100%;
+}
+.search__input {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 15px;
+    border: 2px solid #333;
+    font-size: 1rem;
+    outline: none;
+}
+.content__logo {
+    display: flex;
+    gap: 0.5rem;
+
+    img {
+        width: 2rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+}
+
+.content__nav {
+    display: flex;
+    gap:2rem;
+    align-items: center;
+}
+.nav__links {
+   display: flex;
+   gap: 2rem;
+}
+.nav__burger {
+    display: none;
+}
+
+@media(max-width: 640px) {
+  .nav__links {
+    display: none;
+  }
+  .nav__burger {
+    display: block;
+  }
+}
