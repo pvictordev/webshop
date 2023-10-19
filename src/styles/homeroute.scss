@@ -1,0 +1,14 @@
+.route {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2.5rem;
+    color: #333;
+    p {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+}
