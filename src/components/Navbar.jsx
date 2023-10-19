@@ -3,6 +3,7 @@ import "../styles/navbar.scss";
 import { IoCartOutline } from "react-icons/io5";
 import { BsFillPersonFill } from "react-icons/bs";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -14,19 +15,27 @@ export default function Navbar() {
             <h1>Webshop</h1>
           </div>
           <div className="content__search">
-            <input className="search__input" type="text" placeholder="Look for" />
+            <input
+              className="search__input"
+              type="text"
+              placeholder="Look for"
+            />
           </div>
           <ul className="content__nav">
             <li className="nav__links">
-              Home
-              <li>Cateogories</li>
-              <li>Product</li>
+              <Link className="Link link__categories" to={"/categories"}>
+                <li>Cateogories</li>
+              </Link>
+
+              <Link className="Link link__products" to={"/products"}>
+                <li>Products</li>
+              </Link>
               {/* <li>
                 <BsFillPersonFill /> Login
               </li> */}
             </li>
             <li>
-              <IoCartOutline />
+              <IoCartOutline className="link__cart" />
             </li>
             <li className="nav__burger">
               <RxHamburgerMenu />
