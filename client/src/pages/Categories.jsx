@@ -16,10 +16,10 @@ const Categories = () => {
 
   const productsMap = products.map((product) => {
     <div className="grid__card">
-      <div className="Categories__image">
+      <div className="card__image">
         <img src={product.image} alt="" />
       </div>
-      <div className="Categories__info">
+      <div className="card__text">
         <h2>{product.name}</h2>
         <p>{product.description}</p>
         <p>{product.price}</p>
@@ -56,6 +56,7 @@ const Categories = () => {
                 <p>100$</p>
               </div>
             </div>
+            {/* {productsMap} */}
           </div>
         </div>
       </div>
