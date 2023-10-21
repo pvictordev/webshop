@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/products.scss";
 import { SlArrowLeft } from "react-icons/sl";
 import { Link } from "react-router-dom";
 import HomeRoute from "../components/HomeRoute";
+import axios from "axios";
+
 const Products = () => {
+
   return (
     <div className="Products">
       <div className="Products__container">
