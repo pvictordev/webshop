@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="200" height="200" src="./src/assets/webshop.png">
+  <img width="200" height="200" src="./client/src/assets/webshop.png">
 </p>
 
 ## Webshop - Ecommerce Website
