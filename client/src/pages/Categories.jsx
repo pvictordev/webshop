@@ -3,9 +3,16 @@ import "../styles/categories.scss";
 import { SlArrowLeft } from "react-icons/sl";
 import HomeRoute from "../components/HomeRoute";
 import axios from "axios";
+import Products from "../data/Products";
+import Card from "../components/Card";
 
 const Categories = () => {
 
+  const products = Products.map((product) => {
+    return (
+      <Card key={product.id} {...product}/>
+    );
+  });
   return (
     <div className="Categories">
       <div className="Categories__container">
@@ -24,17 +31,7 @@ const Categories = () => {
             <li>Toys</li>
           </ul>
           <div className="Categories__grid">
-            <div className="grid__card">
-              <div className="card__image">
-                <img src="./src/assets/webshop.png" alt="" />
-              </div>
-              <div className="card__text">
-                <h2>Product name</h2>
-                <p>Product description</p>
-                <p>100$</p>
-              </div>
-            </div>
-            
+            {products}
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ export default [
     name: "Stussy T-shirt",
     price: 59.99,
     image:
-      "https://cdn.shopify.com/s/files/1/2358/2817/files/Stussy-Basic-Pigment-Dyed-Tee-Black-2.png?v=1686239058",
+      "https://arrowandbeast.com/cdn/shop/files/stussy-classic-dot-tee-white-1.png?v=1697127902",
     description: "Super comfy and cozy T-shirt.",
     texture: "Soft",
     weight: "100g",
@@ -125,7 +125,7 @@ export default [
     name: "Porsche 911 RSR",
     price: 179.99,
     image:
-      "https://www.lego.com/cdn/cs/set/assets/blt468d63d0eb6c81a8/42096.jpg?format=webply&fit=bounds&quality=70&width=800&length=800&dpr=1.5",
+      "https://www.lego.com/cdn/cs/set/assets/blt276fd994a44edd09/42096_alt2.png",
     description: "This piece of art makes a great gift for boys aged 7 to 40.",
     texture: "Smooth",
     weight: "1kg",
