@@ -1,6 +1,6 @@
 .Newsletter {
   width: 100%;
-    margin-top: 2rem;
+  margin-top: 2rem;
   background-color: rgb(233, 233, 233);
 }
 .Newsletter__content {
@@ -25,6 +25,7 @@
   padding: 0.5rem;
   outline: none;
   border: 2px solid #333;
+  border-radius: 15px 0px 0px 15px;
 }
 .Newsletter__field button {
   padding: 0.5rem;
@@ -32,4 +33,50 @@
   border: 2px solid #333;
   border-left: none;
   font-size: 1rem;
+  border-radius: 0px 15px 15px 0px;
+
+}
+
+//xl size
+@media screen and (max-width: 1280px) {
+}
+
+//lg size
+@media screen and (max-width: 1024px) {
+}
+
+//md size
+@media screen and (max-width: 768px) {
+}
+
+//sm size
+@media screen and (max-width: 640px) {
+  .Newsletter {
+    margin-top: 2rem;
+  }
+  .Newsletter__content {
+    gap: 1rem;
+    padding: 4rem 2rem;
+    h1 {
+      font-size: 3rem;
+    }
+    p {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+  
+  .Newsletter__field input {
+    width: 30rem;
+    padding: 0.5rem;
+    width: 20rem;
+  }
+  .Newsletter__field button {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+}
+
+//xs size
+@media screen and (max-width: 350px) {
 }

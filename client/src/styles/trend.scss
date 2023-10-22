@@ -1,11 +1,44 @@
 .Trend {
+  width: 100%;
+  padding: 4rem;
 }
 .Trend__header {
+  text-align: center;
 }
 .Trend__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
-  margin: 2rem 0;
-  padding: 3rem;
+  margin-top: 3rem;
 }
+
+//xl size
+@media screen and (max-width: 1280px) {
+}
+
+//lg size
+@media screen and (max-width: 1024px) {
+  .Trend__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+//md size
+@media screen and (max-width: 768px) {
+  .Trend__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+//sm size
+@media screen and (max-width: 640px) {
+  .Trend__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+//xs size
+@media screen and (max-width: 350px) {
+}
+

@@ -17,7 +17,7 @@ export default [
   {
     id: 2,
     category: "Clothes",
-    name: "Nike Air Jordan 1 Shadow",
+    name: "Nike Air Jordan 1",
     price: 59.99,
     image:
       "https://laced.imgix.net/products/3bafede9-dc87-470e-9127-794ea2b5d0cd.png?auto=format&fit=crop&w=1200",
@@ -158,7 +158,7 @@ export default [
     price: 21.99,
     image: "https://media.ulta.com/i/ulta/2559841?w=1020&h=1020",
     description:
-      "An exceptionally wise purchase and investment in yourself; 30 years from now, you'll be pleased with your decision.",
+      "An exceptionally wise purchase and investment in yourself.",
     texture: "Liquid",
     weight: "237ml",
     size: {

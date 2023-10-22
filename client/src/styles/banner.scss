@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5rem 0rem;
 }
 .Banner__content {
   display: grid;
@@ -42,4 +43,41 @@
     font-size: 1rem;
     background: transparent;
   }
+}
+
+//xl size
+@media screen and (max-width: 1280px) {
+}
+
+//lg size
+@media screen and (max-width: 1024px) {
+  .Banner__content {
+    grid-template-columns: 1fr;
+  }
+  .banner__image {
+    display: none;
+  }
+  .banner__text {
+    h2 {
+    }
+    p {
+    }
+    button {
+    }
+  }
+}
+
+//md size
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 576px) {
+}
+
+//sm size
+@media screen and (max-width: 640px) {
+}
+
+//xs size
+@media screen and (max-width: 350px) {
 }
