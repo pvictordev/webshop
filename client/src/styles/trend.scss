@@ -1,0 +1,11 @@
+.Trend {
+}
+.Trend__header {
+}
+.Trend__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  margin: 2rem 0;
+  padding: 3rem;
+}
