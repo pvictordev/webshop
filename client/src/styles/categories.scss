@@ -23,19 +23,6 @@
     font-weight: 700;
   }
 }
-
-.Categories__list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-.Categories__list li {
-  border: 1px solid #333;
-  padding: 0.5rem;
-  border-radius: 15px;
-}
 .Categories__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
