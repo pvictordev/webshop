@@ -4,7 +4,7 @@ import '../styles/banner.scss'
 export default function Banner(props) {
   return (
     <div className="Banner">
-      <div className="Banner__content">
+      <div className={`Banner__content ${props.reverse ? " reverse" : ""}`}>
         <div className="banner__text">
           <h2>{props.title}</h2>
           <p>

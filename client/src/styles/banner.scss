@@ -6,13 +6,18 @@
   padding: 5rem 0rem;
 }
 .Banner__content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: row;
   margin: 0 5rem;
   max-width: 85%;
   background-color: rgb(233, 233, 233);
   border-radius: 15px;
+}
+.reverse {
+  flex-direction: row-reverse;
+
 }
 .banner__image img {
   width: 100%;
@@ -24,6 +29,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  text-align: left;
   padding: 2rem;
   gap: 2rem;
 
@@ -43,6 +49,10 @@
     font-size: 1rem;
     background: transparent;
   }
+}
+.reverse .banner__text {
+  align-items: flex-end;
+  text-align: right;
 }
 
 //xl size
