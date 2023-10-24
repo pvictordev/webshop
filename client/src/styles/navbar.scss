@@ -45,8 +45,8 @@
 .content__nav {
   display: flex;
   gap: 2rem;
-  align-items: center;
-  
+  align-items:center;
+  font-size:1.25rem ;
 }
 .nav__links {
   display: flex;
@@ -60,11 +60,28 @@
 }
 .link__cart {
   color: #333;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   cursor: pointer;
+
 }
 .nav__burger {
   display: none;
+  font-size: 1.5rem;
+}
+.burger__menu {
+  display: none;
+}
+.open {
+  // display: none;
+   position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(15px);
 }
 
 //xl size
@@ -85,7 +102,11 @@
     display: none;
   }
   .nav__burger {
-    display: block;
+    display: flex;
+    align-items: center;
+  }
+  .link__cart {
+    display: flex;
   }
 }
 
