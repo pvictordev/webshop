@@ -18,3 +18,31 @@
   gap: 2rem;
   font-size: 1.25rem;
 }
+
+//xl size
+@media screen and (max-width: 1280px) {
+}
+
+//lg size
+@media screen and (max-width: 1024px) {
+}
+
+//md size
+@media screen and (max-width: 768px) {
+}
+
+//sm size
+@media screen and (max-width: 640px) {
+}
+
+//xs size
+@media screen and (max-width: 350px) {
+  .Footer__content {
+    padding: 3rem 0.5rem;
+  }
+  .Footer__list {
+    gap: 1rem;
+    font-size: 1rem;
+  }
+}
+

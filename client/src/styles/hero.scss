@@ -37,6 +37,7 @@
     font-size: 2rem;
     background: transparent;
     font-weight: 500;
+    border: 2px solid #333;
   }
 }
 
@@ -89,4 +90,21 @@
 
 //xs size
 @media screen and (max-width: 350px) {
+  .Hero__container {
+    padding: 0 1rem;
+  }
+  .content__text {
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    h2 {
+      font-size: 1rem;
+      font-weight: 200;
+    }
+    button {
+      font-size: 1rem;
+      padding: 0.5rem;
+    }
+  }
 }

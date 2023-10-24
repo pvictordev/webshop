@@ -34,7 +34,6 @@
   border-left: none;
   font-size: 1rem;
   border-radius: 0px 15px 15px 0px;
-
 }
 
 //xl size
@@ -65,7 +64,7 @@
       text-align: center;
     }
   }
-  
+
   .Newsletter__field input {
     width: 30rem;
     padding: 0.5rem;
@@ -77,6 +76,41 @@
   }
 }
 
+//xs+ size
+@media screen and (max-width: 415px) {
+  .Newsletter__content {
+    gap: 1rem;
+    padding: 3rem 0.5rem;
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+
+  .Newsletter__field input {
+    width: 15rem;
+  }
+  .Newsletter__field button {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+}
+
 //xs size
 @media screen and (max-width: 350px) {
+
+  .Newsletter__field {
+    flex-direction: column; 
+    gap: 0.3rem;
+    input {
+      border-radius: 15px;
+    }
+    button {
+      border-radius: 15px;
+      border-left: solid;
+    }
+  }
 }

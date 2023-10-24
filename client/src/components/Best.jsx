@@ -4,7 +4,7 @@ import Products from "../data/Products";
 import Card from "./Card";
 
 export default function Best() {
-  const best = Products.splice(0, 6).map((product) => {
+  const best = Products.splice(0, 4).map((product) => {
     return <Card key={product.id} {...product} />;
   });
   return (

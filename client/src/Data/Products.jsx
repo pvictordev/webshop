@@ -49,8 +49,7 @@ export default [
     category: "Furniture",
     name: "Adjustable Desk",
     price: 529.99,
-    image:
-      "https://www.imovr.com/media/catalog/category/Lander_Carbon-Fiber_Black_THUMBNAIL_WEB_Compressed_.png",
+    image: "https://askergoworks.com/cdn/shop/products/0.png?v=1691253070",
     description: "This desk will make your work more comfortable.",
     texture: "Smooth",
     weight: "30kg",
@@ -142,7 +141,7 @@ export default [
     price: 1179.99,
     image: "https://pngimg.com/uploads/drone/drone_PNG155.png",
     description:
-      "Perfect for aerial photography and exploration. Get yours now in our e-commerce store.",
+      "Perfect for aerial photography and exploration.",
     texture: "Smooth",
     weight: "1.5kg",
     size: {
@@ -157,8 +156,7 @@ export default [
     name: "Cerave Cleanser ",
     price: 21.99,
     image: "https://media.ulta.com/i/ulta/2559841?w=1020&h=1020",
-    description:
-      "An exceptionally wise purchase and investment in yourself.",
+    description: "An exceptionally wise purchase and investment in yourself.",
     texture: "Liquid",
     weight: "237ml",
     size: {

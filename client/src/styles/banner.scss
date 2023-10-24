@@ -3,21 +3,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5rem 0rem;
+  padding: 4rem;
 }
 .Banner__content {
-  // display: grid;
-  // grid-template-columns: 1fr 1fr;
   display: flex;
   flex-direction: row;
-  margin: 0 5rem;
-  max-width: 85%;
+  max-width: 100%;
   background-color: rgb(233, 233, 233);
   border-radius: 15px;
 }
 .reverse {
   flex-direction: row-reverse;
-
 }
 .banner__image img {
   width: 100%;
@@ -68,26 +64,56 @@
     display: none;
   }
   .banner__text {
+    align-items: center;
     h2 {
+      font-size: 2rem;
+      text-align: center;
     }
     p {
+      font-size: 1rem;
     }
     button {
+      font-size: 1rem;
     }
   }
+  .reverse .banner__text {
+  align-items: center;
+  text-align: center;
+}
+
 }
 
 //md size
 @media screen and (max-width: 768px) {
 }
 
-@media screen and (max-width: 576px) {
-}
-
 //sm size
 @media screen and (max-width: 640px) {
+  .Banner {
+    padding: 3rem 1.5rem;
+  }
+  .banner__text {
+  padding: 2rem;
+  gap: 2rem;
+
+  h2 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+  button {
+    width: 30%;
+    padding: 0.2rem;
+    font-size: 0.8rem;
+  }
+}
+
 }
 
 //xs size
 @media screen and (max-width: 350px) {
+
+
+
 }

@@ -9,7 +9,7 @@ export default function Hero() {
       strings: [
         "pioneers in online selling",
         "the best in the business",
-        "we can do it all",
+        "super fast delivery",
       ],
       typeSpeed: 40,
       backSpeed: 40,
