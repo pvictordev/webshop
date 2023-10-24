@@ -4,6 +4,8 @@ import { IoCartOutline } from "react-icons/io5";
 import { BsFillPersonFill } from "react-icons/bs";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Link } from "react-router-dom";
+import logo from "../assets/webshop.png";
+import Burger from "./Burger";
 
 export default function Navbar() {
   return (
@@ -12,7 +14,7 @@ export default function Navbar() {
         <div className="Navbar__container">
           <div className="container__content">
             <div className="content__logo">
-              <img src="src/assets/webshop.png" alt="" />
+              <img src={logo} alt="" />
               <h1 className="Logo">Webshop</h1>
             </div>
             <div className="content__search">
@@ -28,7 +30,7 @@ export default function Navbar() {
                   <li>Cateogories</li>
                 </Link>
 
-                <Link className="Link link__products" to={"/products"}>
+                <Link className="Link link__products" to={"/categories/products"}>
                   <li>Products</li>
                 </Link>
                 {/* <li>
@@ -39,7 +41,8 @@ export default function Navbar() {
                 <IoCartOutline className="link__cart" />
               </li>
               <li className="nav__burger">
-                <RxHamburgerMenu />
+                {/* <RxHamburgerMenu /> */}
+                {/* <Burger /> */}
               </li>
             </ul>
           </div>

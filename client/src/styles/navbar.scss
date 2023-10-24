@@ -21,14 +21,14 @@
   border: 2px solid #c4c4c4;
   font-size: 1rem;
   outline: none;
-    &:focus {
-        border: 2px solid #333;
-    }
+  &:focus {
+    border: 2px solid #333;
+  }
 }
 .content__logo {
   display: flex;
   gap: 0.5rem;
-  align-items: center ;
+  align-items: center;
 
   img {
     width: 3rem;
@@ -46,6 +46,7 @@
   display: flex;
   gap: 2rem;
   align-items: center;
+  
 }
 .nav__links {
   display: flex;
@@ -58,8 +59,9 @@
   }
 }
 .link__cart {
-        color: #333;
-        font-size: 1.25rem;
+  color: #333;
+  font-size: 1.25rem;
+  cursor: pointer;
 }
 .nav__burger {
   display: none;
@@ -90,15 +92,15 @@
 //xs+ size
 @media screen and (max-width: 450px) {
   .content__logo {
-  img {
-    width: 2rem;
-  }
+    img {
+      width: 2rem;
+    }
 
-  h1 {
-    font-size: 1.5rem;
-    font-weight: 700;
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
   }
-} 
   .search__input {
     display: none;
   }
@@ -109,15 +111,13 @@
 //xs size
 @media screen and (max-width: 350px) {
   .content__logo {
-  img {
-    width: 2rem;
-  }
+    img {
+      width: 2rem;
+    }
 
-  h1 {
-    font-size: 1rem;
-    font-weight: 700;
+    h1 {
+      font-size: 1rem;
+      font-weight: 700;
+    }
   }
 }
-
-}
-

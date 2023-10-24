@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import HomeRoute from "../components/HomeRoute";
 import Trend from "../components/Trend";
 import products from "../data/Products";
+import Image from "../assets/webshop.png";
+
 //import { useParams } from "react-router-dom";
 
 const Products = () => {
@@ -18,12 +20,12 @@ const Products = () => {
               Product
             </h1>
             <div className="main__image">
-              <img src="src/assets/webshop.png" alt="" />
+              <img src={Image} alt="" />
             </div>
             <div className="carousel__images">
-              <img src="src/assets/webshop.png" alt="" />
-              <img src="src/assets/webshop.png" alt="" />
-              <img src="src/assets/webshop.png" alt="" />
+              <img src={Image} alt="" />
+              <img src={Image} alt="" />
+              <img src={Image} alt="" />
             </div>
           </div>
           <div className="Product__info">
