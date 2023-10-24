@@ -14,6 +14,7 @@
 .content__search {
   width: 100%;
 }
+
 .search__input {
   width: 100%;
   padding: 0.5rem;
@@ -24,6 +25,12 @@
   &:focus {
     border: 2px solid #333;
   }
+}
+.search__icon {
+  display: none;
+  color: #333;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 .content__logo {
   display: flex;
@@ -71,7 +78,6 @@
   display: none;
 }
 .open {
-  // display: none;
   overflow: hidden;
   position: absolute;
   width: 100%;
@@ -124,6 +130,9 @@
   }
   .search__input {
     display: none;
+  }
+  .search__icon{
+    display: flex;
   }
   .Navbar__container {
     padding: 0 0.5rem;
