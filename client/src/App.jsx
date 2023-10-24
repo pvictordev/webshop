@@ -9,9 +9,21 @@ import Footer from "./components/Footer";
 import Newsletter from "./components/Newsletter";
 
 function App() {
+  const [open, setOpen] = React.useState(false);
+
+  const toggleMenu = () => {
+    setOpen(!open);
+
+    if (open) {
+      document.body.style.overflow = "scroll";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
+  };
+
   return (
     <div className="App">
-      <Navbar />
+      <Navbar open={open} setOpen={setOpen} toggleMenu={toggleMenu} />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="categories" element={<Categories />}></Route>

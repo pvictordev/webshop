@@ -7,13 +7,13 @@ import { Link } from "react-router-dom";
 import logo from "../assets/webshop.png";
 import Burger from "./Burger";
 
-export default function Navbar() {
+export default function Navbar({open, toggleMenu}) {
 
-  const [open, setOpen] = React.useState(false);
+  // const [open, setOpen] = React.useState(false);
 
-   const toggleMenu = () => {
-    setOpen(!open);
-  };
+  //  const toggleMenu = () => {
+  //   setOpen(!open);
+  // };
 
 
   return (
