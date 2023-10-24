@@ -5,9 +5,14 @@
   gap: 1.5rem;
   flex-wrap: wrap;
 }
-.Categories__buttons li {
+.Categories__buttons li{
   border: 1px solid #333;
   padding: 0.5rem;
   border-radius: 15px;
   cursor: pointer;
 }
+.active{
+  background-color: #333;
+  color: #fff;
+}
+

@@ -60,12 +60,11 @@
 
 //md size
 @media screen and (max-width: 768px) {
-    .content__text {
-        button {
-            font-size: 1.5rem;
-        }
+  .content__text {
+    button {
+      font-size: 1.5rem;
     }
-
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -73,6 +72,19 @@
 
 //sm size
 @media screen and (max-width: 640px) {
+  .content__text {
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 200;
+    }
+    button {
+      font-size: 1rem;
+    }
+  }
 }
 
 //xs size

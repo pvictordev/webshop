@@ -35,8 +35,7 @@ const Home = () => {
         }
         reverse={true}
       />
-      <Newsletter />
-      <Footer />
+      
     </div>
   );
 };

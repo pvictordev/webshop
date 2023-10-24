@@ -1,5 +1,5 @@
-import React from 'react'
-import '../styles/banner.scss'
+import React from "react";
+import "../styles/banner.scss";
 
 export default function Banner(props) {
   return (
@@ -7,13 +7,11 @@ export default function Banner(props) {
       <div className={`Banner__content ${props.reverse ? " reverse" : ""}`}>
         <div className="banner__text">
           <h2>{props.title}</h2>
-          <p>
-            {props.description}
-          </p>
+          <p>{props.description}</p>
           <button>Go to shop</button>
         </div>
         <div className="banner__image">
-          <img className='image__banner' src={props.image} alt="" />
+          <img className="image__banner" src={props.image} alt="" />
         </div>
       </div>
     </div>

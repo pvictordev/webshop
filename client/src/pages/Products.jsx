@@ -3,27 +3,31 @@ import "../styles/products.scss";
 import { SlArrowLeft } from "react-icons/sl";
 import { Link } from "react-router-dom";
 import HomeRoute from "../components/HomeRoute";
-import axios from "axios";
+import Trend from "../components/Trend";
+import products from "../data/Products";
+//import { useParams } from "react-router-dom";
 
 const Products = () => {
-
   return (
     <div className="Products">
+      <HomeRoute />
       <div className="Products__container">
-        <HomeRoute/>
         <div className="Products__content">
           <div className="Product__images">
+            <h1 className="Product__title image__title" align="center">
+              Product
+            </h1>
             <div className="main__image">
               <img src="src/assets/webshop.png" alt="" />
             </div>
             <div className="carousel__images">
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
+              <img src="src/assets/webshop.png" alt="" />
+              <img src="src/assets/webshop.png" alt="" />
+              <img src="src/assets/webshop.png" alt="" />
             </div>
           </div>
           <div className="Product__info">
-            <h1 className="Product__title">Product</h1>
+            <h1 className="Product__title info__title">Product</h1>
             <div className="info__description">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
               illum at officia provident, culpa perferendis quo neque iure
@@ -45,6 +49,7 @@ const Products = () => {
             </div>
           </div>
         </div>
+        <Trend />
       </div>
     </div>
   );

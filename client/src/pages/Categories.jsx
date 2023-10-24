@@ -18,18 +18,19 @@ const Categories = () => {
       : Products.filter((product) => product.category === selectedCategory);
 
   const products = filteredProducts.map((product) => {
-    return <Card key={product.id} {...product} />;
+      return <Card key={product.id} {...product} />;
   });
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
     setHeaderText(category);
+
   };
 
   return (
     <div className="Categories">
+      <HomeRoute />
       <div className="Categories__container">
-        <HomeRoute />
         <div className="Categories__content">
           <div className="Categories__header">
             <h1>{headerText}</h1>
