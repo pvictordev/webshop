@@ -8,13 +8,16 @@ import logo from "../assets/webshop.png";
 import Burger from "./Burger";
 
 export default function Navbar({ open, toggleMenu }) {
-  // const [focus, setFocus] = useState(false);
+  
+  const [search, setSearch] = useState("")
 
-  // const handleFocus = () => {
-  //   setFocus(!focus);
-  // };
+  const handleSearch = (e) => {
+    setSearch(e.target.value)
+  }
 
-  const searchInputRef = useRef(null);
+  const clearSearch = () => {
+    setSearch("")
+  }
 
   return (
     <nav className="Navbar">
@@ -33,13 +36,12 @@ export default function Navbar({ open, toggleMenu }) {
           <div className="content__search">
             <input
               className="search__input"
-              type="text"
-              placeholder="Look for"
-              // onClick={handleFocus}
-              ref={searchInputRef}
-              onClick={() => searchInputRef.current.focus()}
+              type="search"
+              value={search}
+              onChange={handleSearch}
+              placeholder="Search for items "
             />
-            {/* {focus && <div className="search__results">focus</div>} */}
+
           </div>
 
           <ul className="content__nav">

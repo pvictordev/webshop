@@ -1,6 +1,5 @@
 .Navbar {
   width: 100%;
-  //background-color: #d7d6d4;
 }
 .Navbar__container {
   padding: 0 2rem;
@@ -26,7 +25,9 @@
   &:focus {
     border: 2px solid #333;
   }
+ 
 }
+
 .search__icon {
   display: none;
   color: #333;
@@ -132,7 +133,7 @@
   .search__input {
     display: none;
   }
-  .search__icon{
+  .search__icon {
     display: flex;
     align-items: center;
     font-size: 1.5rem;

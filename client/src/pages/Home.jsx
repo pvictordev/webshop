@@ -35,7 +35,7 @@ const Home = () => {
         }
         reverse={true}
       />
-      
+
     </div>
   );
 };
