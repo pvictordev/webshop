@@ -50,7 +50,7 @@ export default function Navbar({ open, toggleMenu }) {
                 <li>Cateogories</li>
               </Link>
 
-              <Link className="Link link__products" to={"/categories/products/5"}>
+              <Link className="Link link__products" to={"categories/products/5"}>
                 <li>Products</li>
               </Link>
             </li>

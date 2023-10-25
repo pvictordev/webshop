@@ -24,12 +24,11 @@ function App() {
   return (
     <div className="App">
       <Navbar open={open} setOpen={setOpen} toggleMenu={toggleMenu} />
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="categories" element={<Categories />}></Route>
-        {/* <Route path="products" element={<Products />}></Route> */}
-        <Route path="categories/products/:id" element={<Products />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/categories" element={<Categories />} />
+          <Route path="/categories/products/:id" element={<Products />} />
+        </Routes>
       <Newsletter />
       <Footer />
     </div>
