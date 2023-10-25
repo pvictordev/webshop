@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import "../styles/products.scss";
-import { SlArrowLeft } from "react-icons/sl";
 import { Link } from "react-router-dom";
 import HomeRoute from "../components/HomeRoute";
+import { useParams } from "react-router-dom";
 import Trend from "../components/Trend";
 import products from "../data/Products";
 import Image from "../assets/webshop.png";
 
-//import { useParams } from "react-router-dom";
-
 const Products = () => {
+
+  const {id} = useParams();
+
+  const item = products.filter((product) => product.id === parseInt(id));
+
   return (
     <div className="Products">
       <HomeRoute />
@@ -17,25 +20,20 @@ const Products = () => {
         <div className="Products__content">
           <div className="Product__images">
             <h1 className="Product__title image__title" align="center">
-              Product
+              {item[0].name}
             </h1>
             <div className="main__image">
-              <img src={Image} alt="" />
+              <img src={item[0].image} alt="" />
             </div>
             <div className="carousel__images">
-              <img src={Image} alt="" />
-              <img src={Image} alt="" />
-              <img src={Image} alt="" />
+              <img src={item[0].image} alt="" />
+              <img src={item[0].image} alt="" />
+              <img src={item[0].image} alt="" />
             </div>
           </div>
           <div className="Product__info">
             <h1 className="Product__title info__title">Product</h1>
-            <div className="info__description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-              illum at officia provident, culpa perferendis quo neque iure
-              dolorum praesentium minus error ut sapiente dolore maxime sequi
-              architecto quia suscipit.
-            </div>
+            <div className="info__description">{item[0].description}</div>
             <div className="info__quantity">
               <p>Quantity</p>
               <div className="quantity__buttons">
