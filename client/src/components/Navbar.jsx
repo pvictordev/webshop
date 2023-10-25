@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "../styles/navbar.scss";
 import { IoCartOutline } from "react-icons/io5";
 import { BsSearch } from "react-icons/bs";
@@ -8,13 +8,13 @@ import logo from "../assets/webshop.png";
 import Burger from "./Burger";
 
 export default function Navbar({ open, toggleMenu }) {
+  // const [focus, setFocus] = useState(false);
 
-  const [focus, setFocus] = useState(false);
+  // const handleFocus = () => {
+  //   setFocus(!focus);
+  // };
 
-  const handleFocus = () => {
-    setFocus(!focus);
-  }
-
+  const searchInputRef = useRef(null);
 
   return (
     <nav className="Navbar">
@@ -30,13 +30,16 @@ export default function Navbar({ open, toggleMenu }) {
             </div>
           </Link>
 
-          <div className="content__search" onClick={() => handleFocus}>
+          <div className="content__search">
             <input
               className="search__input"
               type="text"
               placeholder="Look for"
+              // onClick={handleFocus}
+              ref={searchInputRef}
+              onClick={() => searchInputRef.current.focus()}
             />
-            {focus && <div className="search__results"></div>}
+            {/* {focus && <div className="search__results">focus</div>} */}
           </div>
 
           <ul className="content__nav">
@@ -53,6 +56,7 @@ export default function Navbar({ open, toggleMenu }) {
             <li className="search__icon">
               <BsSearch />
             </li>
+
             <li>
               <IoCartOutline className="link__cart" />
             </li>

@@ -1,5 +1,6 @@
 .Navbar {
   width: 100%;
+  //background-color: #d7d6d4;
 }
 .Navbar__container {
   padding: 0 2rem;
@@ -133,6 +134,8 @@
   }
   .search__icon{
     display: flex;
+    align-items: center;
+    font-size: 1.5rem;
   }
   .Navbar__container {
     padding: 0 0.5rem;
