@@ -5,7 +5,8 @@ import { IoCartOutline } from "react-icons/io5";
 import { BsSearch } from "react-icons/bs";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Link } from "react-router-dom";
-import logo from "../assets/webshop.png";//problem here
+import logo from "./src/assets/webshop.png";//problem here
+
 import Burger from "./Burger";
 import SearchMobile from "./SearchMobile";
 

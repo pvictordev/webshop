@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/home/home.scss";
+import "../styles/home-styles/home.scss";
 import Hero from "../components/home-comps/Hero";
 import Overview from "../components/home-comps/Overview";
 import Best from "../components/home-comps/Best";
