@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.scss";
-import Navbar from "./components/Navbar";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/ui-comps/Navbar";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Categories from "./pages/Categories";
-import { Routes, Route } from "react-router-dom";
-import Footer from "./components/Footer";
-import Newsletter from "./components/Newsletter";
+import Footer from "./components/home-comps/Footer";
+import Newsletter from "./components/home-comps/Newsletter";
 
 function App() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const toggleMenu = () => {
     setOpen(!open);
@@ -20,7 +20,6 @@ function App() {
       document.body.style.overflow = "hidden";
     }
   };
-
   return (
     <div className="App">
       <Navbar open={open} setOpen={setOpen} toggleMenu={toggleMenu} />

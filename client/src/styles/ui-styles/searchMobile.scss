@@ -1,0 +1,24 @@
+.search-mobile__content {
+}
+.close__search {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.search-mobile__input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 15px;
+  border: 2px solid #c4c4c4;
+  background: transparent;
+  font-size: 1rem;
+  outline: none;
+  &:focus {
+    border: 2px solid #333;
+  }
+}
+.search__results {
+}

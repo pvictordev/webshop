@@ -82,7 +82,9 @@
 .search-mobile {
   display: none;
 }
-
+.nav__search-icon {
+  display: none;
+}
 .open {
   overflow: hidden;
   position: absolute;
@@ -137,7 +139,7 @@
   .search__input {
     display: none;
   }
-  .search__icon {
+  .nav__search-icon {
     display: flex;
     align-items: center;
     font-size: 1.5rem;

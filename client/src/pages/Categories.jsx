@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "../styles/categories.scss";
-import { SlArrowLeft } from "react-icons/sl";
-import HomeRoute from "../components/HomeRoute";
-import axios from "axios";
+import HomeRoute from "../components/ui-comps/HomeRoute";
 import Products from "../data/Products";
-import Card from "../components/Card";
-import Buttons from "../components/Buttons";
+import Card from "../components/ui-comps/Card";
+import Buttons from "../components/ui-comps/Buttons";
 
 const Categories = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");

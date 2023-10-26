@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/searchMobile.scss";
+import "../styles/ui-styles/searchMobile.scss";
 import { GrClose } from "react-icons/gr";
 
 export default function SearchMobile({ search, handleSearch, toggleSearch }) {

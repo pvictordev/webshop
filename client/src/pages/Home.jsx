@@ -1,12 +1,10 @@
 import React from "react";
-import "../styles/home.scss";
-import Overview from "../components/Overview";
-import Best from "../components/Best";
-import Trend from "../components/Trend";
-import Newsletter from "../components/Newsletter";
-import Footer from "../components/Footer";
-import Hero from "../components/Hero";
-import Banner from "../components/Banner";
+import "../styles/home/home.scss";
+import Hero from "../components/home-comps/Hero";
+import Overview from "../components/home-comps/Overview";
+import Best from "../components/home-comps/Best";
+import Trend from "../components/home-comps/Trend";
+import Banner from "../components/home-comps/Banner";
 
 const Home = () => {
   return (
@@ -35,7 +33,6 @@ const Home = () => {
         }
         reverse={true}
       />
-
     </div>
   );
 };

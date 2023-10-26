@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../styles/products.scss";
-import { Link } from "react-router-dom";
-import HomeRoute from "../components/HomeRoute";
+import HomeRoute from "../components/ui-comps/HomeRoute";
 import { useParams } from "react-router-dom";
-import Trend from "../components/Trend";
+import Trend from "../components/home-comps/Trend";
 import products from "../data/Products";
-import Image from "../assets/webshop.png";
 
 const Products = () => {
   const { id } = useParams();

@@ -1,6 +1,6 @@
 import React from "react";
-import "../styles/best.scss";
-import Products from "../data/Products";
+import "../styles/home/best.scss";
+import Products from "../../data/Products";
 import Card from "./Card";
 import { Link } from "react-router-dom";
 

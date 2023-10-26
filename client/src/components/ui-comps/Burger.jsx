@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import "../styles/burger.scss";
+import "../styles/ui-styles/burger.scss";
 import { BsInstagram, BsSnapchat, BsFacebook, BsTwitter } from "react-icons/bs";
 import {GrClose} from "react-icons/gr";
 

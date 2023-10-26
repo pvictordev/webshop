@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/trend.scss";
-import Products from "../data/Products";
+import "../styles/home/trend.scss";
+import Products from "../../data/Products";
 import Card from "./Card";
 
 export default function Trend() {
