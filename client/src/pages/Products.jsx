@@ -8,10 +8,10 @@ import products from "../data/Products";
 import Image from "../assets/webshop.png";
 
 const Products = () => {
-
-  const {id} = useParams();
+  const { id } = useParams();
 
   const item = products.filter((product) => product.id === parseInt(id));
+  console.log(item);
 
   return (
     <div className="Products">
