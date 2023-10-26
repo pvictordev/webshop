@@ -1,8 +1,7 @@
 import React from "react";
-import "../styles/home/best.scss";
-import Products from "../../data/Products";
-import Card from "./Card";
-import { Link } from "react-router-dom";
+import "../home-styles/best.scss";
+import Products from "../data/Products";
+import Card from "../ui-comps/Card.jsx";
 
 export default function Best() {
   const best = Products.splice(0, 4).map((product) => {

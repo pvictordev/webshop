@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./App.scss";
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/ui-comps/Navbar";
+import Navbar from "./ui-comps/Navbar";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Categories from "./pages/Categories";
-import Footer from "./components/home-comps/Footer";
-import Newsletter from "./components/home-comps/Newsletter";
+import Footer from "./home-comps/Footer";
+import Newsletter from "./home-comps/Newsletter";
 
 function App() {
   const [open, setOpen] = useState(false);

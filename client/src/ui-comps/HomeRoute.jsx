@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/ui-styles/homeroute.scss'
+import "../ui-styles/homeroute.scss"
 
 import { Link } from 'react-router-dom';
 import { SlArrowLeft } from 'react-icons/sl';

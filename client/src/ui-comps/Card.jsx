@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/ui-styles/card.scss";
+import "../ui-styles/card.scss";
 import { Link } from "react-router-dom";
 
 //link to products page

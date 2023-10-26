@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/ui-styles/buttons.scss";
+import "../ui-styles/buttons.scss";
 
 export default function Buttons({ menuItems, selectedCategory, handleCategoryClick }) {
   return (

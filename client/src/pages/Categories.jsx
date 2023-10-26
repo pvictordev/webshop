@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "../styles/categories.scss";
-import HomeRoute from "../components/ui-comps/HomeRoute";
+import "../categories.scss"
+import HomeRoute from "../ui-comps/HomeRoute";
 import Products from "../data/Products";
-import Card from "../components/ui-comps/Card";
-import Buttons from "../components/ui-comps/Buttons";
+import Card from "../ui-comps/Card";
+import Buttons from "../ui-comps/Buttons";
 
 const Categories = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");

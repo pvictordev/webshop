@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import "./hero.scss";
+import "../home-styles/hero.scss";
 import Typed from "typed.js";
 
 export default function Hero() {

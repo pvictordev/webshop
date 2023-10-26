@@ -1,10 +1,10 @@
 import React from "react";
-import "../styles/home-styles/home.scss";
-import Hero from "../components/home-comps/Hero";
-import Overview from "../components/home-comps/Overview";
-import Best from "../components/home-comps/Best";
-import Trend from "../components/home-comps/Trend";
-import Banner from "../components/home-comps/Banner";
+import "../home-styles/home.scss"; 
+import Hero from "../home-comps/Hero";
+import Overview from "../home-comps/Overview";
+import Best from "../home-comps/Best";
+import Trend from "../home-comps/Trend";
+import Banner from "../home-comps/Banner";
 
 const Home = () => {
   return (

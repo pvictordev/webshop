@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import "../styles/products.scss";
-import HomeRoute from "../components/ui-comps/HomeRoute";
+import "../products.scss"
+import HomeRoute from "../ui-comps/HomeRoute";
 import { useParams } from "react-router-dom";
-import Trend from "../components/home-comps/Trend";
+import Trend from "../home-comps/Trend.jsx"
 import products from "../data/Products";
 
 const Products = () => {

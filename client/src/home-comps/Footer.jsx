@@ -1,7 +1,6 @@
 import React from "react";
-import "./styles/home/footer.scss";
+import "../home-styles/footer.scss";
 import { BsInstagram, BsSnapchat, BsFacebook, BsTwitter } from "react-icons/bs";
-
 
 export default function Footer() {
   return (

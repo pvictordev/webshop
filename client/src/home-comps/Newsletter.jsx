@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/home/newsletter.scss";
+import "../home-styles/newsletter.scss";
 
 export default function Newsletter() {
   return (

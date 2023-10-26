@@ -1,8 +1,7 @@
 import React from "react";
-import "../styles/trend.scss";
-import "../styles/home/trend.scss";
-import Products from "../../data/Products";
-import Card from "./Card";
+import "../home-styles/trend.scss";
+import Products from "../data/Products";
+import Card from "../ui-comps/Card.jsx";
 
 export default function Trend() {
   const trend = Products.splice(0, 4).map((product) => {

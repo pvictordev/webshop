@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/home/overview.scss";
+import "../home-styles/overview.scss";
 
 export default function Overview() {
   return (

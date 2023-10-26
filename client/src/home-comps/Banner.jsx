@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/home/banner.scss";
+import "../home-styles/banner.scss";
 
 export default function Banner(props) {
   return (
