@@ -8,7 +8,7 @@ export default function SearchMobile({ search, handleSearch, toggleSearch, searc
       <div className="close__search" onClick={toggleSearch}>
         <GrClose />
       </div>
-      <div className="search-mobile__content">
+      <div className="input__search">
         <input
           className="search-mobile__input"
           type="search"
@@ -16,7 +16,6 @@ export default function SearchMobile({ search, handleSearch, toggleSearch, searc
           onChange={handleSearch}
           placeholder="Search for items"
         />
-        {/* <div className="search__results">{"map all the results here"}</div> */}
         {search !== "" ? searchResults : null}
       </div>
     </div>

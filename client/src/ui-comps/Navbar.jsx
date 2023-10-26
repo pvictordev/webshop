@@ -12,9 +12,13 @@ import Prodcuts from "../data/Products.jsx";
 export default function Navbar({ open, toggleMenu }) {
   //search input state
   const [search, setSearch] = useState("");
+  //search data state
+  const [filteredData, setFilteredData] = useState(Prodcuts);
 
   const handleSearch = (e) => {
-    setSearch(e.target.value);
+    const { value } = e.target;
+    setSearch(value);
+    filterData(value);
   };
 
   //opens search mobile
@@ -30,9 +34,24 @@ export default function Navbar({ open, toggleMenu }) {
     }
   };
 
+  //filtering data
+  const filterData = (search) => {
+    const filteredData = Prodcuts.filter((product) => {
+      return product.name.toLowerCase().includes(search.toLowerCase());
+    });
+    setFilteredData(filteredData);
+  };
+
+  //search results
   const searchResults = (
-    <div className="search__results">
-      {"map all the results(matching products names here) here"}
+    <div className="search__results ">
+      <ul className="results">
+        {filteredData.map((item) => (
+          <li style={{ fontWeight: "700" }} key={item.id}>
+            {item.name}
+          </li>
+        ))}
+      </ul>
     </div>
   );
   return (
@@ -42,7 +61,12 @@ export default function Navbar({ open, toggleMenu }) {
       </div>
 
       <div className={`search-mobile ${openSearch ? "open" : ""}`}>
-        <SearchMobile toggleSearch={toggleSearch} search={search} handleSearch={handleSearch} searchResults={searchResults}/>
+        <SearchMobile
+          toggleSearch={toggleSearch}
+          search={search}
+          handleSearch={handleSearch}
+          searchResults={searchResults}
+        />
       </div>
 
       <div className="Navbar__container">
@@ -62,7 +86,6 @@ export default function Navbar({ open, toggleMenu }) {
               onChange={handleSearch}
               placeholder="Search for items"
             />
-            {/* <div className="search__results">{"map all the results here"}</div> */}
             {search !== "" ? searchResults : null}
           </div>
 

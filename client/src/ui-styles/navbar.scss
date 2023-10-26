@@ -15,9 +15,23 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .search__results {
-
+  max-height: 10rem;
+  overflow: scroll;
+  width: 100%;
+  position: absolute;
+  top: 3rem;
+  border-top: none;
+  border: 1px solid black;
+  padding: 0.8rem;
+  border-radius: 15px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.results {
 }
 
 .search__input {
