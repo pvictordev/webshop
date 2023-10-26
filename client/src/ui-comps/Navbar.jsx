@@ -1,14 +1,13 @@
 import React, { useState, useRef } from "react";
 import "../ui-styles/navbar.scss";
-
 import { IoCartOutline } from "react-icons/io5";
 import { BsSearch } from "react-icons/bs";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import logo from "../assets/webshop.png";
-
 import Burger from "./Burger";
 import SearchMobile from "./SearchMobile";
+import Prodcuts from "../data/Products.jsx";
 
 export default function Navbar({ open, toggleMenu }) {
   //search input state
@@ -23,8 +22,19 @@ export default function Navbar({ open, toggleMenu }) {
 
   const toggleSearch = () => {
     setOpenSearch(!openSearch);
+
+    if (openSearch) {
+      document.body.style.overflow = "scroll";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
   };
 
+  const searchResults = (
+    <div className="search__results">
+      {"map all the results(matching products names here) here"}
+    </div>
+  );
   return (
     <nav className="Navbar">
       <div className={`burger__menu ${open ? "open" : ""}`}>
@@ -32,7 +42,7 @@ export default function Navbar({ open, toggleMenu }) {
       </div>
 
       <div className={`search-mobile ${openSearch ? "open" : ""}`}>
-        <SearchMobile toggleSearch={toggleSearch} />
+        <SearchMobile toggleSearch={toggleSearch} search={search} handleSearch={handleSearch} searchResults={searchResults}/>
       </div>
 
       <div className="Navbar__container">
@@ -50,8 +60,10 @@ export default function Navbar({ open, toggleMenu }) {
               type="search"
               value={search}
               onChange={handleSearch}
-              placeholder="Search for items "
+              placeholder="Search for items"
             />
+            {/* <div className="search__results">{"map all the results here"}</div> */}
+            {search !== "" ? searchResults : null}
           </div>
 
           <ul className="content__nav">
@@ -80,9 +92,6 @@ export default function Navbar({ open, toggleMenu }) {
             </li>
           </ul>
         </div>
-        {/* <div className="burger__menu">
-          <Burger />
-        </div> */}
       </div>
     </nav>
   );

@@ -9,6 +9,7 @@ import Footer from "./home-comps/Footer";
 import Newsletter from "./home-comps/Newsletter";
 
 function App() {
+  //opens menu
   const [open, setOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -20,6 +21,7 @@ function App() {
       document.body.style.overflow = "hidden";
     }
   };
+
   return (
     <div className="App">
       <Navbar open={open} setOpen={setOpen} toggleMenu={toggleMenu} />

@@ -13,6 +13,11 @@
 }
 .content__search {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.search__results {
+
 }
 
 .search__input {
