@@ -22,16 +22,31 @@
   overflow: scroll;
   width: 100%;
   position: absolute;
-  top: 3rem;
+  top: 2.6rem;
   border-top: none;
   border: 1px solid black;
-  padding: 0.8rem;
   border-radius: 15px;
   &::-webkit-scrollbar {
     display: none;
   }
 }
 .results {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  gap:0.5rem;
+  li {
+    font-weight: 700;
+  }
+}
+.modal-cart {
+  position: absolute;
+  top: 4rem;
+  right: 0;
+  padding: 1rem;
+  cursor: pointer;
 }
 
 .search__input {
@@ -44,7 +59,6 @@
   &:focus {
     border: 2px solid #333;
   }
- 
 }
 
 .search__icon {
@@ -144,7 +158,7 @@
 }
 
 //xs+ size
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 520px) {
   .content__logo {
     img {
       width: 2rem;
@@ -155,7 +169,7 @@
       font-weight: 700;
     }
   }
-  .search__input {
+  .content__search{
     display: none;
   }
   .nav__search-icon {

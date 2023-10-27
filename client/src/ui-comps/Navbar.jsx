@@ -8,17 +8,22 @@ import logo from "../assets/webshop.png";
 import Burger from "./Burger";
 import SearchMobile from "./SearchMobile";
 import Prodcuts from "../data/Products.jsx";
+import ModalCart from "./ModalCart";
+import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
+import Favorite from "./Favorite";
 
 export default function Navbar({ open, toggleMenu }) {
   //search input state
   const [search, setSearch] = useState("");
+  
   //search data state
   const [filteredData, setFilteredData] = useState(Prodcuts);
 
   const handleSearch = (e) => {
     const { value } = e.target;
     setSearch(value);
-    filterData(value);
+    filterData(search);
+    //filterData(value); 
   };
 
   //opens search mobile
@@ -47,8 +52,8 @@ export default function Navbar({ open, toggleMenu }) {
     <div className="search__results ">
       <ul className="results">
         {filteredData.map((item) => (
-          <li style={{ fontWeight: "700" }} key={item.id}>
-            {item.name}
+          <li key={item.id}>
+            <BsSearch/> {item.name}
           </li>
         ))}
       </ul>
@@ -67,6 +72,14 @@ export default function Navbar({ open, toggleMenu }) {
           handleSearch={handleSearch}
           searchResults={searchResults}
         />
+      </div>
+
+      <div className="modal-cart">
+        <ModalCart />
+      </div>
+
+      <div className="favorite">
+        <Favorite />
       </div>
 
       <div className="Navbar__container">
@@ -109,6 +122,9 @@ export default function Navbar({ open, toggleMenu }) {
 
             <li className="nav__cart">
               <IoCartOutline className="link__cart" />
+            </li>
+            <li className="nav__favorite">
+              <MdFavoriteBorder className="link__favorite" />
             </li>
             <li className="nav__burger">
               <RxHamburgerMenu className="burger__icon" onClick={toggleMenu} />

@@ -1,14 +1,7 @@
 import React from "react";
 import "../ui-styles/card.scss";
 import { Link } from "react-router-dom";
-
-//link to products page
-{
-  /* <Link
-  to={`/categories/products/${props.id}`}
-  onClick={() => window.top(0, 0)}
-></Link>; */
-}
+import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 
 export default function Card(props) {
   return (
@@ -18,6 +11,11 @@ export default function Card(props) {
       style={{ textDecoration: "none", display: "flex", color: "#333" }}
     >
       <div className="grid__card">
+        <div className="card__favorite">
+          <MdFavoriteBorder className="favorite__icon" />
+          {/* filled heart <MdFavorite/> */}
+        </div>
+
         <div className="card__image">
           <img src={props.image} alt="" />
         </div>
