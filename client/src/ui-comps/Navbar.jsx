@@ -15,7 +15,7 @@ import Favorite from "./Favorite";
 export default function Navbar({ open, toggleMenu }) {
   //search input state
   const [search, setSearch] = useState("");
-  
+
   //search data state
   const [filteredData, setFilteredData] = useState(Prodcuts);
 
@@ -23,7 +23,7 @@ export default function Navbar({ open, toggleMenu }) {
     const { value } = e.target;
     setSearch(value);
     filterData(search);
-    //filterData(value); 
+    //filterData(value);
   };
 
   //opens search mobile
@@ -53,12 +53,13 @@ export default function Navbar({ open, toggleMenu }) {
       <ul className="results">
         {filteredData.map((item) => (
           <li key={item.id}>
-            <BsSearch/> {item.name}
+            <BsSearch /> {item.name}
           </li>
         ))}
       </ul>
     </div>
   );
+
   return (
     <nav className="Navbar">
       <div className={`burger__menu ${open ? "open" : ""}`}>
@@ -120,12 +121,16 @@ export default function Navbar({ open, toggleMenu }) {
               <BsSearch onClick={toggleSearch} />
             </li>
 
+            <li className="nav__favorite">
+              <Link className="favorite__link" to={"/favorite"}>
+                <MdFavoriteBorder className="link__favorite" />{" "}
+              </Link>
+            </li>
+
             <li className="nav__cart">
               <IoCartOutline className="link__cart" />
             </li>
-            <li className="nav__favorite">
-              <MdFavoriteBorder className="link__favorite" />
-            </li>
+
             <li className="nav__burger">
               <RxHamburgerMenu className="burger__icon" onClick={toggleMenu} />
             </li>

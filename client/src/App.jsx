@@ -7,6 +7,7 @@ import Products from "./pages/Products";
 import Categories from "./pages/Categories";
 import Footer from "./home-comps/Footer";
 import Newsletter from "./home-comps/Newsletter";
+import Favorite from "./ui-comps/Favorite";
 
 function App() {
   //opens menu
@@ -22,6 +23,7 @@ function App() {
     }
   };
 
+  
   return (
     <div className="App">
       <Navbar open={open} setOpen={setOpen} toggleMenu={toggleMenu} />
@@ -30,6 +32,7 @@ function App() {
         <Route path="/categories" element={<Categories />} />
         <Route path="/categories/products/" element={<Products />} />
         <Route path="/categories/products/:id" element={<Products />} />
+        <Route path="/favorite" element={<Favorite/>}></Route>
       </Routes>
       <Newsletter />
       <Footer />

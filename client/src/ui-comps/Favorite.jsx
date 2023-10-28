@@ -3,7 +3,7 @@ import "../ui-styles/favorite.scss";
 export default function Favorite() {
   return (
     <div>
-      Favorite
+      
     </div>
   )
 }
