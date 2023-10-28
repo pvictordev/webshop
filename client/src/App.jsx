@@ -23,7 +23,6 @@ function App() {
     }
   };
 
-  
   return (
     <div className="App">
       <Navbar open={open} setOpen={setOpen} toggleMenu={toggleMenu} />
@@ -32,7 +31,7 @@ function App() {
         <Route path="/categories" element={<Categories />} />
         <Route path="/categories/products/" element={<Products />} />
         <Route path="/categories/products/:id" element={<Products />} />
-        <Route path="/favorite" element={<Favorite/>}></Route>
+        <Route path="/favorite" element={<Favorite />}></Route>
       </Routes>
       <Newsletter />
       <Footer />

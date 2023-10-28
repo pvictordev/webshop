@@ -13,9 +13,7 @@ export default function Best() {
         <h1>Best sellers</h1>
       </div>
 
-      <div className="Best__grid">
-          {best}
-      </div>
+      <div className="Best__grid">{best}</div>
     </div>
   );
 }
