@@ -3,9 +3,9 @@ import "../home-styles/trend.scss";
 import Products from "../data/Products";
 import Card from "../ui-comps/Card.jsx";
 
-export default function Trend() {
+export default function Trend({ toggleFavorite, favorite}) {
   const trend = Products.splice(0, 4).map((product) => {
-    return <Card key={product.id} {...product} />;
+    return <Card key={product.id} {...product} toggleFavorite={toggleFavorite} favorite={favorite} />;
   });
   return (
     <div className="Trend">

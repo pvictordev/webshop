@@ -1,18 +1,17 @@
 import React from "react";
-import "../home-styles/home.scss"; 
+import "../home-styles/home.scss";
 import Hero from "../home-comps/Hero";
 import Overview from "../home-comps/Overview";
 import Best from "../home-comps/Best";
 import Trend from "../home-comps/Trend";
 import Banner from "../home-comps/Banner";
 
-const Home = () => {
-
+const Home = ({ toggleFavorite, favorite }) => {
   return (
     <div className="Home">
       <Hero />
       <Overview />
-      <Best />
+      <Best toggleFavorite={toggleFavorite} favorite={favorite} />
       <Banner
         title={"Create your perfect environment"}
         description={
@@ -23,7 +22,7 @@ const Home = () => {
         }
         reverse={false}
       />
-      <Trend />
+      <Trend toggleFavorite={toggleFavorite} favorite={favorite} />
       <Banner
         title={"Be more stylish with us"}
         description={

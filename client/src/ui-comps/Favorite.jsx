@@ -4,10 +4,17 @@ import Products from "../data/Products";
 import Card from "../ui-comps/Card";
 import HomeRoute from "./HomeRoute";
 
-export default function Favorite() {
-  const favoriteProducts = Products.filter((product) => product.favorite === true);
+const  Favorite = ({ toggleFavorite, favorite}) => {
+  const favoriteProducts = favorite.filter((product) => product.favorite === true);
   const products = favoriteProducts.map((product) => {
-    return <Card key={product.id} {...product} />;
+    return (
+      <Card
+        key={product.id}
+        {...product}
+        toggleFavorite={toggleFavorite}
+        favorite={favorite}
+      />
+    );
   });
 
   return (
@@ -24,3 +31,5 @@ export default function Favorite() {
     </div>
   );
 }
+
+export default Favorite;

@@ -5,24 +5,22 @@ import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 import Products from "../data/Products";
 
 export default function Card(props) {
-  // console.log(props.favorite);
   
-  const [favorite, setFavorite] = useState(props.favorite);
+  // const [favorite, setFavorite] = useState(props.favorite);
 
-  const toggleFavorite = () => {
-    setFavorite(prev => !prev);
-  };
+  // const toggleFavorite = () => {
+  //   setFavorite(prev => !prev);
+  // };
 
-  console.log(favorite)
   return (
     <div className="grid__card">
       <div className="card__favorite">
-        {favorite ? (
-          <MdFavorite className="favorite__icon" onClick={toggleFavorite} />
+        {props.favorite ? (
+          <MdFavorite className="favorite__icon" onClick={props.toggleFavorite} />
         ) : (
           <MdFavoriteBorder
             className="favorite__icon"
-            onClick={toggleFavorite}
+            onClick={props.toggleFavorite}
           />
         )}
       </div>
