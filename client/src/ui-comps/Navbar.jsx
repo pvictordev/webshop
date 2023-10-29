@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 import logo from "../assets/webshop.png";
 import Burger from "./Burger";
 import SearchMobile from "./SearchMobile";
-import Prodcuts from "../data/Products.jsx";
 import ModalCart from "./ModalCart";
-import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
+import Prodcuts from "../data/Products.jsx";
+import { MdFavoriteBorder } from "react-icons/md";
 import Favorite from "./Favorite";
 
 export default function Navbar({ open, toggleMenu }) {
@@ -79,9 +79,9 @@ export default function Navbar({ open, toggleMenu }) {
         <ModalCart />
       </div>
 
-      <div className="favorite">
+      {/* <div className="favorite">
         <Favorite />
-      </div>
+      </div> */}
 
       <div className="Navbar__container">
         <div className="container__content">

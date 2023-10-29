@@ -2,14 +2,18 @@ import React, {useState} from "react";
 import "../ui-styles/card.scss";
 import { Link } from "react-router-dom";
 import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
+import Products from "../data/Products";
 
 export default function Card(props) {
-  const [favorite, setFavorite] = useState(false);
+  // console.log(props.favorite);
+  
+  const [favorite, setFavorite] = useState(props.favorite);
 
   const toggleFavorite = () => {
-    setFavorite(!favorite);
+    setFavorite(prev => !prev);
   };
 
+  console.log(favorite)
   return (
     <div className="grid__card">
       <div className="card__favorite">

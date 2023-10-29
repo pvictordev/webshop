@@ -7,6 +7,7 @@ export default function Best() {
   const best = Products.splice(0, 4).map((product) => {
     return <Card key={product.id} {...product} />;
   });
+  
   return (
     <div className="Best">
       <div className="Best__header">

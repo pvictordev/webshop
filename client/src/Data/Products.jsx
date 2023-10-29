@@ -13,6 +13,8 @@ export default [
       width: 50,
       length: 80,
     },
+    favorite: false,
+    cart: false,
   },
   {
     id: 2,
@@ -28,6 +30,8 @@ export default [
       width: 30,
       length: 28,
     },
+    favorite: false,
+    cart: false,
   },
   {
     id: 3,
@@ -43,6 +47,8 @@ export default [
       width: 40,
       length: 160,
     },
+    favorite: false,
+    cart: false,
   },
   {
     id: 4,
@@ -57,6 +63,8 @@ export default [
       width: 200,
       length: 200,
     },
+    favorite: false,
+    cart: false,
   },
   {
     id: 5,
@@ -72,6 +80,8 @@ export default [
       width: 30,
       length: 30,
     },
+    favorite: false,
+    cart: false,
   },
   {
     id: 6,
@@ -87,6 +97,8 @@ export default [
       width: 10,
       length: 17,
     },
+    favorite: false,
+    cart: false,
   },
 
   {
@@ -102,6 +114,8 @@ export default [
       width: 300,
       length: 300,
     },
+    favorite: false,
+    cart: false,
   },
   {
     id: 8,
@@ -117,6 +131,8 @@ export default [
       width: 30,
       length: 40,
     },
+    favorite: false,
+    cart: false,
   },
   {
     id: 9,
@@ -133,6 +149,8 @@ export default [
       length: 15,
       depth: 5,
     },
+    favorite: false,
+    cart: false,
   },
   {
     id: 10,
@@ -140,8 +158,7 @@ export default [
     name: "Drone",
     price: 1179.99,
     image: "https://pngimg.com/uploads/drone/drone_PNG155.png",
-    description:
-      "Perfect for aerial photography and exploration.",
+    description: "Perfect for aerial photography and exploration.",
     texture: "Smooth",
     weight: "1.5kg",
     size: {
@@ -149,6 +166,8 @@ export default [
       length: 15,
       depth: 5,
     },
+    favorite: false,
+    cart: false,
   },
   {
     id: 11,
@@ -164,6 +183,8 @@ export default [
       length: 15,
       depth: 5,
     },
+    favorite: false,
+    cart: false,
   },
   {
     id: 12,
@@ -180,5 +201,7 @@ export default [
       length: 15,
       depth: 5,
     },
+    favorite: false,
+    cart: false,
   },
 ];
