@@ -11,7 +11,13 @@ import ModalCart from "./ModalCart";
 import Prodcuts from "../data/Products.jsx";
 import { MdFavoriteBorder } from "react-icons/md";
 
-export default function Navbar({ open, toggleMenu, openCart, setOpenCart, toggleCart }) {
+export default function Navbar({
+  open,
+  toggleMenu,
+  openCart,
+  setOpenCart,
+  toggleCart,
+}) {
   //search input state
   const [search, setSearch] = useState("");
 
@@ -55,6 +61,7 @@ export default function Navbar({ open, toggleMenu, openCart, setOpenCart, toggle
             style={{ color: "#333", fontWeight: "700" }}
             to={`/products/${item.id}`}
             key={item.id}
+            element={<Prodcuts />}
           >
             <BsSearch /> {item.name}
           </Link>

@@ -3,6 +3,8 @@ import "../products.scss";
 import HomeRoute from "../ui-comps/HomeRoute";
 import { useParams, useNavigate } from "react-router-dom";
 import Trend from "../home-comps/Trend.jsx";
+import Best from "../home-comps/Best.jsx";
+import Banner from "../home-comps/Banner";
 // import productsPage from "../data/Products";
 
 const Products = ({ productsList }) => {
@@ -56,7 +58,6 @@ const Products = ({ productsList }) => {
             </div>
           </div>
         </div>
-        {/* <Trend/> */}
       </div>
     </div>
   );
