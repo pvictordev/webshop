@@ -3,6 +3,11 @@ import "../home-styles/trend.scss";
 import Card from "../ui-comps/Card.jsx";
 
 export default function Trend({ toggleFavorite, productsList }) {
+    if (!productsList) {
+      return null 
+    }
+
+
   const trend = productsList
     .slice(4, 8)
     .map((product) => (

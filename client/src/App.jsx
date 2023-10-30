@@ -58,14 +58,13 @@ function App() {
           }
         />
 
-        <Route path="/products" element={<Products />}>
+        <Route
+          path="/products"
+          element={<Products productsList={productsList} />}
+        >
           <Route
             path=":id"
-            element={
-              <Products
-              productsList={productsList}
-              />
-            }
+            element={<Products productsList={productsList} />}
           />
         </Route>
 
