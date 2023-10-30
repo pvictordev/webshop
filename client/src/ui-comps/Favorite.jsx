@@ -1,18 +1,18 @@
 import React from "react";
 import "../ui-styles/favorite.scss";
-import Products from "../data/Products";
 import Card from "../ui-comps/Card";
 import HomeRoute from "./HomeRoute";
 
-const  Favorite = ({ toggleFavorite, favorite}) => {
-  const favoriteProducts = favorite.filter((product) => product.favorite === true);
+const Favorite = ({ toggleFavorite, productsList }) => {
+  const favoriteProducts = productsList.filter(
+    (product) => product.favorite === true
+  );
   const products = favoriteProducts.map((product) => {
     return (
       <Card
         key={product.id}
         {...product}
         toggleFavorite={toggleFavorite}
-        favorite={favorite}
       />
     );
   });
@@ -30,6 +30,6 @@ const  Favorite = ({ toggleFavorite, favorite}) => {
       </div>
     </div>
   );
-}
+};
 
 export default Favorite;

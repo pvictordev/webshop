@@ -1,12 +1,13 @@
 import React from "react";
 import "../home-styles/best.scss";
-import Products from "../data/Products";
 import Card from "../ui-comps/Card.jsx";
 
-export default function Best({ toggleFavorite, favorite }) {
-  const best = Products.splice(0, 4).map((product) => {
-    return <Card key={product.id} {...product} toggleFavorite={toggleFavorite} favorite={favorite} />;
-  });
+export default function Best({ toggleFavorite, productsList }) {
+  const best = productsList
+    .slice(0, 4)
+    .map((product) => (
+      <Card key={product.id} {...product} toggleFavorite={toggleFavorite} />
+    ));
 
   return (
     <div className="Best">

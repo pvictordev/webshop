@@ -25,16 +25,16 @@ function App() {
   };
 
   //favorite items
-  const [favorite, setFavorite] = useState(products);
+  const [productsList, setProductsList] = useState([...products]);
 
   const toggleFavorite = (id) => {
-    const newFavorite = favorite.map((product) => {
+    const newFavorite = productsList.map((product) => {
       if (product.id === id) {
         return { ...product, favorite: !product.favorite };
       }
       return product;
     });
-    setFavorite(newFavorite);
+    setProductsList(newFavorite);
   };
 
   return (
@@ -43,7 +43,9 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Home toggleFavorite={toggleFavorite} favorite={favorite} />}
+          element={
+            <Home toggleFavorite={toggleFavorite} productsList={productsList} />
+          }
         />
         <Route path="/categories" element={<Categories />} />
         <Route path="/categories/products/" element={<Products />} />
@@ -51,7 +53,10 @@ function App() {
         <Route
           path="/favorite"
           element={
-            <Favorite toggleFavorite={toggleFavorite} favorite={favorite} />
+            <Favorite
+              toggleFavorite={toggleFavorite}
+              productsList={productsList}
+            />
           }
         ></Route>
       </Routes>

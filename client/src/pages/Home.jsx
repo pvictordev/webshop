@@ -6,12 +6,12 @@ import Best from "../home-comps/Best";
 import Trend from "../home-comps/Trend";
 import Banner from "../home-comps/Banner";
 
-const Home = ({ toggleFavorite, favorite }) => {
+const Home = ({ toggleFavorite, productsList }) => {
   return (
     <div className="Home">
       <Hero />
       <Overview />
-      <Best toggleFavorite={toggleFavorite} favorite={favorite} />
+      <Best toggleFavorite={toggleFavorite} productsList={productsList} />
       <Banner
         title={"Create your perfect environment"}
         description={
@@ -22,7 +22,7 @@ const Home = ({ toggleFavorite, favorite }) => {
         }
         reverse={false}
       />
-      <Trend toggleFavorite={toggleFavorite} favorite={favorite} />
+      <Trend toggleFavorite={toggleFavorite} productsList={productsList} />
       <Banner
         title={"Be more stylish with us"}
         description={
