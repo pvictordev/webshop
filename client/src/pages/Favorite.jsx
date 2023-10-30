@@ -1,7 +1,7 @@
 import React from "react";
-import "../ui-styles/favorite.scss";
+import "../favorite.scss";
 import Card from "../ui-comps/Card";
-import HomeRoute from "./HomeRoute";
+import HomeRoute from "../ui-comps/HomeRoute";
 
 const Favorite = ({ toggleFavorite, productsList }) => {
   const favoriteProducts = productsList.filter(
@@ -9,11 +9,7 @@ const Favorite = ({ toggleFavorite, productsList }) => {
   );
   const products = favoriteProducts.map((product) => {
     return (
-      <Card
-        key={product.id}
-        {...product}
-        toggleFavorite={toggleFavorite}
-      />
+      <Card key={product.id} {...product} toggleFavorite={toggleFavorite} />
     );
   });
 

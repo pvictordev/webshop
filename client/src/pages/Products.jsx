@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
-import "../products.scss"
+import "../products.scss";
 import HomeRoute from "../ui-comps/HomeRoute";
 import { useParams } from "react-router-dom";
-import Trend from "../home-comps/Trend.jsx"
-import products from "../data/Products";
+import Trend from "../home-comps/Trend.jsx";
 
-const Products = () => {
+const Products = ({ productsList }) => {
   const { id } = useParams();
 
-  const item = products.filter((product) => product.id === parseInt(id));
-  console.log(item);
+  // const item = productsList.filter((product) => product.id === parseInt(id));
+  useEffect(() => {
+    const item = productsList.filter((product) => product.id === parseInt(id));
+    console.log(item);
+  }, [id, productsList]);
 
   return (
     <div className="Products">

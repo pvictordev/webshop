@@ -1,22 +1,24 @@
 import React, { useState, useEffect } from "react";
 import "../categories.scss"
 import HomeRoute from "../ui-comps/HomeRoute";
-import Products from "../data/Products";
 import Card from "../ui-comps/Card";
 import Buttons from "../ui-comps/Buttons";
 
-const Categories = () => {
+const Categories = ({toggleFavorite, productsList}) => {
+
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const menuItems = [...new Set(Products.map((product) => product.category))];
+  const menuItems = [
+    ...new Set(productsList.map((product) => product.category)),
+  ];
   const [headerText, setHeaderText] = useState("All");
 
   const filteredProducts =
     selectedCategory === "All"
-      ? Products
-      : Products.filter((product) => product.category === selectedCategory);
+      ? productsList
+      : productsList.filter((product) => product.category === selectedCategory);
 
   const products = filteredProducts.map((product) => {
-    return <Card key={product.id} {...product} />;
+    return <Card key={product.id} {...product} toggleFavorite={toggleFavorite} />;
   });
 
   const handleCategoryClick = (category) => {

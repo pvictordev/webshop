@@ -8,7 +8,7 @@ import Products from "./pages/Products";
 import Categories from "./pages/Categories";
 import Footer from "./home-comps/Footer";
 import Newsletter from "./home-comps/Newsletter";
-import Favorite from "./ui-comps/Favorite";
+import Favorite from "./pages/Favorite";
 
 function App() {
   //open menu
@@ -47,9 +47,20 @@ function App() {
             <Home toggleFavorite={toggleFavorite} productsList={productsList} />
           }
         />
-        <Route path="/categories" element={<Categories />} />
-        <Route path="/categories/products/" element={<Products />} />
-        <Route path="/categories/products/:id" element={<Products />} />
+        <Route
+          path="/categories"
+          element={
+            <Categories
+              toggleFavorite={toggleFavorite}
+              productsList={productsList}
+            />
+          }
+        />
+        {/* <Route path="/categories/products/" element={<Products />} /> */}
+        <Route
+          path="/products/:id"
+          element={<Products productsList={productsList} />}
+        />
         <Route
           path="/favorite"
           element={

@@ -10,7 +10,6 @@ import SearchMobile from "./SearchMobile";
 import ModalCart from "./ModalCart";
 import Prodcuts from "../data/Products.jsx";
 import { MdFavoriteBorder } from "react-icons/md";
-import Favorite from "./Favorite";
 
 export default function Navbar({ open, toggleMenu }) {
   //search input state
@@ -52,9 +51,13 @@ export default function Navbar({ open, toggleMenu }) {
     <div className="search__results ">
       <ul className="results">
         {filteredData.map((item) => (
-          <li key={item.id}>
+          <Link
+            style={{ color: "#333", fontWeight: "700" }}
+            to={`/products/${item.id}`}
+            key={item.id}
+          >
             <BsSearch /> {item.name}
-          </li>
+          </Link>
         ))}
       </ul>
     </div>
@@ -78,10 +81,6 @@ export default function Navbar({ open, toggleMenu }) {
       <div className="modal-cart">
         <ModalCart />
       </div>
-
-      {/* <div className="favorite">
-        <Favorite />
-      </div> */}
 
       <div className="Navbar__container">
         <div className="container__content">
@@ -109,10 +108,7 @@ export default function Navbar({ open, toggleMenu }) {
                 <li>Cateogories</li>
               </Link>
 
-              <Link
-                className="Link link__products"
-                to={"categories/products/5"}
-              >
+              <Link className="Link link__products" to={"/products/5"}>
                 <li>Products</li>
               </Link>
             </li>

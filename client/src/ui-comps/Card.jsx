@@ -22,7 +22,7 @@ export default function Card({ toggleFavorite, id, name, description, image, pri
         )}
       </div>
       <Link
-        to={`/categories/products/${id}`}
+        to={`/products/${id}`}
         onClick={() => window.top(0, 0)}
         style={{ textDecoration: "none", display: "flex", color: "#333" }}
         className="card__container"
