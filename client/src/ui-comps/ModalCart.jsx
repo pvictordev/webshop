@@ -3,14 +3,14 @@ import "../ui-styles/modalCart.scss";
 import { GrClose } from "react-icons/gr";
 import image from "../assets/webshop.png";
 
-export default function ModalCart() {
+export default function ModalCart({ openCart, setOpenCart, toggleCart}) {
   return (
     <div className="modal__cart-content">
       <div className="cart__top">
         <div className="cart__title">
           <h2>Your Shopping Cart (1)</h2>
           <div>
-            <GrClose />
+            <GrClose onClick={toggleCart}/>
           </div>
         </div>
         <div className="cart__body">

@@ -11,7 +11,7 @@ import ModalCart from "./ModalCart";
 import Prodcuts from "../data/Products.jsx";
 import { MdFavoriteBorder } from "react-icons/md";
 
-export default function Navbar({ open, toggleMenu }) {
+export default function Navbar({ open, toggleMenu, openCart, setOpenCart, toggleCart }) {
   //search input state
   const [search, setSearch] = useState("");
 
@@ -78,10 +78,6 @@ export default function Navbar({ open, toggleMenu }) {
         />
       </div>
 
-      {/* <div className="modal-cart">
-        <ModalCart />
-      </div> */}
-
       <div className="Navbar__container">
         <div className="container__content">
           <Link className="Logo" to={"/"}>
@@ -124,7 +120,7 @@ export default function Navbar({ open, toggleMenu }) {
             </li>
 
             <li className="nav__cart">
-              <IoCartOutline className="link__cart" />
+              <IoCartOutline className="link__cart" onClick={toggleCart} />
             </li>
 
             <li className="nav__burger">

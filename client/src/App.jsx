@@ -38,14 +38,34 @@ function App() {
     setProductsList(newFavorite);
   };
 
+  //open cart
+  const [openCart, setOpenCart] = useState(false);
+
+  const toggleCart = () => {
+    setOpenCart(!openCart);
+  };
+
   return (
     <div className="App">
-      <Navbar open={open} setOpen={setOpen} toggleMenu={toggleMenu} />
+      <Navbar
+        open={open}
+        setOpen={setOpen}
+        toggleMenu={toggleMenu}
+        openCart={openCart}
+        setOpenCart={setOpenCart}
+        toggleCart={toggleCart}
+      />
       <Routes>
         <Route
           path="/"
           element={
-            <Home toggleFavorite={toggleFavorite} productsList={productsList} />
+            <Home
+              toggleFavorite={toggleFavorite}
+              productsList={productsList}
+              openCart={openCart}
+              setOpenCart={setOpenCart}
+              toggleCart={toggleCart}
+            />
           }
         />
         <Route
