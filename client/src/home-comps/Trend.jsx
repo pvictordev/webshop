@@ -1,6 +1,5 @@
 import React from "react";
 import "../home-styles/trend.scss";
-import Products from "../data/Products";
 import Card from "../ui-comps/Card.jsx";
 
 export default function Trend({ toggleFavorite, productsList }) {

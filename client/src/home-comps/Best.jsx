@@ -1,6 +1,7 @@
 import React from "react";
 import "../home-styles/best.scss";
 import Card from "../ui-comps/Card.jsx";
+import { Link } from "react-router-dom";
 
 export default function Best({ toggleFavorite, productsList }) {
   const best = productsList

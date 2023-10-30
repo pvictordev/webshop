@@ -1,11 +1,18 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "../ui-styles/card.scss";
 import { Link } from "react-router-dom";
 import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
-import Products from "../data/Products";
+// import Products from "../pages/Products";
 
-export default function Card({ toggleFavorite, id, name, description, image, price, favorite }) {
-
+export default function Card({
+  toggleFavorite,
+  id,
+  name,
+  description,
+  image,
+  price,
+  favorite,
+}) {
   return (
     <div className="grid__card">
       <div className="card__favorite">
@@ -22,10 +29,13 @@ export default function Card({ toggleFavorite, id, name, description, image, pri
         )}
       </div>
       <Link
-        to={`/products/${id}`}
-        onClick={() => window.top(0, 0)}
-        style={{ textDecoration: "none", display: "flex", color: "#333" }}
         className="card__container"
+        to={`/products/${id}`}
+        // element={<Products />}
+        onClick={() => {
+          window.top(0, 0);
+        }}
+        style={{ textDecoration: "none", display: "flex", color: "#333" }}
       >
         <div className="card__image">
           <img src={image} alt="" />

@@ -24,9 +24,10 @@ function App() {
     }
   };
 
-  //favorite items
+  //items list
   const [productsList, setProductsList] = useState([...products]);
 
+  //add to favorite or remove
   const toggleFavorite = (id) => {
     const newFavorite = productsList.map((product) => {
       if (product.id === id) {
@@ -56,11 +57,18 @@ function App() {
             />
           }
         />
-        {/* <Route path="/categories/products/" element={<Products />} /> */}
-        <Route
-          path="/products/:id"
-          element={<Products productsList={productsList} />}
-        />
+
+        <Route path="/products" element={<Products />}>
+          <Route
+            path=":id"
+            element={
+              <Products
+              productsList={productsList}
+              />
+            }
+          />
+        </Route>
+
         <Route
           path="/favorite"
           element={
