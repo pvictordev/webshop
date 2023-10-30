@@ -5,10 +5,14 @@ import Overview from "../home-comps/Overview";
 import Best from "../home-comps/Best";
 import Trend from "../home-comps/Trend";
 import Banner from "../home-comps/Banner";
+import ModalCart from "../ui-comps/ModalCart";
 
 const Home = ({ toggleFavorite, productsList }) => {
   return (
     <div className="Home">
+      <div className="modal__cart">
+        <ModalCart />
+      </div>
       <Hero />
       <Overview />
       <Best toggleFavorite={toggleFavorite} productsList={productsList} />

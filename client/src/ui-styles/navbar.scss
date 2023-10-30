@@ -9,15 +9,13 @@
 .search-mobile {
   display: none;
 }
-.modal-cart {
-  // display: none;
-  position: absolute;
-  top: 4rem;
-  right: 0;
-  padding: 1rem;
-  cursor: pointer;
-
-}
+// .modal-cart {
+//   position: absolute;
+//   top: 4rem;
+//   right: 0;
+//   padding: 1rem;
+//   cursor: pointer;
+// }
 .favorite {
   display: none;
 }
@@ -54,7 +52,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  position: relative;
+  position: relative; 
 }
 .search__input {
   width: 100%;

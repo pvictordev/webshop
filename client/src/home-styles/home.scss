@@ -1,0 +1,15 @@
+.Home {
+    position: relative;
+}
+.modal__cart {
+    display: block;
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    right: 0;
+    padding: 1rem;
+    cursor: pointer;
+    backdrop-filter: blur(35px);
+}

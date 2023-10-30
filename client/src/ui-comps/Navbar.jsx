@@ -78,9 +78,9 @@ export default function Navbar({ open, toggleMenu }) {
         />
       </div>
 
-      <div className="modal-cart">
+      {/* <div className="modal-cart">
         <ModalCart />
-      </div>
+      </div> */}
 
       <div className="Navbar__container">
         <div className="container__content">
