@@ -58,10 +58,11 @@ export default function Navbar({
       <ul className="results">
         {filteredData.map((item) => (
           <Link
+            className="search__results--item"
             style={{ color: "#333", fontWeight: "700" }}
             to={`/products/${item.id}`}
             key={item.id}
-            element={<Prodcuts />}
+            // element={<Prodcuts />}
           >
             <BsSearch /> {item.name}
           </Link>

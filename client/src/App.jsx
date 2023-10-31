@@ -48,6 +48,7 @@ function App() {
   return (
     <div className="App">
       <Navbar
+        
         open={open}
         setOpen={setOpen}
         toggleMenu={toggleMenu}
