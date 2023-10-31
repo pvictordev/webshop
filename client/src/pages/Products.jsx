@@ -41,8 +41,8 @@ const Products = ({ productsList }) => {
             </div>
           </div>
           <div className="Product__info">
-            <h1 className="Product__title info__title">Product</h1>
-            <div className="info__description">{item.description}</div>
+            <h1 className="Product__title info__title">{item.name}</h1>
+            <div className="info__description">{item.detailedDescription}</div>
             <div className="info__quantity">
               <p>Quantity</p>
               <div className="quantity__buttons">
@@ -57,6 +57,9 @@ const Products = ({ productsList }) => {
               <button>Buy now</button>
             </div>
           </div>
+        </div>
+        <div className="Products__trend">
+
         </div>
       </div>
     </div>
