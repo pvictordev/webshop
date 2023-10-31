@@ -9,6 +9,7 @@ import Categories from "./pages/Categories";
 import Footer from "./home-comps/Footer";
 import Newsletter from "./home-comps/Newsletter";
 import Favorite from "./pages/Favorite";
+import ModalCart from "./ui-comps/ModalCart";
 
 function App() {
   //open menu
@@ -45,10 +46,18 @@ function App() {
     setOpenCart(!openCart);
   };
 
-
   return (
     <div className="App">
-      
+      {openCart && (
+        <div className="modal__cart">
+          <ModalCart
+            openCart={openCart}
+            setOpenCart={setOpenCart}
+            toggleCart={toggleCart}
+          />
+        </div>
+      )}
+
       <Navbar
         open={open}
         setOpen={setOpen}
@@ -82,11 +91,21 @@ function App() {
 
         <Route
           path="/products"
-          element={<Products productsList={productsList} toggleFavorite={toggleFavorite} />}
+          element={
+            <Products
+              productsList={productsList}
+              toggleFavorite={toggleFavorite}
+            />
+          }
         >
           <Route
             path=":id"
-            element={<Products productsList={productsList} toggleFavorite={toggleFavorite} />}
+            element={
+              <Products
+                productsList={productsList}
+                toggleFavorite={toggleFavorite}
+              />
+            }
           />
         </Route>
 

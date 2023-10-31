@@ -7,24 +7,9 @@ import Trend from "../home-comps/Trend";
 import Banner from "../home-comps/Banner";
 import ModalCart from "../ui-comps/ModalCart";
 
-const Home = ({
-  toggleFavorite,
-  productsList,
-  openCart,
-  setOpenCart,
-  toggleCart,
-}) => {
+const Home = ({ toggleFavorite, productsList }) => {
   return (
     <div className="Home">
-      { openCart &&
-        <div className="modal__cart">
-          <ModalCart
-            openCart={openCart}
-            setOpenCart={setOpenCart}
-            toggleCart={toggleCart}
-          />
-        </div>
-      }
       <Hero />
       <Overview />
       <Best toggleFavorite={toggleFavorite} productsList={productsList} />
