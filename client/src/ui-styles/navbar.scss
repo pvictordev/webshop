@@ -75,9 +75,9 @@
   border-top: none;
   border: 1px solid black;
   border-radius: 15px;
-  // &::-webkit-scrollbar {
-  //   display: none
-  // }
+  &::-webkit-scrollbar {
+    display: none
+  }
 
   backdrop-filter: blur(15px);
 }

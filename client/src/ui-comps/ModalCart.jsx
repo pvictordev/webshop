@@ -3,14 +3,14 @@ import "../ui-styles/modalCart.scss";
 import { GrClose } from "react-icons/gr";
 import image from "../assets/webshop.png";
 
-export default function ModalCart({ openCart, setOpenCart, toggleCart}) {
+export default function ModalCart({ toggleCart }) {
   return (
     <div className="modal__cart-content">
       <div className="cart__top">
         <div className="cart__title">
           <h2>Your Shopping Cart (1)</h2>
           <div>
-            <GrClose onClick={toggleCart}/>
+            <GrClose onClick={toggleCart} />
           </div>
         </div>
         <div className="cart__body">
@@ -22,7 +22,8 @@ export default function ModalCart({ openCart, setOpenCart, toggleCart}) {
                 </div>
 
                 <div className="cart__details">
-                  <div className="details__name">Product</div>
+                  <p className="details__name">Product</p>
+                  <p>Product description</p>
                   <div className="details__quantity">
                     <div className="quantity__buttons">
                       <button>-</button>
@@ -44,7 +45,8 @@ export default function ModalCart({ openCart, setOpenCart, toggleCart}) {
                 </div>
 
                 <div className="cart__details">
-                  <div className="details__name">Product</div>
+                  <p className="details__name">Product</p>
+                  <p>Product description</p>
                   <div className="details__quantity">
                     <div className="quantity__buttons">
                       <button>-</button>
@@ -66,7 +68,8 @@ export default function ModalCart({ openCart, setOpenCart, toggleCart}) {
                 </div>
 
                 <div className="cart__details">
-                  <div className="details__name">Product</div>
+                  <p className="details__name">Product</p>
+                  <p>Product description</p>
                   <div className="details__quantity">
                     <div className="quantity__buttons">
                       <button>-</button>
@@ -84,6 +87,7 @@ export default function ModalCart({ openCart, setOpenCart, toggleCart}) {
               </div>
             </div>
           </div>
+
           <div className="cart__bottom">
             <div className="subtotal__cart">
               <div className="subtotal__left">

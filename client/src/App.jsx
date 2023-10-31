@@ -45,6 +45,7 @@ function App() {
     setOpenCart(!openCart);
   };
 
+
   return (
     <div className="App">
       
@@ -81,11 +82,11 @@ function App() {
 
         <Route
           path="/products"
-          element={<Products productsList={productsList} />}
+          element={<Products productsList={productsList} toggleFavorite={toggleFavorite} />}
         >
           <Route
             path=":id"
-            element={<Products productsList={productsList} />}
+            element={<Products productsList={productsList} toggleFavorite={toggleFavorite} />}
           />
         </Route>
 

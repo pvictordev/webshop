@@ -62,7 +62,6 @@ export default function Navbar({
             style={{ color: "#333", fontWeight: "700" }}
             to={`/products/${item.id}`}
             key={item.id}
-            // element={<Prodcuts />}
           >
             <BsSearch /> {item.name}
           </Link>
