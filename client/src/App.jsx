@@ -28,6 +28,12 @@ function App() {
   //items list
   const [productsList, setProductsList] = useState([...products]);
 
+  //open cart
+  const [openCart, setOpenCart] = useState(false);
+  const toggleCart = () => {
+    setOpenCart(!openCart);
+  };
+
   //add to favorite or remove
   const toggleFavorite = (id) => {
     const newFavorite = productsList.map((product) => {
@@ -39,11 +45,15 @@ function App() {
     setProductsList(newFavorite);
   };
 
-  //open cart
-  const [openCart, setOpenCart] = useState(false);
-
-  const toggleCart = () => {
-    setOpenCart(!openCart);
+  //add to cart
+  const addToCart = (id) => {
+    const newCart = productsList.map((product) => {
+      if (product.id === id) {
+        return { ...product, cart: !product.cart };
+      }
+      return product;
+    });
+    setProductsList(newCart);
   };
 
   return (
@@ -51,9 +61,9 @@ function App() {
       {openCart && (
         <div className="modal__cart">
           <ModalCart
-            openCart={openCart}
-            setOpenCart={setOpenCart}
             toggleCart={toggleCart}
+            addToCart={addToCart}
+            productsList={productsList}
           />
         </div>
       )}
@@ -95,6 +105,7 @@ function App() {
             <Products
               productsList={productsList}
               toggleFavorite={toggleFavorite}
+              addToCart={addToCart}
             />
           }
         >
@@ -104,6 +115,7 @@ function App() {
               <Products
                 productsList={productsList}
                 toggleFavorite={toggleFavorite}
+                addToCart={addToCart}
               />
             }
           />

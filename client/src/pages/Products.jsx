@@ -3,18 +3,9 @@ import "../products.scss";
 import HomeRoute from "../ui-comps/HomeRoute";
 import { useParams, useNavigate } from "react-router-dom";
 import Trend from "../home-comps/Trend.jsx";
-import Best from "../home-comps/Best.jsx";
-import Banner from "../home-comps/Banner";
-// import productsPage from "../data/Products";
 
-const Products = ({ productsList, toggleFavorite }) => {
-  //const history = useNavigate();
+const Products = ({ productsList, toggleFavorite, addToCart }) => {
   const { id } = useParams();
-
-  // useEffect(() => {
-  //   const item = productsList.filter((product) => product.id === parseInt(id));
-  //   console.log(item);
-  // }, [id, productsList]);
 
   const item = productsList.find((product) => product.id === parseInt(id, 10));
 
@@ -53,10 +44,10 @@ const Products = ({ productsList, toggleFavorite }) => {
                   <p>1</p>
                   <button>+</button>
                 </div>
-                <p>100.00$</p>
+                <p>${item.price}</p>
               </div>
               <div className="info__buttons">
-                <button>Add to cart</button>
+                <button onClick={() => addToCart(id)}>Add to cart</button>
                 <button>Buy now</button>
               </div>
             </div>
@@ -73,7 +64,7 @@ const Products = ({ productsList, toggleFavorite }) => {
             <div className="specs__details">
               <h2>Size:</h2>
               <p>
-                {item.size.width} cm x {item.size.length} cm
+                {item.size.width}cm x {item.size.length}cm
               </p>
             </div>
           </div>

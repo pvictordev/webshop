@@ -127,6 +127,7 @@ export default function Navbar({
             </li>
 
             <li className="nav__cart">
+              {/* <div className="qnt">1</div> */}
               <IoCartOutline className="link__cart" onClick={toggleCart} />
             </li>
 

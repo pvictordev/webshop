@@ -3,7 +3,10 @@ import "../ui-styles/modalCart.scss";
 import { GrClose } from "react-icons/gr";
 import image from "../assets/webshop.png";
 
-export default function ModalCart({ toggleCart }) {
+export default function ModalCart({ productsList, toggleCart, addToCart }) {
+  //check if product is added to cart
+  const cartProducts = productsList.filter((product) => product.cart === true);
+
   return (
     <div className="modal__cart-content">
       <div className="cart__top">
@@ -35,53 +38,7 @@ export default function ModalCart({ toggleCart }) {
                 <div className="cart__price">
                   <p>100.00$</p>
                   <div>
-                    <GrClose />
-                  </div>
-                </div>
-              </div>
-              <div className="cart__item">
-                <div className="cart__img">
-                  <img src={image} alt="" />
-                </div>
-
-                <div className="cart__details">
-                  <p className="details__name">Product</p>
-                  <p>Product description</p>
-                  <div className="details__quantity">
-                    <div className="quantity__buttons">
-                      <button>-</button>
-                      <p>2</p>
-                      <button>+</button>
-                    </div>
-                  </div>
-                </div>
-                <div className="cart__price">
-                  <p>100.00$</p>
-                  <div>
-                    <GrClose />
-                  </div>
-                </div>
-              </div>
-              <div className="cart__item">
-                <div className="cart__img">
-                  <img src={image} alt="" />
-                </div>
-
-                <div className="cart__details">
-                  <p className="details__name">Product</p>
-                  <p>Product description</p>
-                  <div className="details__quantity">
-                    <div className="quantity__buttons">
-                      <button>-</button>
-                      <p>2</p>
-                      <button>+</button>
-                    </div>
-                  </div>
-                </div>
-                <div className="cart__price">
-                  <p>100.00$</p>
-                  <div>
-                    <GrClose />
+                    <GrClose onClick={() => addToCart(id)} />
                   </div>
                 </div>
               </div>

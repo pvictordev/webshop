@@ -135,7 +135,7 @@ export default [
     id: 8,
     category: "Household",
     name: "Bonsai Tree",
-    price: 60.0,
+    price: 60.99,
     image:
       "https://static.vecteezy.com/system/resources/previews/023/450/290/original/bonsai-tree-on-transparent-background-created-with-generative-ai-png.png",
     description: "Experience Japanese culture with our Bonsai Tree.",
