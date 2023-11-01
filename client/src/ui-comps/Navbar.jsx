@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "../ui-styles/navbar.scss";
 import { IoCartOutline } from "react-icons/io5";
 import { BsSearch } from "react-icons/bs";
@@ -70,8 +70,25 @@ export default function Navbar({
     </div>
   );
 
+  //navbar fixed
+ const [scrollY, setScrollY] = useState(0);
+
+ useEffect(() => {
+   const handleScroll = () => {
+     setScrollY(window.scrollY);
+   };
+
+   window.addEventListener("scroll", handleScroll);
+
+   return () => {
+     window.removeEventListener("scroll", handleScroll);
+   };
+ }, []);
+
+ const navClass = `Navbar ${scrollY > 100 ? "fixedNav" : ""}`;
+
   return (
-    <nav className="Navbar">
+    <nav className={navClass}>
       <div className={`burger__menu ${open ? "open" : ""}`}>
         <Burger toggleMenu={toggleMenu} />
       </div>
@@ -122,7 +139,9 @@ export default function Navbar({
 
             <li className="nav__favorite">
               <Link className="favorite__link" to={"/favorite"}>
-                <MdFavoriteBorder className="link__favorite" />{" "}
+                <MdFavoriteBorder
+                  className="link__favorite"
+                />{" "}
               </Link>
             </li>
 

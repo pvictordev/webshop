@@ -10,7 +10,7 @@
   margin: 2.5rem 0;
 }
 .Categories__container {
-  margin: 4rem;
+  // margin: 4rem;
 }
 .Categories__header {
   display: flex;
@@ -39,17 +39,22 @@
 @media screen and (max-width: 1024px) {
   .Categories__grid {
     grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
   }
 }
 
 //md size
 @media screen and (max-width: 768px) {
+  .Categories__grid {
+    
+  }
 }
 
 //sm size
 @media screen and (max-width: 640px) {
   .Categories__grid {
     grid-template-columns: 1fr;
+    padding: 1.5rem;
   }
   .Categories__container {
     margin: 0;

@@ -19,7 +19,7 @@ const Home = ({ toggleFavorite, productsList }) => {
           "You deserve the best, and we're here to provide it. Don't waste your time searching online for the perfect match for your room and create your dream setup right here."
         }
         image={
-          "https://images.unsplash.com/photo-1626968361222-291e74711449?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          "https://images.unsplash.com/photo-1529336953128-a85760f58cb5?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         }
         reverse={false}
       />

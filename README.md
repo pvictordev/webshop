@@ -19,6 +19,7 @@ The Webshop Website is built using the following technologies:
 - **Node.js**
 - **Express.js**
 - **MongoDB**
+- **Stripe**
 
 ## Features
 

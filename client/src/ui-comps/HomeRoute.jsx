@@ -8,7 +8,7 @@ export default function HomeRoute() {
     <Link to="/">
       <div className="route">
         <p>
-          <SlArrowLeft />
+          <SlArrowLeft className='arrow' />
           Home
         </p>
       </div>

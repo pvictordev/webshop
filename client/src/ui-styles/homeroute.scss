@@ -1,14 +1,16 @@
 .route {
-    width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1.5rem 0 0 2rem;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 600;
+  p {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
     align-items: center;
-    padding: 1.5rem 0 0 4.5rem;
-    color: #333;
-    p {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
+    gap: 0.5rem;
+  }
 }
