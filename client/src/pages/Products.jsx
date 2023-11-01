@@ -4,7 +4,7 @@ import HomeRoute from "../ui-comps/HomeRoute";
 import { useParams, useNavigate } from "react-router-dom";
 import Trend from "../home-comps/Trend.jsx";
 
-const Products = ({ productsList, toggleFavorite, addToCart }) => {
+const Products = ({ productsList, toggleFavorite, addToCart, buttonText  }) => {
   const { id } = useParams();
 
   const item = productsList.find((product) => product.id === parseInt(id, 10));
@@ -47,7 +47,7 @@ const Products = ({ productsList, toggleFavorite, addToCart }) => {
                 <p>${item.price}</p>
               </div>
               <div className="info__buttons">
-                <button onClick={() => addToCart(item.id)}>Add to cart</button>
+                <button onClick={() => {addToCart(item.id)}}>{buttonText ? "Add to cart": "Added to cart"}</button>
                 <button>Buy now</button>
               </div>
             </div>

@@ -3,11 +3,9 @@ import "../ui-styles/modalCart.scss";
 import { GrClose } from "react-icons/gr";
 import image from "../assets/webshop.png";
 
-export default function ModalCart({ productsList, toggleCart, addToCart, cart }) {
+export default function ModalCart({ cart, toggleCart, addToCart }) {
   //check if product is added to cart
-  //const addedProducts = productsList.filter((product) => product.cart === true);
   console.log(cart);
-
   const addedProducts = cart.filter((product) => product.cart === true);
 
   const cartProducts = addedProducts.map((product) => {
@@ -19,7 +17,10 @@ export default function ModalCart({ productsList, toggleCart, addToCart, cart })
 
         <div className="cart__details">
           <p className="details__name">{product.name}</p>
-          <p>Product description</p>
+          <p>
+            {/* {product.size.width}cm x {product.size.length}cm{" "} */}
+            {product.texture}
+          </p>
           <div className="details__quantity">
             <div className="quantity__buttons">
               <button>-</button>

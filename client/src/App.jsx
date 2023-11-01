@@ -45,20 +45,12 @@ function App() {
     setProductsList(newFavorite);
   };
 
-  //add to cart
-  // const [cart, setCart] = useState([]);
-  // const addToCart = (id) => {
-  //   const newCart = productsList.map((product) => {
-  //     if (product.id === id) {
-  //       return { ...product, cart: !product.cart };
-  //     }
-  //     return product;
-  //   });
-  //   setCart(newCart);
-  // };
+  //cart functionality
   const [cart, setCart] = useState([]);
+  const [buttonText, setButtonText] = useState(true);
 
   const addToCart = (id) => {
+    //add to cart
     const productIndex = productsList.findIndex((product) => product.id === id);
 
     if (productIndex !== -1) {
@@ -86,6 +78,9 @@ function App() {
       });
 
       setProductsList(updatedProductsList);
+      
+      //button text
+      setButtonText(!buttonText);
     }
   };
 
@@ -144,6 +139,7 @@ function App() {
               cart={cart}
               setCart={setCart}
               addToCart={addToCart}
+              buttonText={buttonText}
             />
           }
         >
@@ -156,6 +152,7 @@ function App() {
                 setCart={setCart}
                 toggleFavorite={toggleFavorite}
                 addToCart={addToCart}
+                buttonText={buttonText}
               />
             }
           />

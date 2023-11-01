@@ -62,6 +62,10 @@ export default function Navbar({
             style={{ color: "#333", fontWeight: "700" }}
             to={`/products/${item.id}`}
             key={item.id}
+            onClick={() => {
+              setSearch("");
+              // toggleSearch();
+            }}
           >
             <BsSearch /> {item.name}
           </Link>
@@ -71,21 +75,21 @@ export default function Navbar({
   );
 
   //navbar fixed
- const [scrollY, setScrollY] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
 
- useEffect(() => {
-   const handleScroll = () => {
-     setScrollY(window.scrollY);
-   };
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
 
-   window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-   return () => {
-     window.removeEventListener("scroll", handleScroll);
-   };
- }, []);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
- const navClass = `Navbar ${scrollY > 100 ? "fixedNav" : ""}`;
+  const navClass = `Navbar ${scrollY > 100 ? "fixedNav" : ""}`;
 
   return (
     <nav className={navClass}>
@@ -101,7 +105,6 @@ export default function Navbar({
           searchResults={searchResults}
         />
       </div>
-
       <div className="Navbar__container">
         <div className="container__content">
           <Link className="Logo" to={"/"}>
@@ -139,9 +142,7 @@ export default function Navbar({
 
             <li className="nav__favorite">
               <Link className="favorite__link" to={"/favorite"}>
-                <MdFavoriteBorder
-                  className="link__favorite"
-                />{" "}
+                <MdFavoriteBorder className="link__favorite" onClick={() => window.scrollTo(0,0)} />{" "}
               </Link>
             </li>
 

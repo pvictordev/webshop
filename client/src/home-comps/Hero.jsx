@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import "../home-styles/hero.scss";
 import Typed from "typed.js";
 import heroBG from "../assets/hero-bg.jpg";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   const el = React.useRef(null);
@@ -31,10 +32,13 @@ export default function Hero() {
               Webshop, <span ref={el} className="slogan"></span>{" "}
             </h1>
             <h2>
-              We are different on the market, first E-commerce with
-              it's own shiping company.
+              We are different on the market, first E-commerce with it's own
+              shiping company.
             </h2>
-            <button>Shop now</button>
+            <button className="shop__button">
+              {" "}
+              <Link to={"/categories"}>Shop now</Link>
+            </button>
           </div>
         </div>
       </div>

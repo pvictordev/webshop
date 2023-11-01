@@ -8,7 +8,6 @@
   background: url("https://images.unsplash.com/photo-1543320485-d0d5a49c2b2e?auto=format&fit=crop&q=80&w=1916&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
     no-repeat center center/cover;
   // background: rgba(0, 0, 0, 0.25);
-    
 }
 .Hero::before {
   content: "";
@@ -46,8 +45,8 @@
     font-size: 3rem;
     font-weight: 200;
   }
+
   button {
-    cursor: pointer;
     min-width: 30%;
     align-self: center;
     padding: 0.5rem;
@@ -56,7 +55,15 @@
     background: transparent;
     font-weight: 500;
     border: 3px solid #333;
+    cursor: pointer;
+    z-index: 100;
   }
+  a {
+    color: #333;
+    cursor: pointer;
+  }
+}
+.shop__button {
 }
 
 //xl size
