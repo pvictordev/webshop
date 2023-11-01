@@ -46,15 +46,47 @@ function App() {
   };
 
   //add to cart
+  // const [cart, setCart] = useState([]);
+  // const addToCart = (id) => {
+  //   const newCart = productsList.map((product) => {
+  //     if (product.id === id) {
+  //       return { ...product, cart: !product.cart };
+  //     }
+  //     return product;
+  //   });
+  //   setCart(newCart);
+  // };
   const [cart, setCart] = useState([]);
+
   const addToCart = (id) => {
-    const newCart = productsList.map((product) => {
-      if (product.id === id) {
-        return { ...product, cart: !product.cart };
-      }
-      return product;
-    });
-    setProductsList(newCart);
+    const productIndex = productsList.findIndex((product) => product.id === id);
+
+    if (productIndex !== -1) {
+      const updatedProductsList = [...productsList];
+      updatedProductsList[productIndex] = {
+        ...updatedProductsList[productIndex],
+        cart: !updatedProductsList[productIndex].cart,
+      };
+
+      setCart((prevCart) => {
+        const newCart = [...prevCart];
+
+        if (updatedProductsList[productIndex].cart) {
+          newCart.push(updatedProductsList[productIndex]);
+        } else {
+          const existingCartItemIndex = newCart.findIndex(
+            (item) => item.id === updatedProductsList[productIndex].id
+          );
+          if (existingCartItemIndex !== -1) {
+            newCart.splice(existingCartItemIndex, 1);
+          }
+        }
+
+        return newCart;
+      });
+
+      setProductsList(updatedProductsList);
+    }
   };
 
   return (
@@ -64,6 +96,9 @@ function App() {
           <ModalCart
             toggleCart={toggleCart}
             addToCart={addToCart}
+            cart={cart}
+            setCart={setCart}
+            //unnecessary
             productsList={productsList}
           />
         </div>
@@ -106,6 +141,8 @@ function App() {
             <Products
               productsList={productsList}
               toggleFavorite={toggleFavorite}
+              cart={cart}
+              setCart={setCart}
               addToCart={addToCart}
             />
           }
@@ -115,6 +152,8 @@ function App() {
             element={
               <Products
                 productsList={productsList}
+                cart={cart}
+                setCart={setCart}
                 toggleFavorite={toggleFavorite}
                 addToCart={addToCart}
               />

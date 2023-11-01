@@ -47,7 +47,7 @@ const Products = ({ productsList, toggleFavorite, addToCart }) => {
                 <p>${item.price}</p>
               </div>
               <div className="info__buttons">
-                <button onClick={() => addToCart(id)}>Add to cart</button>
+                <button onClick={() => addToCart(item.id)}>Add to cart</button>
                 <button>Buy now</button>
               </div>
             </div>
