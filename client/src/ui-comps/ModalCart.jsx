@@ -5,7 +5,35 @@ import image from "../assets/webshop.png";
 
 export default function ModalCart({ productsList, toggleCart, addToCart }) {
   //check if product is added to cart
-  const cartProducts = productsList.filter((product) => product.cart === true);
+  const addedProducts = productsList.filter((product) => product.cart === true);
+
+  const cartProducts = addedProducts.map((product) => {
+    return (
+      <div className="cart__item">
+        <div className="cart__img">
+          <img src={product.image} alt="" />
+        </div>
+
+        <div className="cart__details">
+          <p className="details__name">{product.name}</p>
+          <p>Product description</p>
+          <div className="details__quantity">
+            <div className="quantity__buttons">
+              <button>-</button>
+              <p>2</p>
+              <button>+</button>
+            </div>
+          </div>
+        </div>
+        <div className="cart__price">
+          <p>${product.price}</p>
+          <div>
+            <GrClose onClick={() => addToCart(product.id)} />
+          </div>
+        </div>
+      </div>
+    );
+  });
 
   return (
     <div className="modal__cart-content">
@@ -38,10 +66,11 @@ export default function ModalCart({ productsList, toggleCart, addToCart }) {
                 <div className="cart__price">
                   <p>100.00$</p>
                   <div>
-                    <GrClose onClick={() => addToCart(id)} />
+                    <GrClose onClick={""} />
                   </div>
                 </div>
               </div>
+              {/* {cartProducts ? cartProducts : <div>Cart is empty</div>} */}
             </div>
           </div>
 

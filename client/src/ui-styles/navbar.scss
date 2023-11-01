@@ -1,14 +1,13 @@
 .Navbar {
   width: 100%;
-
-  // backdrop-filter: blur(15px);
-  // position: fixed;
-}
-.fixedNav {
   z-index: 100;
   position: fixed;
-  background-color: #fff;
 }
+// .fixedNav {
+//   z-index: 100;
+//   position: fixed;
+//   background-color: #fff;
+// }
 
 //navbar popups
 .burger__menu {
@@ -30,6 +29,7 @@
 
 .Navbar__container {
   padding: 0 2rem;
+  backdrop-filter: blur(15px);
 }
 .container__content {
   display: flex;
@@ -54,7 +54,6 @@
     font-size: 2rem;
     font-weight: 700;
     //font-variant: small-caps;
-
   }
 }
 
@@ -68,13 +67,13 @@
   width: 100%;
   padding: 0.5rem;
   border-radius: 15px;
-  border: 2px solid #c4c4c4;
+  border: 2px solid #969696;
+  background-color: transparent;
   font-size: 1rem;
   outline: none;
   &:focus {
     border: 2px solid #333;
   }
-  
 }
 .search__results {
   height: 10rem;
@@ -84,12 +83,11 @@
   top: 2.6rem;
   border-top: none;
   border: 1px solid black;
+  //backdrop-filter: blur(15px);
   border-radius: 15px;
   &::-webkit-scrollbar {
     display: none;
   }
-
-  backdrop-filter: blur(15px);
 }
 
 .results {
@@ -97,7 +95,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   gap: 0.5rem;
   li {
     font-weight: 700;
@@ -220,5 +217,4 @@
       display: none;
     }
   }
-
 }

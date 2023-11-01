@@ -46,6 +46,7 @@ function App() {
   };
 
   //add to cart
+  const [cart, setCart] = useState([]);
   const addToCart = (id) => {
     const newCart = productsList.map((product) => {
       if (product.id === id) {

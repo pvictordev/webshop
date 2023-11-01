@@ -10,7 +10,7 @@ const Products = ({ productsList, toggleFavorite, addToCart }) => {
   const item = productsList.find((product) => product.id === parseInt(id, 10));
 
   if (!item) {
-    return <div>Продукт не найден</div>;
+    return <div>Product not found</div>;
   }
 
   return (
