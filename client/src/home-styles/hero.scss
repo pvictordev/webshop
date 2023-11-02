@@ -16,7 +16,8 @@
   left: 0;
   width: 100%;
   height: inherit;
-  background: rgba(0, 0, 0, 0.15);
+  //background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(2px);
 }
 .Hero__container {
   padding: 0 3rem;
@@ -30,7 +31,7 @@
 }
 .content__text {
   // position: relative;
-  // z-index: 1;
+  z-index: 1;
   // text-align: center;
   margin-top: 6rem;
   display: flex;

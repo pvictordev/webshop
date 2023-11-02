@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import logo from "../assets/webshop.png";
 import Burger from "./Burger";
 import SearchMobile from "./SearchMobile";
-import ModalCart from "./ModalCart";
 import Prodcuts from "../data/Products.jsx";
 import { MdFavoriteBorder } from "react-icons/md";
 
@@ -71,6 +70,7 @@ export default function Navbar({
           </Link>
         ))}
       </ul>
+
     </div>
   );
 
@@ -107,7 +107,12 @@ export default function Navbar({
       </div>
       <div className="Navbar__container">
         <div className="container__content">
-          <Link className="Logo" to={"/"}>
+          <Link
+            className="Logo"
+            to={"/"}
+            href="#hero"
+            onClick={() => window.scrollTo(0, 0)}
+          >
             <div className="content__logo">
               <img src={logo} alt="" />
               <h1 className="Logo">Webshop</h1>
@@ -127,12 +132,12 @@ export default function Navbar({
 
           <ul className="content__nav">
             <li className="nav__links">
-              <Link className="Link link__categories" to={"/categories"}>
-                <li>Cateogories</li>
+              <Link onClick={() => window.scrollTo(0, 0)} className="Link link__categories" to={"/categories"}>
+                <li >Cateogories</li>
               </Link>
 
-              <Link className="Link link__products" to={"/products/5"}>
-                <li>Products</li>
+              <Link onClick={() => window.scrollTo(0, 0)} className="Link link__products" to={"/products/5"}>
+                <li >Products</li>
               </Link>
             </li>
 
@@ -142,7 +147,10 @@ export default function Navbar({
 
             <li className="nav__favorite">
               <Link className="favorite__link" to={"/favorite"}>
-                <MdFavoriteBorder className="link__favorite" onClick={() => window.scrollTo(0,0)} />{" "}
+                <MdFavoriteBorder
+                  className="link__favorite"
+                  onClick={() => window.scrollTo(0, 0)}
+                />{" "}
               </Link>
             </li>
 

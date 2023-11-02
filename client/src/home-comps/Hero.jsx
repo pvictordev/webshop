@@ -24,7 +24,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="Hero">
+    <div className="Hero" id="hero">
       <div className="Hero__container">
         <div className="Hero__content">
           <div className="content__text">

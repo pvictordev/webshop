@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../ui-styles/modalCart.scss";
 import { GrClose } from "react-icons/gr";
 import image from "../assets/webshop.png";
 
 export default function ModalCart({ cart, toggleCart, addToCart }) {
   //check if product is added to cart
-  console.log(cart);
+
   const addedProducts = cart.filter((product) => product.cart === true);
+
+  console.log(addedProducts);
 
   const cartProducts = addedProducts.map((product) => {
     return (
-      <div className="cart__item">
+      <div className="cart__item" key={product.id}>
         <div className="cart__img">
           <img src={product.image} alt="" />
         </div>
@@ -74,7 +76,11 @@ export default function ModalCart({ cart, toggleCart, addToCart }) {
                   </div>
                 </div>
               </div> */}
-              {cartProducts ? cartProducts : <div>Cart is empty</div>}
+              {addedProducts.length <= 0 ? (
+                <div className="empty-cart">Cart is empty</div>
+              ) : (
+                cartProducts
+              )}
             </div>
           </div>
 
