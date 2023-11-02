@@ -13,7 +13,7 @@ const Favorite = ({ toggleFavorite, productsList }) => {
       <Card key={product.id} {...product} toggleFavorite={toggleFavorite} />
     );
   });
-  console.log(favoriteProducts);
+  
 
   return (
     <div className="Favorite">

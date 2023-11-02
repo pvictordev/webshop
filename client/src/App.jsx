@@ -52,7 +52,6 @@ function App() {
   const addToCart = (id) => {
     //add to cart
     const productIndex = productsList.findIndex((product) => product.id === id);
-
     if (productIndex !== -1) {
       const updatedProductsList = [...productsList];
       updatedProductsList[productIndex] = {
@@ -84,19 +83,43 @@ function App() {
       setButtonText(!buttonText);
     }
   };
+  
 
+  // const addToCart = (id) => {
+  //   const productIndex = productsList.findIndex((product) => product.id === id);
+
+  //   if (productIndex !== -1) {
+  //     const updatedProductsList = [...productsList];
+
+  //     if (!updatedProductsList[productIndex].cart) {
+  //       updatedProductsList[productIndex] = {
+  //         ...updatedProductsList[productIndex],
+  //         cart: true,
+  //       };
+
+  //       setCart((prevCart) => {
+  //         const newCart = [...prevCart];
+  //         newCart.push(updatedProductsList[productIndex]);
+
+  //         // Сохранить корзину в локальное хранилище
+  //         localStorage.setItem("cart", JSON.stringify(newCart));
+  //         return newCart;
+  //       });
+
+  //       setButtonText(!buttonText);
+  //     }
+  //   }
+  // };
   return (
     <div className="App">
-      {openCart && (
-        <div className="modal__cart">
-          <ModalCart
-            toggleCart={toggleCart}
-            addToCart={addToCart}
-            cart={cart}
-            setCart={setCart}
-          />
-        </div>
-      )}
+      <div className={`modal__cart ${openCart ? "openCart" : ""}`}>
+        <ModalCart
+          toggleCart={toggleCart}
+          addToCart={addToCart}
+          cart={cart}
+          setCart={setCart}
+        />
+      </div>
 
       <Navbar
         open={open}

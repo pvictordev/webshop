@@ -1,16 +1,16 @@
 .modal__cart {
-  display: block;
-  // width: 45rem;
-  // width: 50%;
   width: 48rem;
   height: 100%;
   position: fixed;
   z-index: 1000;
   bottom: 0;
-  right: 0;
+  right: -100%;
   padding: 1rem;
   cursor: pointer;
   backdrop-filter: blur(35px);
+}
+.openCart {
+  right: 0;
 }
 //xl size
 @media screen and (max-width: 1280px) {

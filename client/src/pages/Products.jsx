@@ -12,7 +12,8 @@ const Products = ({ productsList, toggleFavorite, addToCart, buttonText }) => {
   if (!item) {
     return <div>Product not found</div>;
   }
-
+  
+  
   return (
     <div className="Products">
       <HomeRoute />

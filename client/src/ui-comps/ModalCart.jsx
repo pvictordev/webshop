@@ -5,15 +5,14 @@ import image from "../assets/webshop.png";
 
 export default function ModalCart({ cart, setCart, toggleCart, addToCart }) {
   //check if product is added to cart
-
   const addedProducts = cart.filter((product) => product.cart === true);
 
-  // useEffect(() => {
-  //   const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
-  //   setCart(savedCart);
-  // }, []);
+  //get cart from local storage
+  useEffect(() => {
+    const savedProducts = JSON.parse(localStorage.getItem("cart")) || [];
+    setCart(savedProducts);
+  }, []);
 
-  console.log(addedProducts.length);
 
   const cartProducts = addedProducts.map((product) => {
     return (
