@@ -120,24 +120,38 @@ export default function Navbar({
           </Link>
 
           <div className="content__search">
+            <BsSearch
+              style={{ marginLeft: "1rem", position: "absolute", top:"0.4rem" }}
+              color="#333"
+              size="1.5rem"
+            />
             <input
               className="search__input"
               type="search"
               value={search}
               onChange={handleSearch}
-              placeholder="Search for items"
+              placeholder="Search for products"
+
             />
             {search !== "" ? searchResults : null}
           </div>
 
           <ul className="content__nav">
             <li className="nav__links">
-              <Link onClick={() => window.scrollTo(0, 0)} className="Link link__categories" to={"/categories"}>
-                <li >Cateogories</li>
+              <Link
+                onClick={() => window.scrollTo(0, 0)}
+                className="Link link__categories"
+                to={"/categories"}
+              >
+                <li>Cateogories</li>
               </Link>
 
-              <Link onClick={() => window.scrollTo(0, 0)} className="Link link__products" to={"/products/5"}>
-                <li >Products</li>
+              <Link
+                onClick={() => window.scrollTo(0, 0)}
+                className="Link link__products"
+                to={"/products/5"}
+              >
+                <li>Products</li>
               </Link>
             </li>
 

@@ -17,10 +17,31 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-
   h1 {
     font-size: 3rem;
     font-weight: 700;
+  }
+}
+.no-favorite {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 1rem;
+  width: 100%;
+  svg {
+    font-size: 3rem;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+  button {
+    background-color: transparent;
+    border: 2px solid #333;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    padding: 1rem;
   }
 }
 .Favorite__grid {

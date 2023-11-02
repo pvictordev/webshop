@@ -83,6 +83,7 @@ function App() {
       setButtonText(!buttonText);
     }
   };
+  // console.log(cart)
 
   return (
     <div className="App">
