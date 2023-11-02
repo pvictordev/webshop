@@ -74,16 +74,16 @@ function App() {
           }
         }
 
+        //save to local storage
+        localStorage.setItem("cart", JSON.stringify(newCart));
         return newCart;
       });
 
       setProductsList(updatedProductsList);
-      
       //button text
       setButtonText(!buttonText);
     }
   };
-  // console.log(cart)
 
   return (
     <div className="App">
@@ -94,8 +94,6 @@ function App() {
             addToCart={addToCart}
             cart={cart}
             setCart={setCart}
-            //unnecessary
-            productsList={productsList}
           />
         </div>
       )}

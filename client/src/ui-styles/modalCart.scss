@@ -130,13 +130,16 @@
 
 //md size
 @media screen and (max-width: 768px) {
+  .cart__item {
+    grid-template-columns: 1fr;
+    grid-template-rows:1fr;
+  }
 }
 
 //sm size
 @media screen and (max-width: 640px) {
   .cart__item {
     grid-template-columns: 1fr;
-    grid-template-rows:0.33fr 0.33fr 0.33fr;
   }
   .cart__details {
     align-items: center;

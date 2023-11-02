@@ -1,16 +1,16 @@
 .modal__cart {
-    display: block;
-    // width: 45rem;
-    // width: 50%;
-    width: 48rem;
-    height: 100%;
-    position: fixed;
-    z-index: 1000;
-    bottom: 0;
-    right: 0;
-    padding: 1rem;
-    cursor: pointer;
-    backdrop-filter: blur(35px);
+  display: block;
+  // width: 45rem;
+  // width: 50%;
+  width: 48rem;
+  height: 100%;
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  right: 0;
+  padding: 1rem;
+  cursor: pointer;
+  backdrop-filter: blur(35px);
 }
 //xl size
 @media screen and (max-width: 1280px) {
@@ -22,6 +22,9 @@
 
 //md size
 @media screen and (max-width: 768px) {
+  .modal__cart {
+    width: 100%;
+  }
 }
 
 //sm size
