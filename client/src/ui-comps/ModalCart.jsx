@@ -13,7 +13,6 @@ export default function ModalCart({ cart, setCart, toggleCart, addToCart }) {
     setCart(savedProducts);
   }, []);
 
-
   const cartProducts = addedProducts.map((product) => {
     return (
       <div className="cart__item" key={product.id}>

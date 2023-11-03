@@ -83,33 +83,7 @@ function App() {
       setButtonText(!buttonText);
     }
   };
-  
 
-  // const addToCart = (id) => {
-  //   const productIndex = productsList.findIndex((product) => product.id === id);
-
-  //   if (productIndex !== -1) {
-  //     const updatedProductsList = [...productsList];
-
-  //     if (!updatedProductsList[productIndex].cart) {
-  //       updatedProductsList[productIndex] = {
-  //         ...updatedProductsList[productIndex],
-  //         cart: true,
-  //       };
-
-  //       setCart((prevCart) => {
-  //         const newCart = [...prevCart];
-  //         newCart.push(updatedProductsList[productIndex]);
-
-  //         // Сохранить корзину в локальное хранилище
-  //         localStorage.setItem("cart", JSON.stringify(newCart));
-  //         return newCart;
-  //       });
-
-  //       setButtonText(!buttonText);
-  //     }
-  //   }
-  // };
   return (
     <div className="App">
       <div className={`modal__cart ${openCart ? "openCart" : ""}`}>
