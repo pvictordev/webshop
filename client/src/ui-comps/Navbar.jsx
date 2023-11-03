@@ -63,6 +63,7 @@ export default function Navbar({
             key={item.id}
             onClick={() => {
               setSearch("");
+              window.scrollTo(0, 0);
               // toggleSearch();
             }}
           >

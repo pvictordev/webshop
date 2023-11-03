@@ -7,7 +7,6 @@
 .fixedNav {
   z-index: 100;
   position: fixed;
-  //backdrop-filter: blur(15px);
   background-color: #fff;
 }
 
@@ -76,8 +75,7 @@
   top: 2.6rem;
   border-top: none;
   border: 2px solid #242424;
-  // backdrop-filter: blur(15px);
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 15px;
   &::-webkit-scrollbar {
     display: none;

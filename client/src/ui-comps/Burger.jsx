@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import "../ui-styles/burger.scss";
 import { BsInstagram, BsSnapchat, BsFacebook, BsTwitter } from "react-icons/bs";
 import {GrClose} from "react-icons/gr";
+import { Link } from "react-router-dom";
 
 export default function Burger({toggleMenu}) {
 
@@ -12,8 +13,13 @@ export default function Burger({toggleMenu}) {
       </div>
       <h1 className="burger__title">Menu</h1>
       <ul className="burger__list">
-        <li>Categories</li>
-        <li>Products</li>
+        <Link to={"/categories"} onClick={toggleMenu}>
+          Categories
+        </Link>
+        <Link to={"/products/5"} onClick={toggleMenu}>
+          Products
+        </Link>
+
         <li>FAQs</li>
         <li>News</li>
         <li>Contact</li>
