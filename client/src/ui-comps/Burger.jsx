@@ -1,11 +1,10 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "../ui-styles/burger.scss";
 import { BsInstagram, BsSnapchat, BsFacebook, BsTwitter } from "react-icons/bs";
-import {GrClose} from "react-icons/gr";
+import { GrClose } from "react-icons/gr";
 import { Link } from "react-router-dom";
 
-export default function Burger({toggleMenu}) {
-
+export default function Burger({ toggleMenu }) {
   return (
     <div className="burger">
       <div className="close__burger" onClick={toggleMenu}>
@@ -19,7 +18,6 @@ export default function Burger({toggleMenu}) {
         <Link to={"/products/5"} onClick={toggleMenu}>
           Products
         </Link>
-
         <li>FAQs</li>
         <li>News</li>
         <li>Contact</li>
