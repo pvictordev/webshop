@@ -29,14 +29,14 @@ const Favorite = ({ toggleFavorite, productsList }) => {
                 </div>
                 <h1>You have no Favorite Items</h1>
                 <p>
-                  Go to shop and add some items to your favorite list to see
+                  Go to categories section and add some items to your favorite list to see
                 </p>
-                <Link to={"/products/2"} className="go-to-shop">
-                  Go to Shop
+                <Link to={"/categories"} className="go-to-shop">
+                  Go to categories
                 </Link>
               </div>
             ) : (
-              <div>Favorite</div>
+              <h1>Favorite items</h1>
             )}
           </div>
 
