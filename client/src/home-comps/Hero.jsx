@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "../home-styles/hero.scss";
 import Typed from "typed.js";
-import heroBG from "../assets/hero-bg.jpg";
 import { Link } from "react-router-dom";
 
 export default function Hero() {

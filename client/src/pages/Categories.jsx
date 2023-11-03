@@ -28,8 +28,8 @@ const Categories = ({toggleFavorite, productsList}) => {
 
   return (
     <div className="Categories">
-      <HomeRoute />
       <div className="Categories__container">
+        <HomeRoute />
         <div className="Categories__content">
           <div className="Categories__header">
             <h1>{headerText}</h1>

@@ -9,7 +9,7 @@ export default function Banner(props) {
         <div className="banner__text">
           <h2>{props.title}</h2>
           <p>{props.description}</p>
-          <button>
+          <button className="banner__button">
             {" "}
             <Link to={"/products/5"} onClick={() => window.scrollTo(0, 0)}>
               Go to shop

@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 import { SlArrowLeft } from 'react-icons/sl';
 export default function HomeRoute() {
   return (
-    <Link to="/">
-      <div className="route">
+    <Link className="route" to="/">
+      <div>
         <p>
-          <SlArrowLeft className='arrow' />
+          <SlArrowLeft className="arrow" />
           Home
         </p>
       </div>

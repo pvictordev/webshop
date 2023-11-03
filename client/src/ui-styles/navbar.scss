@@ -1,13 +1,15 @@
 .Navbar {
   width: 100%;
+  position: fixed;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+.fixedNav {
   z-index: 100;
   position: fixed;
+  //backdrop-filter: blur(15px);
+  background-color: #fff;
 }
-// .fixedNav {
-//   z-index: 100;
-//   position: fixed;
-//   background-color: #fff;
-// }
 
 //navbar popups
 .burger__menu {
@@ -15,6 +17,7 @@
 }
 .search-mobile {
   display: none;
+  z-index: 10000;
 }
 
 .favorite {
@@ -23,7 +26,6 @@
 
 .Navbar__container {
   padding: 0 2rem;
-  backdrop-filter: blur(15px);
 }
 .container__content {
   display: flex;
@@ -32,14 +34,10 @@
   padding: 1rem 0;
   gap: 2rem;
 }
-.Logo {
-  color: #333;
-}
 .content__logo {
   display: flex;
   gap: 0.5rem;
   align-items: center;
-
   img {
     width: 3rem;
   }
@@ -47,7 +45,7 @@
   h1 {
     font-size: 2rem;
     font-weight: 700;
-    //font-variant: small-caps;
+    color: #242424;
   }
 }
 
@@ -59,14 +57,15 @@
 }
 .search__input {
   width: 100%;
-  padding: 0.5rem 0.5rem 0.5rem 3rem;
+  padding: 0.5rem;
+  text-indent: 2.5rem;
   border-radius: 15px;
   border: 2px solid #969696;
   background-color: transparent;
   font-size: 1rem;
   outline: none;
   &:focus {
-    border: 2px solid #333;
+    border: 2px solid #242424;
   }
 }
 .search__results {
@@ -76,8 +75,9 @@
   position: absolute;
   top: 2.6rem;
   border-top: none;
-  border: 1px solid black;
-  //backdrop-filter: blur(15px);
+  border: 2px solid #242424;
+  // backdrop-filter: blur(15px);
+  background-color: #fff;
   border-radius: 15px;
   &::-webkit-scrollbar {
     display: none;
@@ -107,35 +107,52 @@
   gap: 2rem;
   list-style: none;
 
-  .Link {
+  a {
     text-decoration: none;
-    color: #333;
+    font-weight: 600;
+    color: #242424;
+  }
+  a:hover {
+    color: #000;
+    transition: all 0.2s ease;
   }
 }
 .nav__search-icon {
   display: none;
+  color: #242424;
 }
 
 .nav__favorite {
+  a {
+    color: #242424;
+  }
+  a:hover {
+    color: #000;
+    transition: all 0.2s ease;
+  }
 }
 .favorite__link {
   display: flex;
   align-items: center;
 }
-.link__favorite {
-  color: #333;
-}
 .nav__cart {
   display: flex;
   align-items: center;
+  svg {
+    color: #242424;
+  }
+  svg:hover {
+    color: #000;
+    transition: all 0.2s ease;
+  }
 }
 .link__cart {
-  color: #333;
   cursor: pointer;
   position: relative;
 }
 .nav__burger {
   display: none;
+  color: #242424;
 }
 
 .open {

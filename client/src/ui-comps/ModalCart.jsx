@@ -28,7 +28,7 @@ export default function ModalCart({ cart, setCart, toggleCart, addToCart }) {
             {product.texture}
           </p>
           <div className="details__quantity">
-            <div className="quantity__buttons">
+            <div className="quantity__buttons-cart">
               <button>-</button>
               <p>2</p>
               <button>+</button>

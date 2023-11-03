@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4rem;
+  padding: 7rem 4rem;
 }
 .Banner__content {
   display: flex;
@@ -35,17 +35,30 @@
   p {
     font-size: 1.2rem;
   }
-  button {
-    width: 30%;
-    align-self: left;
-    padding: 0.5rem;
-    border: 2px solid #333;
-    color: #333;
-    border-radius: 15px;
-    font-size: 1rem;
-    background: transparent;
+}
+.banner__button {
+  width: 30%;
+  align-self: left;
+  padding: 0.5rem;
+  border: 2px solid #242424;
+  color: #333;
+  border-radius: 15px;
+  font-size: 1rem;
+  background: transparent;
+  cursor: pointer;
+  a {
+    color: #242424;
   }
 }
+.banner__button:hover,
+.banner__button:focus {
+  background-color: #242424;
+  transition: all 0.2s ease;
+  a {
+    color: #fff;
+  }
+}
+
 .reverse .banner__text {
   align-items: flex-end;
   text-align: right;
@@ -77,10 +90,9 @@
     }
   }
   .reverse .banner__text {
-  align-items: center;
-  text-align: center;
-}
-
+    align-items: center;
+    text-align: center;
+  }
 }
 
 //md size
@@ -93,27 +105,23 @@
     padding: 3rem 1.5rem;
   }
   .banner__text {
-  padding: 2rem;
-  gap: 2rem;
+    padding: 2rem;
+    gap: 2rem;
 
-  h2 {
-    font-size: 1.5rem;
+    h2 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+    button {
+      width: 30%;
+      padding: 0.2rem;
+      font-size: 0.8rem;
+    }
   }
-  p {
-    font-size: 0.8rem;
-  }
-  button {
-    width: 30%;
-    padding: 0.2rem;
-    font-size: 0.8rem;
-  }
-}
-
 }
 
 //xs size
 @media screen and (max-width: 350px) {
-
-
-
 }

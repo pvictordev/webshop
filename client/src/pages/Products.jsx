@@ -41,9 +41,9 @@ const Products = ({ productsList, toggleFavorite, addToCart, buttonText }) => {
               <div className="info__quantity">
                 <p>Quantity</p>
                 <div className="quantity__buttons">
-                  <button>-</button>
-                  <p>1</p>
                   <button>+</button>
+                  <p>1</p>
+                  <button>-</button>
                 </div>
                 <p>${item.price}</p>
               </div>

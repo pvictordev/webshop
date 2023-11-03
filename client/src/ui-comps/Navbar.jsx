@@ -89,7 +89,7 @@ export default function Navbar({
     };
   }, []);
 
-  const navClass = `Navbar ${scrollY > 100 ? "fixedNav" : ""}`;
+  const navClass = `Navbar ${scrollY > 50 ? "fixedNav" : ""}`;
 
   return (
     <nav className={navClass}>
@@ -105,6 +105,7 @@ export default function Navbar({
           searchResults={searchResults}
         />
       </div>
+      
       <div className="Navbar__container">
         <div className="container__content">
           <Link

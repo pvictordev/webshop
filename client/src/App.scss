@@ -8,6 +8,7 @@
   padding: 1rem;
   cursor: pointer;
   backdrop-filter: blur(35px);
+  transition: all 0.5s ease;
 }
 .openCart {
   right: 0;
