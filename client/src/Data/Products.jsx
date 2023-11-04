@@ -16,7 +16,7 @@ export default [
       length: 80,
     },
     favorite: false,
-    cart: false,
+    quantity: 1,
   },
   {
     id: 2,
@@ -35,7 +35,7 @@ export default [
       length: 28,
     },
     favorite: false,
-    cart: false,
+    quantity: 1,
   },
   {
     id: 3,
@@ -54,7 +54,7 @@ export default [
       length: 160,
     },
     favorite: false,
-    cart: false,
+    quantity: 1,
   },
   {
     id: 4,
@@ -72,7 +72,7 @@ export default [
       length: 200,
     },
     favorite: false,
-    cart: false,
+    quantity: 1,
   },
   {
     id: 5,
@@ -91,7 +91,7 @@ export default [
       length: 30,
     },
     favorite: false,
-    cart: false,
+    quantity: 1,
   },
   {
     id: 6,
@@ -110,7 +110,7 @@ export default [
       length: 17,
     },
     favorite: false,
-    cart: false,
+    quantity: 1,
   },
 
   {
@@ -129,7 +129,7 @@ export default [
       length: 300,
     },
     favorite: false,
-    cart: false,
+    quantity: 1,
   },
   {
     id: 8,
@@ -148,8 +148,9 @@ export default [
       length: 40,
     },
     favorite: false,
-    cart: false,
+    quantity: 1,
   },
+
   {
     id: 9,
     category: "Toys",
@@ -167,7 +168,7 @@ export default [
       length: 15,
     },
     favorite: false,
-    cart: false,
+    quantity: 1,
   },
   {
     id: 10,
@@ -185,7 +186,7 @@ export default [
       length: 15,
     },
     favorite: false,
-    cart: false,
+    quantity: 1,
   },
   {
     id: 11,
@@ -203,7 +204,7 @@ export default [
       length: 10,
     },
     favorite: false,
-    cart: false,
+    quantity: 1,
   },
   {
     id: 12,
@@ -222,6 +223,6 @@ export default [
       length: 6,
     },
     favorite: false,
-    cart: false,
+    quantity: 1,
   },
 ];

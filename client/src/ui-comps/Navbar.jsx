@@ -9,6 +9,8 @@ import Burger from "./Burger";
 import SearchMobile from "./SearchMobile";
 import Prodcuts from "../data/Products.jsx";
 import { MdFavoriteBorder } from "react-icons/md";
+import { useSelector, useDispatch } from "react-redux";
+// import { removeFromCart } from "../redux/cartSlice";
 
 export default function Navbar({
   open,
@@ -17,6 +19,11 @@ export default function Navbar({
   setOpenCart,
   toggleCart,
 }) {
+  //redux
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.cart);
+  console.log(cartItems);
+
   //search input state
   const [search, setSearch] = useState("");
 
@@ -71,7 +78,6 @@ export default function Navbar({
           </Link>
         ))}
       </ul>
-
     </div>
   );
 
@@ -106,7 +112,7 @@ export default function Navbar({
           searchResults={searchResults}
         />
       </div>
-      
+
       <div className="Navbar__container">
         <div className="container__content">
           <Link
@@ -123,7 +129,11 @@ export default function Navbar({
 
           <div className="content__search">
             <BsSearch
-              style={{ marginLeft: "1rem", position: "absolute", top:"0.4rem" }}
+              style={{
+                marginLeft: "1rem",
+                position: "absolute",
+                top: "0.4rem",
+              }}
               color="#333"
               size="1.5rem"
             />
@@ -133,7 +143,6 @@ export default function Navbar({
               value={search}
               onChange={handleSearch}
               placeholder="Search for products"
-
             />
             {search !== "" ? searchResults : null}
           </div>
@@ -171,7 +180,7 @@ export default function Navbar({
             </li>
 
             <li className="nav__cart">
-              {/* <div className="qnt">1</div> */}
+              <div className="quantity">{cartItems.length}</div>
               <IoCartOutline className="link__cart" onClick={toggleCart} />
             </li>
 

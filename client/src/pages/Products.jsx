@@ -3,17 +3,62 @@ import "../products.scss";
 import HomeRoute from "../ui-comps/HomeRoute";
 import { useParams, useNavigate } from "react-router-dom";
 import Trend from "../home-comps/Trend.jsx";
+import { useDispatch } from "react-redux";
+import {
+  addToCart,
+  removeFromCart,
+  setCart,
+  incrementQuantity,
+  decrementQuantity,
+} from "../redux/cartSlice.jsx";
+import { useSelector } from "react-redux";
 
-const Products = ({ productsList, toggleFavorite, addToCart, buttonText }) => {
+const Products = ({ productsList, toggleFavorite }) => {
+  // const { id } = useParams();
+
+  // const item = productsList.find((product) => product.id === parseInt(id, 10));
+
+  // if (!item) {
+  //   return <div>Product not found</div>;
+  // }
+
+  // //redux
+  // const dispatch = useDispatch();
+  // const cartItems = useSelector((state) => state.cart.cart);
+  // const saveCartToLocalStorage = (cartItems) => {
+  //   localStorage.setItem("cart", JSON.stringify(cartItems));
+  // };
+
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.cart);
+
+  const saveCartToLocalStorage = (cartItems) => {
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+  };
+
+  const loadCartFromLocalStorage = () => {
+    const savedCart = localStorage.getItem("cart");
+    if (savedCart) {
+      const parsedCart = JSON.parse(savedCart);
+      dispatch(setCart(parsedCart));
+    }
+  };
+
+  useEffect(() => {
+    loadCartFromLocalStorage();
+  }, []);
+
+  useEffect(() => {
+    saveCartToLocalStorage(cartItems);
+  }, [cartItems]);
+
   const { id } = useParams();
-
   const item = productsList.find((product) => product.id === parseInt(id, 10));
 
   if (!item) {
     return <div>Product not found</div>;
   }
-  
-  
+
   return (
     <div className="Products">
       <HomeRoute />
@@ -41,19 +86,45 @@ const Products = ({ productsList, toggleFavorite, addToCart, buttonText }) => {
               <div className="info__quantity">
                 <p>Quantity</p>
                 <div className="quantity__buttons">
-                  <button>+</button>
-                  <p>1</p>
-                  <button>-</button>
+                  <button
+                    onClick={() => {
+                      // dispatch(incrementQuantity({ quantity: item.quantity }));
+                    }}
+                  >
+                    +
+                  </button>
+                  <p>
+                    {/* {cartItems.length} */}
+                    {item.quantity}
+                  </p>
+                  <button
+                    onClick={() => {
+                      // dispatch(decrementQuantity({ quantity: quantity.id }));
+                    }}
+                  >
+                    -
+                  </button>
                 </div>
                 <p>${item.price}</p>
               </div>
               <div className="info__buttons">
                 <button
                   onClick={() => {
-                    addToCart(item.id);
+                    dispatch(
+                      addToCart({
+                        name: item.name,
+                        image: item.image,
+                        id: item.id,
+                        price: item.price,
+                        texture: item.texture,
+                        quantity: item.quantity,
+                      })
+                    );
+                    saveCartToLocalStorage(cartItems);
                   }}
                 >
-                  {buttonText ? "Add to cart" : "Added to cart"}
+                  {/* {cartItems.length <= 0 ? "Add to cart" : "Added to cart"} */}
+                  Add to cart
                 </button>
                 <button>Buy now</button>
               </div>

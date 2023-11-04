@@ -10,6 +10,8 @@ import Footer from "./home-comps/Footer";
 import Newsletter from "./home-comps/Newsletter";
 import Favorite from "./pages/Favorite";
 import ModalCart from "./ui-comps/ModalCart";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 function App() {
   //open menu
@@ -46,127 +48,131 @@ function App() {
   };
 
   //cart functionality
-  const [cart, setCart] = useState([]);
-  const [buttonText, setButtonText] = useState(true);
+  // const [cart, setCart] = useState([]);
+  // const [buttonText, setButtonText] = useState(true);
 
-  const addToCart = (id) => {
-    //add to cart
-    const productIndex = productsList.findIndex((product) => product.id === id);
-    if (productIndex !== -1) {
-      const updatedProductsList = [...productsList];
-      updatedProductsList[productIndex] = {
-        ...updatedProductsList[productIndex],
-        cart: !updatedProductsList[productIndex].cart,
-      };
+  // const addToCart = (id) => {
+  //   //add to cart
+  //   const productIndex = productsList.findIndex((product) => product.id === id);
+  //   if (productIndex !== -1) {
+  //     const updatedProductsList = [...productsList];
+  //     updatedProductsList[productIndex] = {
+  //       ...updatedProductsList[productIndex],
+  //       cart: !updatedProductsList[productIndex].cart,
+  //     };
 
-      setCart((prevCart) => {
-        const newCart = [...prevCart];
+  //     setCart((prevCart) => {
+  //       const newCart = [...prevCart];
 
-        if (updatedProductsList[productIndex].cart) {
-          newCart.push(updatedProductsList[productIndex]);
-        } else {
-          const existingCartItemIndex = newCart.findIndex(
-            (item) => item.id === updatedProductsList[productIndex].id
-          );
-          if (existingCartItemIndex !== -1) {
-            newCart.splice(existingCartItemIndex, 1);
-          }
-        }
+  //       if (updatedProductsList[productIndex].cart) {
+  //         newCart.push(updatedProductsList[productIndex]);
+  //       } else {
+  //         const existingCartItemIndex = newCart.findIndex(
+  //           (item) => item.id === updatedProductsList[productIndex].id
+  //         );
+  //         if (existingCartItemIndex !== -1) {
+  //           newCart.splice(existingCartItemIndex, 1);
+  //         }
+  //       }
 
-        //save to local storage
-        localStorage.setItem("cart", JSON.stringify(newCart));
-        return newCart;
-      });
+  //       //save to local storage
+  //       localStorage.setItem("cart", JSON.stringify(newCart));
+  //       return newCart;
+  //     });
 
-      setProductsList(updatedProductsList);
-      //button text
-      setButtonText(!buttonText);
-    }
-  };
+  //     setProductsList(updatedProductsList);
+  //     //button text
+  //     setButtonText(!buttonText);
+  //   }
+  // };
 
   return (
-    <div className="App">
-      <div className={`modal__cart ${openCart ? "openCart" : ""}`}>
-        <ModalCart
+    <Provider store={store}>
+      <div className="App">
+        <div className={`modal__cart ${openCart ? "openCart" : ""}`}>
+          <ModalCart
+            toggleCart={toggleCart}
+            productsList={productsList}
+            // addToCart={addToCart}
+            // cart={cart}
+            // setCart={setCart}
+          />
+        </div>
+
+        <Navbar
+          open={open}
+          setOpen={setOpen}
+          toggleMenu={toggleMenu}
+          openCart={openCart}
+          setOpenCart={setOpenCart}
           toggleCart={toggleCart}
-          addToCart={addToCart}
-          cart={cart}
-          setCart={setCart}
         />
-      </div>
-
-      <Navbar
-        open={open}
-        setOpen={setOpen}
-        toggleMenu={toggleMenu}
-        openCart={openCart}
-        setOpenCart={setOpenCart}
-        toggleCart={toggleCart}
-      />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              toggleFavorite={toggleFavorite}
-              productsList={productsList}
-              openCart={openCart}
-              setOpenCart={setOpenCart}
-              toggleCart={toggleCart}
-            />
-          }
-        />
-        <Route
-          path="/categories"
-          element={
-            <Categories
-              toggleFavorite={toggleFavorite}
-              productsList={productsList}
-            />
-          }
-        />
-
-        <Route
-          path="/products"
-          element={
-            <Products
-              productsList={productsList}
-              toggleFavorite={toggleFavorite}
-              cart={cart}
-              setCart={setCart}
-              addToCart={addToCart}
-              buttonText={buttonText}
-            />
-          }
-        >
+        <Routes>
           <Route
-            path=":id"
+            path="/"
             element={
-              <Products
-                productsList={productsList}
-                cart={cart}
-                setCart={setCart}
+              <Home
                 toggleFavorite={toggleFavorite}
-                addToCart={addToCart}
-                buttonText={buttonText}
+                productsList={productsList}
+                openCart={openCart}
+                setOpenCart={setOpenCart}
+                toggleCart={toggleCart}
               />
             }
           />
-        </Route>
+          <Route
+            path="/categories"
+            element={
+              <Categories
+                toggleFavorite={toggleFavorite}
+                productsList={productsList}
+              />
+            }
+          />
 
-        <Route
-          path="/favorite"
-          element={
-            <Favorite
-              toggleFavorite={toggleFavorite}
-              productsList={productsList}
+          <Route
+            path="/products"
+            element={
+              <Products
+                productsList={productsList}
+                toggleFavorite={toggleFavorite}
+                // cart={cart}
+                // setCart={setCart}
+                // addToCart={addToCart}
+                // buttonText={buttonText}
+              />
+            }
+          >
+            <Route
+              path=":id"
+              element={
+                <Products
+                  productsList={productsList}
+                  toggleFavorite={toggleFavorite}
+
+                  // cart={cart}
+                  // setCart={setCart}
+                  // addToCart={addToCart}
+                  // buttonText={buttonText}
+                />
+              }
             />
-          }
-        ></Route>
-      </Routes>
-      <Newsletter />
-      <Footer />
-    </div>
+          </Route>
+
+          <Route
+            path="/favorite"
+            element={
+              <Favorite
+                toggleFavorite={toggleFavorite}
+                productsList={productsList}
+              />
+            }
+          ></Route>
+        </Routes>
+        <Newsletter />
+        <Footer />
+      </div>
+    </Provider>
   );
 }
 

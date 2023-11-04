@@ -136,6 +136,7 @@
 .nav__cart {
   display: flex;
   align-items: center;
+  position: relative;
   svg {
     color: #242424;
   }
@@ -143,6 +144,17 @@
     color: #000;
     transition: all 0.2s ease;
   }
+}
+.quantity {
+  position: absolute;
+  top: -15px;
+  right: -20px;
+  font-size: 15px;
+  //border: 1px solid black;
+  color: #fff;
+  padding: 1px 7px;
+  border-radius:60% ;
+  background-color: #242424;
 }
 .link__cart {
   cursor: pointer;

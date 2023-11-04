@@ -89,6 +89,7 @@
     font-size: 2rem;
     border: 2px solid #242424;
     border-radius: 15px;
+    cursor: pointer;
   }
 }
 .info__buttons {
@@ -107,13 +108,13 @@
     cursor: pointer;
     color: #242424;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background-color: #242424;
       color: #fff;
       transition: all 0.2s ease;
     }
   }
-  
 }
 .product__specs {
   width: 100%;
@@ -134,7 +135,7 @@
 
 //lg size
 @media screen and (max-width: 1024px) {
-   .Products__container {
+  .Products__container {
     margin: 5rem 3rem;
   }
   .Products__product {
@@ -151,7 +152,6 @@
 
 //md+ size
 @media screen and (max-width: 840px) {
-
 }
 //md size
 @media screen and (max-width: 768px) {
