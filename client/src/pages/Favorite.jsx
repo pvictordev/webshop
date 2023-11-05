@@ -2,18 +2,14 @@ import React, {useEffect} from "react";
 import "../favorite.scss";
 import Card from "../ui-comps/Card";
 import HomeRoute from "../ui-comps/HomeRoute";
-import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
+import { MdFavoriteBorder } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const Favorite = ({
   toggleFavorite,
-  productsList,
   favoriteItems,
   setFavoriteItems,
 }) => {
-  // const favoriteProducts = productsList.filter(
-  //   (product) => product.favorite === true
-  // );
 
   useEffect(() => {
     const storedFavoriteItems = JSON.parse(

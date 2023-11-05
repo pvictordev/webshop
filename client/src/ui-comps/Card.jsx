@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../ui-styles/card.scss";
 import { Link } from "react-router-dom";
 import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
-// import Products from "../pages/Products";
 
 export default function Card({
   toggleFavorite,

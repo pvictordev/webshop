@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../ui-styles/navbar.scss";
+import logo from "../assets/webshop.png";
 import { IoCartOutline } from "react-icons/io5";
 import { BsSearch } from "react-icons/bs";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Link } from "react-router-dom";
-import logo from "../assets/webshop.png";
 import Burger from "./Burger";
 import SearchMobile from "./SearchMobile";
 import Prodcuts from "../data/Products.jsx";
@@ -15,8 +15,6 @@ import { useSelector, useDispatch } from "react-redux";
 export default function Navbar({
   open,
   toggleMenu,
-  openCart,
-  setOpenCart,
   toggleCart,
 }) {
   //redux
@@ -33,7 +31,6 @@ export default function Navbar({
     const { value } = e.target;
     setSearch(value);
     filterData(search);
-    //filterData(value);
   };
 
   //opens search mobile

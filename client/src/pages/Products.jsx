@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../products.scss";
 import HomeRoute from "../ui-comps/HomeRoute";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Trend from "../home-comps/Trend.jsx";
 import { useDispatch } from "react-redux";
 import {

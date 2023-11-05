@@ -64,10 +64,7 @@ function App() {
 
         <Navbar
           open={open}
-          setOpen={setOpen}
           toggleMenu={toggleMenu}
-          openCart={openCart}
-          setOpenCart={setOpenCart}
           toggleCart={toggleCart}
         />
         <Routes>

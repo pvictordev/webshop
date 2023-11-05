@@ -3,9 +3,9 @@
   position: fixed;
   background: transparent;
   transition: all 0.2s ease;
+  z-index: 100;
 }
 .fixedNav {
-  z-index: 100;
   position: fixed;
   background-color: #fff;
 }
@@ -16,7 +16,7 @@
 }
 .search-mobile {
   display: none;
-  z-index: 10000;
+  z-index: 1000;
 }
 
 .favorite {
@@ -170,7 +170,7 @@
   position: absolute;
   width: 100%;
   height: 100vh;
-  z-index: 2;
+  z-index: 3000;
   display: flex;
   flex-direction: column;
   justify-content: center;
