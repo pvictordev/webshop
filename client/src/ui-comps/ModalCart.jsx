@@ -2,9 +2,14 @@ import React, { useState, useEffect } from "react";
 import "../ui-styles/modalCart.scss";
 import { GrClose } from "react-icons/gr";
 import { useSelector, useDispatch } from "react-redux";
-import { removeFromCart, addToCart, setCart, incrementQuantity, decrementQuantity } from "../redux/cartSlice";
+import {
+  removeFromCart,
+  setCart,
+  incrementQuantity,
+  decrementQuantity,
+} from "../redux/cartSlice";
 
-export default function ModalCart({ toggleCart, productsList }) {
+export default function ModalCart({ toggleCart }) {
   //redux
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cart);
@@ -16,8 +21,13 @@ export default function ModalCart({ toggleCart, productsList }) {
       dispatch(setCart(parsedCart));
     }
   }, []);
-  console.log(cartItems);
+  console.log(cartItems)
+
   const cartProducts = cartItems.map((product) => {
+
+    const price = product.price * product.quantity;
+    const priceToFixed = price.toFixed(2);
+
     return (
       <div className="cart__item" key={product.id}>
         <div className="cart__img">
@@ -29,14 +39,26 @@ export default function ModalCart({ toggleCart, productsList }) {
           <p>{product.texture}</p>
           <div className="details__quantity">
             <div className="quantity__buttons-cart">
-              <button onClick={""}>+</button>
+              <button
+                onClick={() => {
+                  dispatch(incrementQuantity({ id: product.id }));
+                }}
+              >
+                +
+              </button>
               <p>{product.quantity}</p>
-              <button onClick={""}>-</button>
+              <button
+                onClick={() => {
+                  dispatch(decrementQuantity({ id: product.id }));
+                }}
+              >
+                -
+              </button>
             </div>
           </div>
         </div>
         <div className="cart__price">
-          <p>${product.price}</p>
+          <p>${priceToFixed}</p>
           <div>
             <GrClose
               onClick={() => dispatch(removeFromCart({ id: product.id }))}

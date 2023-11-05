@@ -6,7 +6,6 @@ import Trend from "../home-comps/Trend.jsx";
 import { useDispatch } from "react-redux";
 import {
   addToCart,
-  removeFromCart,
   setCart,
   incrementQuantity,
   decrementQuantity,
@@ -14,21 +13,6 @@ import {
 import { useSelector } from "react-redux";
 
 const Products = ({ productsList, toggleFavorite }) => {
-  // const { id } = useParams();
-
-  // const item = productsList.find((product) => product.id === parseInt(id, 10));
-
-  // if (!item) {
-  //   return <div>Product not found</div>;
-  // }
-
-  // //redux
-  // const dispatch = useDispatch();
-  // const cartItems = useSelector((state) => state.cart.cart);
-  // const saveCartToLocalStorage = (cartItems) => {
-  //   localStorage.setItem("cart", JSON.stringify(cartItems));
-  // };
-
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cart);
 
@@ -59,6 +43,8 @@ const Products = ({ productsList, toggleFavorite }) => {
     return <div>Product not found</div>;
   }
 
+  console.log(cartItems.length);
+
   return (
     <div className="Products">
       <HomeRoute />
@@ -88,24 +74,42 @@ const Products = ({ productsList, toggleFavorite }) => {
                 <div className="quantity__buttons">
                   <button
                     onClick={() => {
-                      // dispatch(incrementQuantity({ quantity: item.quantity }));
+                      dispatch(incrementQuantity({ id: item.id }));
                     }}
                   >
                     +
                   </button>
                   <p>
-                    {/* {cartItems.length} */}
-                    {item.quantity}
+                    {cartItems.length <= 0 ? (
+                      <span>1</span>
+                    ) : (
+                      cartItems.map((item) => {
+                        return item.quantity;
+                      })
+                    )}
                   </p>
+
                   <button
                     onClick={() => {
-                      // dispatch(decrementQuantity({ quantity: quantity.id }));
+                      dispatch(decrementQuantity({ id: item.id }));
                     }}
                   >
                     -
                   </button>
                 </div>
-                <p>${item.price}</p>
+                <p>
+                  <p>
+                    {cartItems.length <= 0 ? (
+                      <span>${item.price}</span>
+                    ) : (
+                      cartItems.map((item) => {
+                        const price = item.price * item.quantity;
+                        const priceToFixed = price.toFixed(2);
+                        return <span>${priceToFixed}</span>;
+                      })
+                    )}
+                  </p>
+                </p>
               </div>
               <div className="info__buttons">
                 <button
@@ -123,7 +127,6 @@ const Products = ({ productsList, toggleFavorite }) => {
                     saveCartToLocalStorage(cartItems);
                   }}
                 >
-                  {/* {cartItems.length <= 0 ? "Add to cart" : "Added to cart"} */}
                   Add to cart
                 </button>
                 <button>Buy now</button>

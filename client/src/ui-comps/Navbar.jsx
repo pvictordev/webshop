@@ -22,7 +22,6 @@ export default function Navbar({
   //redux
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cart);
-  console.log(cartItems);
 
   //search input state
   const [search, setSearch] = useState("");

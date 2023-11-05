@@ -15,6 +15,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  div {
+    cursor: pointer;
+  }
 }
 .cart__body {
   height: 100vh;
@@ -134,6 +137,7 @@
   background-color: transparent;
   border: 2px solid #333;
   border-radius: 15px;
+  cursor: pointer;
 }
 
 //xl size
