@@ -43,8 +43,6 @@ const Products = ({ productsList, toggleFavorite }) => {
     return <div>Product not found</div>;
   }
 
-  console.log(cartItems.length);
-
   return (
     <div className="Products">
       <HomeRoute />
@@ -79,16 +77,15 @@ const Products = ({ productsList, toggleFavorite }) => {
                   >
                     +
                   </button>
-                  <p>
-                    {cartItems.length <= 0 ? (
-                      <span>1</span>
-                    ) : (
-                      cartItems.map((item) => {
-                        return item.quantity;
-                      })
-                    )}
-                  </p>
 
+                  <p>
+                    {/* count */}
+                    {cartItems.map((product) => {
+                      if (product.id === item.id) {
+                        return product.quantity;
+                      }
+                    })}
+                  </p>
                   <button
                     onClick={() => {
                       dispatch(decrementQuantity({ id: item.id }));
@@ -98,17 +95,15 @@ const Products = ({ productsList, toggleFavorite }) => {
                   </button>
                 </div>
                 <p>
-                  <p>
-                    {cartItems.length <= 0 ? (
-                      <span>${item.price}</span>
-                    ) : (
-                      cartItems.map((item) => {
-                        const price = item.price * item.quantity;
-                        const priceToFixed = price.toFixed(2);
-                        return <span>${priceToFixed}</span>;
-                      })
-                    )}
-                  </p>
+                  {/* price */}
+                  {cartItems.map((product) => {
+                    if (product.id === item.id) {
+                      const price = product.price * product.quantity;
+                      return (
+                        <span>${price.toFixed(2)}</span>
+                      );
+                    }
+                  })}
                 </p>
               </div>
               <div className="info__buttons">

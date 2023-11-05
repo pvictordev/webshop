@@ -21,7 +21,6 @@ export default function ModalCart({ toggleCart }) {
       dispatch(setCart(parsedCart));
     }
   }, []);
-  console.log(cartItems)
 
   const cartProducts = cartItems.map((product) => {
 
