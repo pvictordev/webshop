@@ -36,7 +36,7 @@ function App() {
     setOpenCart(!openCart);
   };
 
-  //add to favorite or remove
+  //Favorite feature (add to favorite or remove)
   const toggleFavorite = (id) => {
     const newFavorite = productsList.map((product) => {
       if (product.id === id) {
@@ -45,58 +45,15 @@ function App() {
       return product;
     });
     setProductsList(newFavorite);
+    //save to local storage
+    // localStorage.setItem("productsList", JSON.stringify(newFavorite));
   };
-
-  //cart functionality
-  // const [cart, setCart] = useState([]);
-  // const [buttonText, setButtonText] = useState(true);
-
-  // const addToCart = (id) => {
-  //   //add to cart
-  //   const productIndex = productsList.findIndex((product) => product.id === id);
-  //   if (productIndex !== -1) {
-  //     const updatedProductsList = [...productsList];
-  //     updatedProductsList[productIndex] = {
-  //       ...updatedProductsList[productIndex],
-  //       cart: !updatedProductsList[productIndex].cart,
-  //     };
-
-  //     setCart((prevCart) => {
-  //       const newCart = [...prevCart];
-
-  //       if (updatedProductsList[productIndex].cart) {
-  //         newCart.push(updatedProductsList[productIndex]);
-  //       } else {
-  //         const existingCartItemIndex = newCart.findIndex(
-  //           (item) => item.id === updatedProductsList[productIndex].id
-  //         );
-  //         if (existingCartItemIndex !== -1) {
-  //           newCart.splice(existingCartItemIndex, 1);
-  //         }
-  //       }
-
-  //       //save to local storage
-  //       localStorage.setItem("cart", JSON.stringify(newCart));
-  //       return newCart;
-  //     });
-
-  //     setProductsList(updatedProductsList);
-  //     //button text
-  //     setButtonText(!buttonText);
-  //   }
-  // };
 
   return (
     <Provider store={store}>
       <div className="App">
         <div className={`modal__cart ${openCart ? "openCart" : ""}`}>
-          <ModalCart
-            toggleCart={toggleCart}
-            productsList={productsList}
-            // addToCart={addToCart}
-            // cart={cart}
-            // setCart={setCart}
-          />
+          <ModalCart toggleCart={toggleCart} productsList={productsList} />
         </div>
 
         <Navbar
@@ -136,10 +93,6 @@ function App() {
               <Products
                 productsList={productsList}
                 toggleFavorite={toggleFavorite}
-                // cart={cart}
-                // setCart={setCart}
-                // addToCart={addToCart}
-                // buttonText={buttonText}
               />
             }
           >
@@ -149,11 +102,6 @@ function App() {
                 <Products
                   productsList={productsList}
                   toggleFavorite={toggleFavorite}
-
-                  // cart={cart}
-                  // setCart={setCart}
-                  // addToCart={addToCart}
-                  // buttonText={buttonText}
                 />
               }
             />

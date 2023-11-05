@@ -6,12 +6,17 @@ import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const Favorite = ({ toggleFavorite, productsList }) => {
+
   const favoriteProducts = productsList.filter(
     (product) => product.favorite === true
   );
   const products = favoriteProducts.map((product) => {
     return (
-      <Card key={product.id} {...product} toggleFavorite={toggleFavorite} />
+      <Card
+        key={product.id}
+        {...product}
+        toggleFavorite={toggleFavorite}
+      />
     );
   });
 
@@ -29,7 +34,8 @@ const Favorite = ({ toggleFavorite, productsList }) => {
                 </div>
                 <h1>You have no Favorite Items</h1>
                 <p>
-                  Go to categories section and add some items to your favorite list to see
+                  Go to categories section and add some items to your favorite
+                  list to see
                 </p>
                 <Link to={"/categories"} className="go-to-shop">
                   Go to categories
