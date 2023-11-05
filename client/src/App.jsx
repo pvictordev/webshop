@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.scss";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./ui-comps/Navbar";
@@ -36,6 +36,7 @@ function App() {
     setOpenCart(!openCart);
   };
 
+
   //Favorite feature (add to favorite or remove)
   const [favoriteItems, setFavoriteItems] = useState([]);
 
@@ -57,16 +58,12 @@ function App() {
 
   return (
     <Provider store={store}>
-      <div className="App">
+      <div className="App" >
         <div className={`modal__cart ${openCart ? "openCart" : ""}`}>
           <ModalCart toggleCart={toggleCart} productsList={productsList} />
         </div>
 
-        <Navbar
-          open={open}
-          toggleMenu={toggleMenu}
-          toggleCart={toggleCart}
-        />
+        <Navbar open={open} toggleMenu={toggleMenu} toggleCart={toggleCart} />
         <Routes>
           <Route
             path="/"

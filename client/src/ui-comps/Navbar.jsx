@@ -12,11 +12,7 @@ import { MdFavoriteBorder } from "react-icons/md";
 import { useSelector, useDispatch } from "react-redux";
 // import { removeFromCart } from "../redux/cartSlice";
 
-export default function Navbar({
-  open,
-  toggleMenu,
-  toggleCart,
-}) {
+export default function Navbar({ open, toggleMenu, toggleCart }) {
   //redux
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cart);
@@ -37,12 +33,18 @@ export default function Navbar({
   const [openSearch, setOpenSearch] = useState(false);
 
   const toggleSearch = () => {
-    setOpenSearch(!openSearch);
+    setOpenSearch((prev) => !prev);
 
     if (openSearch) {
       document.body.style.overflow = "scroll";
     } else {
       document.body.style.overflow = "hidden";
+    }
+  };
+
+  const exitToggle = () => {
+    if (openSearch) {
+      toggleSearch();
     }
   };
 
@@ -67,7 +69,7 @@ export default function Navbar({
             onClick={() => {
               setSearch("");
               window.scrollTo(0, 0);
-              // toggleSearch();
+              exitToggle();
             }}
           >
             <BsSearch /> {item.name}

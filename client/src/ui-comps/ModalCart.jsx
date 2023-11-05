@@ -23,7 +23,6 @@ export default function ModalCart({ toggleCart }) {
   }, []);
 
   const cartProducts = cartItems.map((product) => {
-
     const price = product.price * product.quantity;
     const priceToFixed = price.toFixed(2);
 

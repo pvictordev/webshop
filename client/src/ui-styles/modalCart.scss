@@ -64,6 +64,7 @@
   border-radius: 15px;
   padding: 1rem;
   margin-right: 0.5rem;
+  width: 100%;
 }
 .cart__img {
   width: 100%;
@@ -103,6 +104,7 @@
     font-size: 1rem;
     border: 2px solid #242424;
     border-radius: 15px;
+    cursor: pointer;
   }
 }
 .cart__price {
@@ -130,13 +132,20 @@
   font-size: 1.5rem;
   font-weight: 700;
 }
-.subtotal__right button {
-  padding: 0.5rem;
-  font-size: 1rem;
-  background-color: transparent;
-  border: 2px solid #333;
-  border-radius: 15px;
-  cursor: pointer;
+.subtotal__right {
+  button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: transparent;
+    border: 2px solid #333;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  button:hover {
+    background-color: #242424;
+    color: #fff;
+  }
 }
 
 //xl size
@@ -151,14 +160,6 @@
 @media screen and (max-width: 768px) {
   .cart__item {
     grid-template-columns: 1fr;
-    grid-template-rows:1fr;
-  }
-}
-
-//sm size
-@media screen and (max-width: 640px) {
-  .cart__item {
-    grid-template-columns: 1fr;
   }
   .cart__details {
     align-items: center;
@@ -167,6 +168,10 @@
   .cart__price {
     flex-direction: row;
   }
+}
+
+//sm size
+@media screen and (max-width: 640px) {
 }
 
 //xs size

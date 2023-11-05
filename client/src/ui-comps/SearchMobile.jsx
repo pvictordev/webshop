@@ -2,7 +2,12 @@ import React from "react";
 import "../ui-styles/searchMobile.scss";
 import { GrClose } from "react-icons/gr";
 
-export default function SearchMobile({ search, handleSearch, toggleSearch, searchResults }) {
+export default function SearchMobile({
+  search,
+  handleSearch,
+  toggleSearch,
+  searchResults,
+}) {
   return (
     <div className="search-mobile__content">
       <div className="close__search" onClick={toggleSearch}>

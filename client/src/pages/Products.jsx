@@ -46,6 +46,7 @@ const Products = ({ productsList, toggleFavorite }) => {
   return (
     <div className="Products">
       <HomeRoute />
+
       <div className="Products__container">
         <div className="Products__content">
           <div className="Products__product">
@@ -78,14 +79,22 @@ const Products = ({ productsList, toggleFavorite }) => {
                     +
                   </button>
 
-                  <p>
-                    {/* count */}
+                  {/* <p className="qnt">
                     {cartItems.map((product) => {
                       if (product.id === item.id) {
                         return product.quantity;
                       }
                     })}
+                  </p> */}
+                  <p className="qnt">
+                    {(() => {
+                      const foundProduct = cartItems.find(
+                        (product) => product.id === item.id
+                      );
+                      return foundProduct ? foundProduct.quantity : 1;
+                    })()}
                   </p>
+
                   <button
                     onClick={() => {
                       dispatch(decrementQuantity({ id: item.id }));
@@ -94,16 +103,28 @@ const Products = ({ productsList, toggleFavorite }) => {
                     -
                   </button>
                 </div>
-                <p>
-                  {/* price */}
-                  {cartItems.map((product) => {
+                <p className="prc">
+                  {/* {cartItems.map((product) => {
                     if (product.id === item.id) {
                       const price = product.price * product.quantity;
-                      return (
-                        <span>${price.toFixed(2)}</span>
-                      );
+                      return <span>${price.toFixed(2)}</span>;
                     }
-                  })}
+                  })} */}
+                  {(() => {
+                    const foundProduct = cartItems.find(
+                      (product) => product.id === item.id
+                    );
+                    return foundProduct ? (
+                      <span>
+                        $
+                        {(foundProduct.price * foundProduct.quantity).toFixed(
+                          2
+                        )}
+                      </span>
+                    ) : (
+                      <span>${item.price.toFixed(2)}</span>
+                    );
+                  })()}
                 </p>
               </div>
               <div className="info__buttons">
