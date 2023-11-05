@@ -10,7 +10,6 @@
   margin: 2.5rem 0;
 }
 .Favorite__container {
-
 }
 .Favorite__header {
   display: flex;
@@ -29,6 +28,7 @@
   flex-direction: column;
   row-gap: 1rem;
   width: 100%;
+  text-align: center;
   svg {
     font-size: 3rem;
   }
@@ -73,10 +73,6 @@
 //md size
 @media screen and (max-width: 768px) {
   .no-favorite {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     row-gap: 1rem;
     width: 100%;
     padding: 1rem;
@@ -89,13 +85,9 @@
     }
   }
   .go-to-shop {
-    background-color: transparent;
-    border: 2px solid #242424;
     border-radius: 15px;
     font-size: 1rem;
     padding: 0.5rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
   }
 }
 
@@ -110,13 +102,35 @@
   .Favorite__grid {
     padding: 1rem;
   }
+  .Favorite__header {
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+  }
+
+  .no-favorite {
+    row-gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+    svg {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+  }
+  .go-to-shop {
+    border-radius: 15px;
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
 }
 
 //xs size
 @media screen and (max-width: 350px) {
-  .Favorite__header {
-    h1 {
-      font-size: 2rem;
-    }
-  }
 }

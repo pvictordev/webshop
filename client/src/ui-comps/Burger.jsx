@@ -5,17 +5,21 @@ import { GrClose } from "react-icons/gr";
 import { Link } from "react-router-dom";
 
 export default function Burger({ toggleMenu }) {
+  function handleLinkClick() {
+    window.scrollTo(0, 0);
+    toggleMenu();
+  }
   return (
     <div className="burger">
-      <div className="close__burger" onClick={toggleMenu}>
+      <div className="close__burger" onClick={handleLinkClick}>
         <GrClose />
       </div>
       <h1 className="burger__title">Menu</h1>
       <ul className="burger__list">
-        <Link to={"/categories"} onClick={toggleMenu}>
+        <Link to={"/categories"} onClick={handleLinkClick}>
           Categories
         </Link>
-        <Link to={"/products/5"} onClick={toggleMenu}>
+        <Link to={"/products/5"} onClick={handleLinkClick}>
           Products
         </Link>
         <li>FAQs</li>

@@ -2,7 +2,7 @@
   width: 100%;
 }
 .Products__container {
-  margin: 3rem 7rem;
+  margin: 4rem 7rem;
   //padding: 0rem 4rem;
 }
 
@@ -173,6 +173,18 @@
   .product__specs {
     flex-direction: column;
     gap: 1rem;
+  }
+  .quantity__buttons {
+    button {
+      font-size: 1rem;
+      border-radius:10px;
+      padding: 1rem 1.5rem;
+    }
+  }
+  .info__buttons {
+    button {
+      font-size: 1rem;
+    }
   }
 }
 //sm size

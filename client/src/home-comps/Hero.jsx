@@ -36,7 +36,9 @@ export default function Hero() {
             </h2>
             <button className="shop__button">
               {" "}
-              <Link to={"/categories"}>Shop now</Link>
+              <Link to={"/categories"} onClick={() => window.scrollTo(0, 0)}>
+                Shop now
+              </Link>
             </button>
           </div>
         </div>

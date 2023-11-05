@@ -15,3 +15,11 @@
     gap: 0.5rem;
   }
 }
+
+//xs size
+@media screen and (max-width: 640px) {
+  .route {
+    padding-left: 1rem;
+    padding-top: 6rem;
+  }
+}

@@ -66,12 +66,16 @@ export default function ModalCart({ toggleCart }) {
       </div>
     );
   });
+  const cartTotal = cartItems.reduce((total, item) => {
+    const price = item.price * item.quantity;
+    return total + price;
+  }, 0);
 
   return (
     <div className="modal__cart-content">
       <div className="cart__top">
         <div className="cart__title">
-          <h2>Your Shopping Cart {cartItems.length}</h2>
+          <h2>Your Shopping Cart ({cartItems.length})</h2>
           <div>
             <GrClose onClick={toggleCart} />
           </div>
@@ -91,7 +95,10 @@ export default function ModalCart({ toggleCart }) {
             <div className="subtotal__cart">
               <div className="subtotal__left">
                 <p>Subtotal</p>
-                <p>$200</p>
+                <p className="total">
+                  $
+                  {cartTotal.toFixed(2)}
+                </p>
               </div>
               <div className="subtotal__right">
                 <button>Checkout</button>
