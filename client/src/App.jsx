@@ -37,6 +37,8 @@ function App() {
   };
 
   //Favorite feature (add to favorite or remove)
+  const [favoriteItems, setFavoriteItems] = useState([]);
+
   const toggleFavorite = (id) => {
     const newFavorite = productsList.map((product) => {
       if (product.id === id) {
@@ -45,8 +47,12 @@ function App() {
       return product;
     });
     setProductsList(newFavorite);
-    //save to local storage
-    // localStorage.setItem("productsList", JSON.stringify(newFavorite));
+
+    const favoriteOnly = newFavorite.filter((product) => product.favorite);
+    setFavoriteItems(favoriteOnly);
+
+    // Сохранить массив favoriteItems в localStorage
+    localStorage.setItem("favoriteItems", JSON.stringify(favoriteOnly));
   };
 
   return (
@@ -113,6 +119,8 @@ function App() {
               <Favorite
                 toggleFavorite={toggleFavorite}
                 productsList={productsList}
+                favoriteItems={favoriteItems}
+                setFavoriteItems={setFavoriteItems}
               />
             }
           ></Route>

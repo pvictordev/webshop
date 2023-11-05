@@ -1,22 +1,36 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "../favorite.scss";
 import Card from "../ui-comps/Card";
 import HomeRoute from "../ui-comps/HomeRoute";
 import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-const Favorite = ({ toggleFavorite, productsList }) => {
+const Favorite = ({
+  toggleFavorite,
+  productsList,
+  favoriteItems,
+  setFavoriteItems,
+}) => {
+  // const favoriteProducts = productsList.filter(
+  //   (product) => product.favorite === true
+  // );
 
-  const favoriteProducts = productsList.filter(
+  useEffect(() => {
+    const storedFavoriteItems = JSON.parse(
+      localStorage.getItem("favoriteItems")
+    );
+    if (storedFavoriteItems) {
+      setFavoriteItems(storedFavoriteItems);
+    }
+  }, [setFavoriteItems]);
+  const favoriteProducts = favoriteItems.filter(
     (product) => product.favorite === true
   );
+  console.log(favoriteItems);
+
   const products = favoriteProducts.map((product) => {
     return (
-      <Card
-        key={product.id}
-        {...product}
-        toggleFavorite={toggleFavorite}
-      />
+      <Card key={product.id} {...product} toggleFavorite={toggleFavorite} />
     );
   });
 
