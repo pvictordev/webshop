@@ -1,4 +1,5 @@
-const Products = [
+import React from "react";
+export default [
   {
     id: 1,
     category: "Clothes",
@@ -226,5 +227,3 @@ const Products = [
     quantity: 1,
   },
 ];
-
-export default Products;
