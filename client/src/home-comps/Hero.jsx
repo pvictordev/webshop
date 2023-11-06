@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import "../home-styles/hero.scss";
 import Typed from "typed.js";
 import { Link } from "react-router-dom";

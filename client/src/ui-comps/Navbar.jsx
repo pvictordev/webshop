@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "../ui-styles/navbar.scss";
 import logo from "../assets/webshop.png";
-import { IoCartOutline } from "react-icons/io5";
 import { BsSearch } from "react-icons/bs";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { MdFavoriteBorder } from "react-icons/md";
+import { IoCartOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Burger from "./Burger";
 import SearchMobile from "./SearchMobile";
 import Products from "../data/Products.jsx";
-import { MdFavoriteBorder } from "react-icons/md";
+
 import { useSelector, useDispatch } from "react-redux";
-// import { removeFromCart } from "../redux/cartSlice";
 
 export default function Navbar({ open, toggleMenu, toggleCart }) {
   //redux
@@ -50,7 +50,7 @@ export default function Navbar({ open, toggleMenu, toggleCart }) {
 
   //filtering data
   const filterData = (search) => {
-    const filteredData = Prodcuts.filter((product) => {
+    const filteredData = Products.filter((product) => {
       return product.name.toLowerCase().includes(search.toLowerCase());
     });
     setFilteredData(filteredData);
