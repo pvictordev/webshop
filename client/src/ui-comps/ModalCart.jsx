@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "../ui-styles/modalCart.scss";
 import { GrClose } from "react-icons/gr";
 import { useSelector, useDispatch } from "react-redux";

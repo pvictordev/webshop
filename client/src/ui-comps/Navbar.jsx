@@ -7,7 +7,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import Burger from "./Burger";
 import SearchMobile from "./SearchMobile";
-import Prodcuts from "../data/Products.jsx";
+import Products from "../data/Products.jsx";
 import { MdFavoriteBorder } from "react-icons/md";
 import { useSelector, useDispatch } from "react-redux";
 // import { removeFromCart } from "../redux/cartSlice";
@@ -21,7 +21,7 @@ export default function Navbar({ open, toggleMenu, toggleCart }) {
   const [search, setSearch] = useState("");
 
   //search data state
-  const [filteredData, setFilteredData] = useState(Prodcuts);
+  const [filteredData, setFilteredData] = useState(Products);
 
   const handleSearch = (e) => {
     const { value } = e.target;
