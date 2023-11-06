@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "../ui-styles/navbar.scss";
 import logo from "../assets/webshop.png";
 import { IoCartOutline } from "react-icons/io5";
@@ -64,7 +64,7 @@ export default function Navbar({ open, toggleMenu, toggleCart }) {
           <Link
             className="search__results--item"
             style={{ color: "#333", fontWeight: "700" }}
-            to={`/products/${item.id}`}
+            to={`/ProductPage/${item.id}`}
             key={item.id}
             onClick={() => {
               setSearch("");
@@ -86,9 +86,7 @@ export default function Navbar({ open, toggleMenu, toggleCart }) {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -158,7 +156,7 @@ export default function Navbar({ open, toggleMenu, toggleCart }) {
               <Link
                 onClick={() => window.scrollTo(0, 0)}
                 className="Link link__products"
-                to={"/products/5"}
+                to={"/ProductPage/5"}
               >
                 <li>Products</li>
               </Link>

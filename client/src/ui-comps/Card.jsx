@@ -29,8 +29,7 @@ export default function Card({
       </div>
       <Link
         className="card__container"
-        to={`/products/${id}`}
-        // element={<Products />}
+        to={`/ProductPage/${id}`}
         onClick={() => {
           window.top(0, 0);
         }}

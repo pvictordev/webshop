@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import "../products.scss";
-import HomeRoute from "../ui-comps/HomeRoute";
+import React, { useEffect } from "react";
+import "../productPage.scss";
+import HomeRoute from "../ui-comps/HomeRoute.jsx";
 import { useParams } from "react-router-dom";
 import Trend from "../home-comps/Trend.jsx";
 import { useDispatch } from "react-redux";
@@ -12,7 +12,7 @@ import {
 } from "../redux/cartSlice.jsx";
 import { useSelector } from "react-redux";
 
-const Products = ({ productsList, toggleFavorite }) => {
+const ProductPage = ({ productsList, toggleFavorite }) => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cart);
 
@@ -78,14 +78,6 @@ const Products = ({ productsList, toggleFavorite }) => {
                   >
                     +
                   </button>
-
-                  {/* <p className="qnt">
-                    {cartItems.map((product) => {
-                      if (product.id === item.id) {
-                        return product.quantity;
-                      }
-                    })}
-                  </p> */}
                   <p className="qnt">
                     {(() => {
                       const foundProduct = cartItems.find(
@@ -104,12 +96,6 @@ const Products = ({ productsList, toggleFavorite }) => {
                   </button>
                 </div>
                 <p className="prc">
-                  {/* {cartItems.map((product) => {
-                    if (product.id === item.id) {
-                      const price = product.price * product.quantity;
-                      return <span>${price.toFixed(2)}</span>;
-                    }
-                  })} */}
                   {(() => {
                     const foundProduct = cartItems.find(
                       (product) => product.id === item.id
@@ -172,4 +158,4 @@ const Products = ({ productsList, toggleFavorite }) => {
   );
 };
 
-export default Products;
+export default ProductPage;

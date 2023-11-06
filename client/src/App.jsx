@@ -3,8 +3,8 @@ import "./App.scss";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./ui-comps/Navbar";
 import Home from "./pages/Home";
-import products from "./data/Products";
-import Products from "./pages/Products";
+import Products from "./data/Products";
+import ProductPage from "./pages/ProductPage";
 import Categories from "./pages/Categories";
 import Footer from "./home-comps/Footer";
 import Newsletter from "./home-comps/Newsletter";
@@ -28,8 +28,7 @@ function App() {
   };
 
   //items list
-  const [productsList, setProductsList] = useState([...products]);
-
+  const [productsList, setProductsList] = useState([...Products]);
   //open cart
   const [openCart, setOpenCart] = useState(false);
   const toggleCart = () => {
@@ -87,9 +86,9 @@ function App() {
           />
 
           <Route
-            path="/products"
+            path="/ProductPage"
             element={
-              <Products
+              <ProductPage
                 productsList={productsList}
                 toggleFavorite={toggleFavorite}
               />
@@ -98,7 +97,7 @@ function App() {
             <Route
               path=":id"
               element={
-                <Products
+                <ProductPage
                   productsList={productsList}
                   toggleFavorite={toggleFavorite}
                 />
