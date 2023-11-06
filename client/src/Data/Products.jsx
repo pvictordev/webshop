@@ -1,4 +1,4 @@
-export default [
+const Products = [
   {
     id: 1,
     category: "Clothes",
@@ -226,3 +226,5 @@ export default [
     quantity: 1,
   },
 ];
+
+export default Products;
