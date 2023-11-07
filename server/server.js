@@ -6,12 +6,11 @@ const app = express();
 
 //load productsData from server
 app.get("/api/productsData", (req, res) => {
-    console.log(productsData)
   res.json(productsData);
 });
 //load product by id
 app.get("/api/productsData/:id", (req, res) => {
-  const product = productsData.find((x) => x.id === req.params.id);
+  const product = productsData.find((x) => x.id === parseInt(req.params.id));
   if (product) {
     res.json(product);
   } else {
