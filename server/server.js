@@ -1,8 +1,14 @@
-//const express = require('express');
 import express from "express";
 import productsData from "./Data/productsData.js";
+import cors from "cors";
+import bodyParser from "body-parser";
+import dotenv from "dotenv";
 
+dotenv.config();
 const app = express();
+
+app.use(bodyParser.json());
+app.use(cors());
 
 //load productsData from server
 app.get("/api/productsData", (req, res) => {
@@ -22,5 +28,5 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-const port = 5000;
-app.listen(port, console.log(`Server started on port ${port}`));
+const PORT = process.env.PORT || 1000;
+app.listen(PORT, console.log(`Server started on port ${PORT}`));

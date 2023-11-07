@@ -16,22 +16,20 @@ import axios from "axios";
 
 function App() {
   // const [productsList, setProductsList] = useState([...Products]);
-
   //fetch data from API
   const [productsList, setProductsList] = useState([]);
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const { data } = await axios.get("/api/productsData");
-        setProductsList(data);
+        const { data } = await axios.get("http://localhost:5000/api/productsData");
+        setProductsList([...data]);
       } catch (error) {
         console.error("ERROR GET DATA:", error);
       }
     };
     fetchProducts();
   }, []);
-
-  console.log(productsList);
+  console.log("productsList:", productsList); 
 
   //open cart
   const [openCart, setOpenCart] = useState(false);

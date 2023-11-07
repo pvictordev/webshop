@@ -2,7 +2,6 @@
   "name": "webshop",
   "private": true,
   "version": "0.0.0",
-  "proxy": "http://localhost:5000/",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
@@ -32,5 +31,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "vite": "^4.4.5"
-  }
+  },
+  "proxy": "http://localhost:5000/"
 }
