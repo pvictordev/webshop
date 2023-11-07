@@ -11,7 +11,7 @@ const Home = ({ toggleFavorite, productsList }) => {
     <div className="Home">
       <Hero />
       <Overview />
-      <Best toggleFavorite={toggleFavorite} productsList={productsList} />
+      {/* <Best toggleFavorite={toggleFavorite} productsList={productsList} /> */}
       <Banner
         title={"Create your perfect environment"}
         description={

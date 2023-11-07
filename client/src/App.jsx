@@ -3,7 +3,6 @@ import "./App.scss";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./ui-comps/Navbar";
 import Home from "./pages/Home";
-import Products from "./data/Products";
 import ProductPage from "./pages/ProductPage";
 import Categories from "./pages/Categories";
 import Footer from "./home-comps/Footer";
@@ -12,8 +11,29 @@ import Favorite from "./pages/Favorite";
 import ModalCart from "./ui-comps/ModalCart";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+// import Products from "./data/Products";
+import axios from "axios";
 
 function App() {
+  // const [productsList, setProductsList] = useState([...Products]);
+
+  //fetch data from API
+  const [productsList, setProductsList] = useState([]);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const { data } = await axios.get("/api/productsData");
+      setProductsList(data);
+    };
+    fetchProducts();
+  }, []);
+  console.log(productsList);
+
+  //open cart
+  const [openCart, setOpenCart] = useState(false);
+  const toggleCart = () => {
+    setOpenCart(!openCart);
+  };
+
   //open menu
   const [open, setOpen] = useState(false);
 
@@ -25,14 +45,6 @@ function App() {
     } else {
       document.body.style.overflow = "hidden";
     }
-  };
-
-  //items list
-  const [productsList, setProductsList] = useState([...Products]);
-  //open cart
-  const [openCart, setOpenCart] = useState(false);
-  const toggleCart = () => {
-    setOpenCart(!openCart);
   };
 
   //Favorite feature (add to favorite or remove)
