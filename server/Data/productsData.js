@@ -1,7 +1,6 @@
 // import React from "react";
 const productsData = [
   {
-    id: 1,
     category: "Clothes",
     name: "Stussy T-shirt",
     price: 59.99,
@@ -20,7 +19,6 @@ const productsData = [
     quantity: 1,
   },
   {
-    id: 2,
     category: "Clothes",
     name: "Nike Air Jordan 1",
     price: 59.99,
@@ -39,7 +37,6 @@ const productsData = [
     quantity: 1,
   },
   {
-    id: 3,
     category: "Furniture",
     name: "Office Chair",
     price: 129.99,
@@ -58,7 +55,6 @@ const productsData = [
     quantity: 1,
   },
   {
-    id: 4,
     category: "Furniture",
     name: "Adjustable Desk",
     price: 529.99,
@@ -76,7 +72,6 @@ const productsData = [
     quantity: 1,
   },
   {
-    id: 5,
     category: "Electronics",
     name: "Macbook Pro 14",
     price: 2119.99,
@@ -95,7 +90,6 @@ const productsData = [
     quantity: 1,
   },
   {
-    id: 6,
     category: "Electronics",
     name: "Iphone 14 Pro",
     price: 1119.99,
@@ -115,7 +109,6 @@ const productsData = [
   },
 
   {
-    id: 7,
     category: "Household",
     name: "Babushka Rug",
     price: 69.99,
@@ -133,7 +126,6 @@ const productsData = [
     quantity: 1,
   },
   {
-    id: 8,
     category: "Household",
     name: "Bonsai Tree",
     price: 60.99,
@@ -153,7 +145,6 @@ const productsData = [
   },
 
   {
-    id: 9,
     category: "Toys",
     name: "Porsche 911 RSR",
     price: 179.99,
@@ -172,7 +163,6 @@ const productsData = [
     quantity: 1,
   },
   {
-    id: 10,
     category: "Toys",
     name: "Drone",
     price: 1179.99,
@@ -190,7 +180,6 @@ const productsData = [
     quantity: 1,
   },
   {
-    id: 11,
     category: "Skin care",
     name: "Cerave Cleanser ",
     price: 21.99,
@@ -208,7 +197,6 @@ const productsData = [
     quantity: 1,
   },
   {
-    id: 12,
     category: "Skin care",
     name: "The Ordinary Retinol",
     price: 17.99,
