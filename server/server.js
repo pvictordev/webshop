@@ -3,7 +3,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import connectDB from "./config/MongoDB.js";
-import ImportData from "./DataImport.js";
+import productRoute from "./Routes/ProductRoutes.js";
 
 dotenv.config();
 connectDB();
@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 //MongoDB API
-app.use("/api/import", ImportData);
+app.use("/api/products", productRoute);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");

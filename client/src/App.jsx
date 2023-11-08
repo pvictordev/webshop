@@ -21,7 +21,9 @@ function App() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const { data } = await axios.get("http://localhost:5000/api/productsData");
+        const { data } = await axios.get(
+          "http://localhost:5000/api/productsData"
+        );
         setProductsList([...data]);
       } catch (error) {
         console.error("ERROR GET DATA:", error);
@@ -29,7 +31,7 @@ function App() {
     };
     fetchProducts();
   }, []);
-  console.log("productsList:", productsList); 
+  console.log("productsList:", productsList);
 
   //open cart
   const [openCart, setOpenCart] = useState(false);
