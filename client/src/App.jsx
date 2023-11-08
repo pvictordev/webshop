@@ -22,7 +22,7 @@ function App() {
     const fetchProducts = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:5000/api/productsData"
+          "http://localhost:5000/api/products"
         );
         setProductsList([...data]);
       } catch (error) {
