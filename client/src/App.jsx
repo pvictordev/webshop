@@ -31,7 +31,6 @@ function App() {
     };
     fetchProducts();
   }, []);
-  console.log("productsList:", productsList);
 
   //open cart
   const [openCart, setOpenCart] = useState(false);

@@ -55,6 +55,7 @@ export default function Navbar({ open, toggleMenu, toggleCart }) {
     });
     setFilteredData(filteredData);
   };
+  console.log(filteredData)
 
   //search results
   const searchResults = (
@@ -64,7 +65,7 @@ export default function Navbar({ open, toggleMenu, toggleCart }) {
           <Link
             className="search__results--item"
             style={{ color: "#333", fontWeight: "700" }}
-            to={`/ProductPage/${item.id}`}
+            to={`/products/${item.id}`}
             key={item.id}
             onClick={() => {
               setSearch("");
