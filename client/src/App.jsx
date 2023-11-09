@@ -11,7 +11,6 @@ import Favorite from "./pages/Favorite";
 import ModalCart from "./ui-comps/ModalCart";
 import { Provider } from "react-redux";
 import store from "./redux/store";
-// import Products from "./data/Products";
 import axios from "axios";
 
 function App() {
@@ -28,7 +27,6 @@ function App() {
     };
     fetchProducts();
   }, []);
-  // console.log(productsList[0]._id);
   console.log(productsList);
 
   //open cart
@@ -50,7 +48,7 @@ function App() {
     }
   };
 
-  //Favorite feature (add to favorite or remove)
+  //add to Favorite feature (add to favorite or remove)
   const [favoriteItems, setFavoriteItems] = useState([]);
 
   const toggleFavorite = (_id) => {
@@ -65,7 +63,6 @@ function App() {
     const favoriteOnly = newFavorite.filter((product) => product.favorite);
     setFavoriteItems(favoriteOnly);
 
-    // Сохранить массив favoriteItems в localStorage
     localStorage.setItem("favoriteItems", JSON.stringify(favoriteOnly));
   };
   return (
@@ -105,7 +102,7 @@ function App() {
           />
 
           <Route
-            path="/ProductPage"
+            path="/products"
             element={
               <ProductPage
                 productsList={productsList}

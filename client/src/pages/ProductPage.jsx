@@ -37,7 +37,7 @@ const ProductPage = ({ productsList, toggleFavorite }) => {
   }, [cartItems]);
 
   const { id } = useParams();
-  const item = productsList.find((product) => product.id === parseInt(id, 10));
+  const item = productsList.find((product) => product._id === id);
 
   if (!item) {
     return <div>Product not found</div>;
@@ -73,7 +73,7 @@ const ProductPage = ({ productsList, toggleFavorite }) => {
                 <div className="quantity__buttons">
                   <button
                     onClick={() => {
-                      dispatch(incrementQuantity({ id: item.id }));
+                      dispatch(incrementQuantity({ id: item._id }));
                     }}
                   >
                     +
@@ -81,7 +81,7 @@ const ProductPage = ({ productsList, toggleFavorite }) => {
                   <p className="qnt">
                     {(() => {
                       const foundProduct = cartItems.find(
-                        (product) => product.id === item.id
+                        (product) => product.id === item._id
                       );
                       return foundProduct ? foundProduct.quantity : 1;
                     })()}
@@ -89,7 +89,7 @@ const ProductPage = ({ productsList, toggleFavorite }) => {
 
                   <button
                     onClick={() => {
-                      dispatch(decrementQuantity({ id: item.id }));
+                      dispatch(decrementQuantity({ id: item._id }));
                     }}
                   >
                     -
@@ -98,7 +98,7 @@ const ProductPage = ({ productsList, toggleFavorite }) => {
                 <p className="prc">
                   {(() => {
                     const foundProduct = cartItems.find(
-                      (product) => product.id === item.id
+                      (product) => product.id === item._id
                     );
                     return foundProduct ? (
                       <span>
@@ -120,7 +120,7 @@ const ProductPage = ({ productsList, toggleFavorite }) => {
                       addToCart({
                         name: item.name,
                         image: item.image,
-                        id: item.id,
+                        id: item._id,
                         price: item.price,
                         texture: item.texture,
                         quantity: item.quantity,
