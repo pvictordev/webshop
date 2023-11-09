@@ -15,15 +15,12 @@ import store from "./redux/store";
 import axios from "axios";
 
 function App() {
-  // const [productsList, setProductsList] = useState([...Products]);
   //fetch data from API
   const [productsList, setProductsList] = useState([]);
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const { data } = await axios.get(
-          "http://localhost:5000/api/products"
-        );
+        const { data } = await axios.get("http://localhost:5000/api/products");
         setProductsList([...data]);
       } catch (error) {
         console.error("ERROR GET DATA:", error);
@@ -31,6 +28,8 @@ function App() {
     };
     fetchProducts();
   }, []);
+  // console.log(productsList[0]._id);
+  console.log(productsList);
 
   //open cart
   const [openCart, setOpenCart] = useState(false);
@@ -54,9 +53,9 @@ function App() {
   //Favorite feature (add to favorite or remove)
   const [favoriteItems, setFavoriteItems] = useState([]);
 
-  const toggleFavorite = (id) => {
+  const toggleFavorite = (_id) => {
     const newFavorite = productsList.map((product) => {
-      if (product.id === id) {
+      if (product._id === _id) {
         return { ...product, favorite: !product.favorite };
       }
       return product;
@@ -69,7 +68,6 @@ function App() {
     // Сохранить массив favoriteItems в localStorage
     localStorage.setItem("favoriteItems", JSON.stringify(favoriteOnly));
   };
-
   return (
     <Provider store={store}>
       <div className="App">
@@ -77,7 +75,12 @@ function App() {
           <ModalCart toggleCart={toggleCart} productsList={productsList} />
         </div>
 
-        <Navbar open={open} toggleMenu={toggleMenu} toggleCart={toggleCart} />
+        <Navbar
+          productsList={productsList}
+          open={open}
+          toggleMenu={toggleMenu}
+          toggleCart={toggleCart}
+        />
         <Routes>
           <Route
             path="/"

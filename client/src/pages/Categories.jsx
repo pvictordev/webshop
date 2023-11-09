@@ -18,7 +18,7 @@ const Categories = ({ toggleFavorite, productsList }) => {
 
   const products = filteredProducts.map((product) => {
     return (
-      <Card key={product.id} {...product} toggleFavorite={toggleFavorite} />
+      <Card key={product._id} {...product} toggleFavorite={toggleFavorite} />
     );
   });
 
@@ -26,6 +26,7 @@ const Categories = ({ toggleFavorite, productsList }) => {
     setSelectedCategory(category);
     setHeaderText(category);
   };
+  console.log(productsList);
 
   return (
     <div className="Categories">

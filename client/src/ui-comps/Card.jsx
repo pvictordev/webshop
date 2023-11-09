@@ -5,7 +5,7 @@ import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 
 export default function Card({
   toggleFavorite,
-  id,
+  _id,
   name,
   description,
   image,
@@ -18,18 +18,18 @@ export default function Card({
         {favorite ? (
           <MdFavorite
             className="favorite__icon"
-            onClick={() => toggleFavorite(id)}
+            onClick={() => toggleFavorite(_id)}
           />
         ) : (
           <MdFavoriteBorder
             className="favorite__icon"
-            onClick={() => toggleFavorite(id)}
+            onClick={() => toggleFavorite(_id)}
           />
         )}
       </div>
       <Link
         className="card__container"
-        to={`/ProductPage/${id}`}
+        to={`/products/${_id}`}
         onClick={() => {
           window.top(0, 0);
         }}

@@ -7,11 +7,11 @@ export default function Trend({ toggleFavorite, productsList }) {
       return null 
     }
 
-
+    
   const trend = productsList
     .slice(4, 8)
     .map((product) => (
-      <Card key={product.id} {...product} toggleFavorite={toggleFavorite} />
+      <Card key={product._id} {...product} toggleFavorite={toggleFavorite} />
     ));
 
   return (

@@ -8,11 +8,10 @@ import { IoCartOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Burger from "./Burger";
 import SearchMobile from "./SearchMobile";
-import Products from "../data/Products.jsx";
 
 import { useSelector, useDispatch } from "react-redux";
 
-export default function Navbar({ open, toggleMenu, toggleCart }) {
+export default function Navbar({ open, toggleMenu, toggleCart, productsList }) {
   //redux
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cart);
@@ -21,7 +20,7 @@ export default function Navbar({ open, toggleMenu, toggleCart }) {
   const [search, setSearch] = useState("");
 
   //search data state
-  const [filteredData, setFilteredData] = useState(Products);
+  const [filteredData, setFilteredData] = useState(productsList);
 
   const handleSearch = (e) => {
     const { value } = e.target;
@@ -50,12 +49,11 @@ export default function Navbar({ open, toggleMenu, toggleCart }) {
 
   //filtering data
   const filterData = (search) => {
-    const filteredData = Products.filter((product) => {
+    const filteredData = productsList.filter((product) => {
       return product.name.toLowerCase().includes(search.toLowerCase());
     });
     setFilteredData(filteredData);
   };
-  console.log(filteredData)
 
   //search results
   const searchResults = (
@@ -65,8 +63,8 @@ export default function Navbar({ open, toggleMenu, toggleCart }) {
           <Link
             className="search__results--item"
             style={{ color: "#333", fontWeight: "700" }}
-            to={`/products/${item.id}`}
-            key={item.id}
+            to={`/products/${item._id}`}
+            key={item._id}
             onClick={() => {
               setSearch("");
               window.scrollTo(0, 0);
@@ -94,6 +92,8 @@ export default function Navbar({ open, toggleMenu, toggleCart }) {
   }, []);
 
   const navClass = `Navbar ${scrollY > 50 ? "fixedNav" : ""}`;
+
+  const product = productsList[Math.floor(Math.random() * productsList.length)];
 
   return (
     <nav className={navClass}>
@@ -157,7 +157,7 @@ export default function Navbar({ open, toggleMenu, toggleCart }) {
               <Link
                 onClick={() => window.scrollTo(0, 0)}
                 className="Link link__products"
-                to={"/ProductPage/5"}
+                to={"/products/654bf39e61307df4d92e7fb2"}
               >
                 <li>Products</li>
               </Link>

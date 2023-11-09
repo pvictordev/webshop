@@ -6,7 +6,7 @@ export default function Best({ toggleFavorite, productsList }) {
   const best = productsList
     .slice(0, 4)
     .map((product) => (
-      <Card key={product.id} {...product} toggleFavorite={toggleFavorite} />
+      <Card key={product._id} {...product} toggleFavorite={toggleFavorite} />
     ));
 
   return (
