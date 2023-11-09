@@ -9,12 +9,12 @@ export default function Hero() {
     const typed = new Typed(el.current, {
       strings: [
         "pioneers in online selling",
-        "the best in the business",
-        "super fast delivery",
+        // "the best in the business",
+        // "super fast delivery",
       ],
       typeSpeed: 40,
       backSpeed: 40,
-      loop: true,
+      loop: false,
     });
 
     return () => {
