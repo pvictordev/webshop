@@ -9,7 +9,6 @@
     "start": "node ./server.js",
     "server": "nodemon ./server.js",
     "build": "npm install"
-
   },
   "author": "",
   "license": "ISC",
