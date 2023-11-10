@@ -13,11 +13,12 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(
-  cors({
-    origin: "https://webshop-smoky.vercel.app/",
-    methods: ["POST", "GET"],
-    credentials: true,
-  })
+  cors()
+  //   {
+  //   origin: "https://webshop-smoky.vercel.app/",
+  //   methods: ["POST", "GET"],
+  //   credentials: true,
+  // }
 );
 
 //MongoDB API
@@ -35,4 +36,3 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, console.log(`Server started on PORT ${PORT}`));
 
-  // "proxy": "http://localhost:5000/"
