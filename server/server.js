@@ -12,7 +12,13 @@ connectDB();
 const app = express();
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://webshop-smoky.vercel.app/",
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 
 //MongoDB API
 app.use("/api/import", ImportData);
