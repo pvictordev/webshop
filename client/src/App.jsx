@@ -19,7 +19,9 @@ function App() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const { data } = await axios.get("http://localhost:5000/api/products");
+        const { data } = await axios.get(
+          "https://webshopserver.onrender.com/api/products"
+        );
         setProductsList([...data]);
       } catch (error) {
         console.error("ERROR GET DATA:", error);
