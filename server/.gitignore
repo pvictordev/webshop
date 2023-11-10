@@ -1,2 +1,2 @@
 .env
-node__modules
+/node__modules/
