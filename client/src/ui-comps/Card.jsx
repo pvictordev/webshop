@@ -29,7 +29,7 @@ export default function Card({
       </div>
       <Link
         className="card__container"
-        to={`https://webshopserver.onrender.com/api/products/${_id}`}
+        to={`/api/products/${_id}`}
         onClick={() => {
           window.top(0, 0);
         }}
