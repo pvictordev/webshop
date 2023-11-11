@@ -32,5 +32,5 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "vite": "^4.4.5"
   },
-  "proxy": "http://localhost:5000/"
+  "proxy": "https://webshop-ebon.vercel.app/"
 }
