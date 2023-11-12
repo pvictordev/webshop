@@ -63,7 +63,7 @@ export default function Navbar({ open, toggleMenu, toggleCart, productsList }) {
           <Link
             className="search__results--item"
             style={{ color: "#333", fontWeight: "700" }}
-            to={`https://webshopserver.onrender.com/api/products/${item._id}`}
+            to={`/api/products/${item._id}`}
             key={item._id}
             onClick={() => {
               setSearch("");
