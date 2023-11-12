@@ -20,7 +20,7 @@ function App() {
     const fetchProducts = async () => {
       try {
         const { data } = await axios.get(
-          "https://webshopserver.onrender.com/products"
+          "https://webshopserver.onrender.com/api/products"
         );
         setProductsList([...data]);
       } catch (error) {
