@@ -113,7 +113,7 @@ function App() {
             }
           >
             <Route
-              path=":id"
+              path="/products/:id"
               element={
                 <ProductPage
                   productsList={productsList}

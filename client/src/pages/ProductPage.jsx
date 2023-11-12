@@ -40,7 +40,7 @@ const ProductPage = ({ productsList, toggleFavorite }) => {
   const item = productsList.find((product) => product._id === id);
 
   if (!item) {
-    return <div>Product not found</div>;
+    return null
   }
 
   return (
