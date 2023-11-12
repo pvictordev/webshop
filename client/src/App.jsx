@@ -29,7 +29,6 @@ function App() {
     };
     fetchProducts();
   }, []);
-  console.log(productsList);
 
   //open cart
   const [openCart, setOpenCart] = useState(false);
