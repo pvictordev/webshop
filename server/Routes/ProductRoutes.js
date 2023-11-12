@@ -6,7 +6,7 @@ const productRoute = express.Router();
 
 //GET ALL PRODUCTS
 productRoute.get(
-  "/products",
+  "/",
   asyncHandler(async (req, res) => {
     const products = await Product.find({});
     res.json(products);
@@ -15,7 +15,7 @@ productRoute.get(
 
 //GET PRODUCT BY ID
 productRoute.get(
-  "/products/:id",
+  "/:id",
   asyncHandler(async (req, res) => {
     const product = await Product.findById(req.params.id);
     if (product) {
