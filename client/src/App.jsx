@@ -20,7 +20,7 @@ function App() {
     const fetchProducts = async () => {
       try {
         const { data } = await axios.get(
-          "https://webshopserver.onrender.com/api/products"
+          "https://webshopserver.onrender.com/products"
         );
         setProductsList([...data]);
       } catch (error) {
@@ -29,6 +29,7 @@ function App() {
     };
     fetchProducts();
   }, []);
+  console.log(productsList);
 
   //open cart
   const [openCart, setOpenCart] = useState(false);

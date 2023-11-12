@@ -16,7 +16,7 @@ app.use(cors());
 
 //MongoDB API
 app.use("/api/import", ImportData);
-app.use("/products", productRoute);
+app.use("/api/products", productRoute);
 
 //error handler
 app.use(notFound);
