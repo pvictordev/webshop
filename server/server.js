@@ -26,13 +26,5 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.get("/products/:id", (req, res) => {
-  // Обработка запроса для получения деталей продукта по ID
-  const productId = req.params.id;
-  // Ваш код для получения данных о продукте по productId
-  // Отправка данных о продукте в ответе
-  res.send(`Product details for ID ${productId}`);
-});
-
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, console.log(`Server started on PORT ${PORT}`));
