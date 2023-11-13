@@ -16,12 +16,11 @@ import axios from "axios";
 function App() {
   //fetch data from API
   const [productsList, setProductsList] = useState([]);
+  const url = "https://webshopserver.onrender.com";
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const { data } = await axios.get(
-          "https://webshopserver.onrender.com/api/products"
-        );
+        const { data } = await axios.get(`${url}/api/products`);
         setProductsList([...data]);
       } catch (error) {
         console.error("ERROR GET DATA:", error);
