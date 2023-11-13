@@ -38,6 +38,7 @@ const ProductPage = ({ productsList, toggleFavorite }) => {
 
   const { id } = useParams();
   const item = productsList.find((product) => product._id === id);
+  console.log(item);
 
   if (!item) {
     return null
