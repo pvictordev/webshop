@@ -42,7 +42,7 @@ const ProductPage = ({ productsList, toggleFavorite }) => {
   if (!item) {
     return null;
   }
-  
+
   return (
     <div className="Products">
       <HomeRoute />
