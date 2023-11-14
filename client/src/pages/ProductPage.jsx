@@ -39,10 +39,10 @@ const ProductPage = ({ productsList, toggleFavorite }) => {
   const { id } = useParams();
   const item = productsList.find((product) => product._id === id);
 
-  {if (!item) {
+  if (!item) {
     return null;
-  }}
-
+  }
+  
   return (
     <div className="Products">
       <HomeRoute />
