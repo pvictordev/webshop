@@ -38,10 +38,11 @@ const ProductPage = ({ productsList, toggleFavorite }) => {
 
   const { id } = useParams();
   const item = productsList.find((product) => product._id === id);
-  console.log(item);
+  //console.log(item);
 
   if (!item) {
-    return null
+    // return null
+    return <div>product not found</div>
   }
 
   return (
