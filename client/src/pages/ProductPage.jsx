@@ -42,7 +42,7 @@ const ProductPage = ({ productsList, toggleFavorite }) => {
   if (!item) {
     return null;
   }
-
+  console.log(item);
   return (
     <div className="Products">
       <HomeRoute />
@@ -73,7 +73,18 @@ const ProductPage = ({ productsList, toggleFavorite }) => {
                 <div className="quantity__buttons">
                   <button
                     onClick={() => {
-                      dispatch(incrementQuantity({ id: item._id }));
+                      //   dispatch(incrementQuantity({ id: item._id }));
+                      // }}
+                      dispatch(
+                        addToCart({
+                          name: item.name,
+                          image: item.image,
+                          id: item._id,
+                          price: item.price,
+                          texture: item.texture,
+                          quantity: item.quantity,
+                        })
+                      );
                     }}
                   >
                     +
