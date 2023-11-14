@@ -19,7 +19,10 @@ export default function Burger({ toggleMenu }) {
         <Link to={"/categories"} onClick={handleLinkClick}>
           Categories
         </Link>
-        <Link to={"/products/5"} onClick={handleLinkClick}>
+        <Link
+          to={"/products/654bf39e61307df4d92e7fb5"}
+          onClick={handleLinkClick}
+        >
           Products
         </Link>
         <li>FAQs</li>
