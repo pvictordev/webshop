@@ -42,7 +42,7 @@ const ProductPage = ({ productsList, toggleFavorite }) => {
   if (!item) {
     return null;
   }
-  console.log(item);
+
   return (
     <div className="Products">
       <HomeRoute />
@@ -126,7 +126,7 @@ const ProductPage = ({ productsList, toggleFavorite }) => {
                         quantity: item.quantity,
                       })
                     );
-                    // saveCartToLocalStorage(cartItems);
+                    saveCartToLocalStorage(cartItems);
                   }}
                 >
                   Add to cart
