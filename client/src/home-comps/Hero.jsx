@@ -41,6 +41,9 @@ export default function Hero() {
               </Link>
             </button>
           </div>
+          <div className="content__img">
+            <img src="../assets/hero-img(3).jpg" alt="" />
+          </div>
         </div>
       </div>
     </div>
