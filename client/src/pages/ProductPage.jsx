@@ -11,6 +11,14 @@ import {
   decrementQuantity,
 } from "../redux/cartSlice.jsx";
 import { useSelector } from "react-redux";
+import { MdFullscreen } from "react-icons/md";
+import {
+  FaCcVisa,
+  FaCcMastercard,
+  FaCcDiscover,
+  FaCcJcb,
+} from "react-icons/fa";
+import { IoCartOutline } from "react-icons/io5";
 
 const ProductPage = ({ productsList, toggleFavorite }) => {
   const dispatch = useDispatch();
@@ -50,11 +58,10 @@ const ProductPage = ({ productsList, toggleFavorite }) => {
       <div className="Products__container">
         <div className="Products__content">
           <div className="Products__product">
+
             <div className="Product__images">
-              <h1 className="Product__title image__title" align="center">
-                {item.name}
-              </h1>
               <div className="main__image">
+                <MdFullscreen className="image-full" />
                 <img src={item.image} alt="" />
               </div>
               <div className="carousel__images">
@@ -63,13 +70,34 @@ const ProductPage = ({ productsList, toggleFavorite }) => {
                 <img src={item.image} alt="" />
               </div>
             </div>
+
             <div className="Product__info">
-              <h1 className="Product__title info__title">{item.name}</h1>
-              <div className="info__description">
-                {item.detailedDescription}
-              </div>
+              <span className="info__category">{item.category}</span>
+              <h1 className="info__title">{item.name}</h1>
+              <p className="info__description">{item.detailedDescription}</p>
               <div className="info__quantity">
-                <p>Quantity</p>
+                <button
+                  className="info__buttons"
+                  onClick={() => {
+                    dispatch(
+                      addToCart({
+                        name: item.name,
+                        image: item.image,
+                        id: item._id,
+                        price: item.price,
+                        texture: item.texture,
+                        quantity: item.quantity,
+                      })
+                    );
+                    saveCartToLocalStorage(cartItems);
+                  }}
+                >
+                  Add to cart{" "}
+                  {/* <span>
+                    <IoCartOutline />
+                  </span> */}
+                </button>
+
                 <div className="quantity__buttons">
                   <button
                     onClick={() => {
@@ -95,6 +123,7 @@ const ProductPage = ({ productsList, toggleFavorite }) => {
                     -
                   </button>
                 </div>
+
                 <p className="prc">
                   {(() => {
                     const foundProduct = cartItems.find(
@@ -113,28 +142,28 @@ const ProductPage = ({ productsList, toggleFavorite }) => {
                   })()}
                 </p>
               </div>
-              <div className="info__buttons">
-                <button
-                  onClick={() => {
-                    dispatch(
-                      addToCart({
-                        name: item.name,
-                        image: item.image,
-                        id: item._id,
-                        price: item.price,
-                        texture: item.texture,
-                        quantity: item.quantity,
-                      })
-                    );
-                    saveCartToLocalStorage(cartItems);
-                  }}
-                >
-                  Add to cart
-                </button>
-                <button>Buy now</button>
-              </div>
+
+              <fieldset className="info__payment">
+                <legend>Guaranteed Safe Checkout</legend>
+                <ul>
+                  <li>
+                    <FaCcVisa />
+                  </li>
+                  <li>
+                    <FaCcMastercard />
+                  </li>
+                  <li>
+                    <FaCcJcb />{" "}
+                  </li>
+                  <li>
+                    {" "}
+                    <FaCcDiscover />{" "}
+                  </li>
+                </ul>
+              </fieldset>
             </div>
           </div>
+
           <div className="product__specs">
             <div className="specs__details">
               <h2>Texture:</h2>
