@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   background: linear-gradient(#ece6ea, #ffffff);
-  margin-bottom: 7rem;
+  margin-bottom: 5rem;
 }
 .Hero__container {
   padding: 0 3rem;
@@ -15,9 +15,10 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  column-gap: 2rem;
+  margin-top: 3rem;
 }
 .content__text {
-  margin-top: 4rem;
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -46,20 +47,21 @@
 .shop__button {
   width: 100%;
   display: flex;
+  justify-content: flex-start;
+}
+.button-shop {
+  display: flex;
   align-items: center;
-  justify-content: space-between;
-  a {
-    width: 25%;
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    font-size: 2rem;
-    border: 3.5px solid #242424;
-    cursor: pointer;
-    font-weight: 600;
-  }
+  justify-content: center;
+  column-gap: 0.7rem;
+  border: 3px solid #242424;
+  padding: 0.7rem;
+  font-size: 1.7rem;
+  border-radius: 20px;
+  font-weight: 600;
 
-  a:hover,
-  a:focus {
+  &:hover,
+  &:focus {
     background-color: #242424;
     transition: all 0.2s ease;
     color: #fff;
@@ -69,16 +71,32 @@
 @media screen and (max-width: 1280px) {
   .content__text {
     h1 {
-      font-size: 4rem;
+      font-size: 3rem;
     }
     h2 {
-      font-size: 2rem;
+      font-size: 1.5rem;
+    }
+  }
+  .button-shop {
+    border: 3px solid #242424;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    border-radius: 20px;
+
+    &:hover,
+    &:focus {
+      background-color: #242424;
+      transition: all 0.2s ease;
+      color: #fff;
     }
   }
 }
 
 //lg size
 @media screen and (max-width: 1024px) {
+  .content__img {
+    display: none;
+  }
 }
 
 //md size
@@ -111,7 +129,7 @@
 }
 
 //xs size
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 450px) {
   .Hero__container {
     padding: 0 1rem;
   }
@@ -124,9 +142,8 @@
       font-size: 1rem;
       font-weight: 200;
     }
-    button {
-      font-size: 1rem;
-      padding: 0.5rem;
-    }
+  }
+  .button-shop {
+    font-size: 1rem;
   }
 }

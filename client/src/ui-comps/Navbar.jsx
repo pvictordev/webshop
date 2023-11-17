@@ -125,9 +125,7 @@ export default function Navbar({ open, toggleMenu, toggleCart, productsList }) {
           </Link>
 
           <div className="content__search">
-            <BsSearch
-              className="search__icon"
-            />
+            <BsSearch className="search__icon" />
             <input
               className="search__input"
               type="search"

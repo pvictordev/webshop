@@ -1,6 +1,7 @@
 import React from "react";
 import "../ui-styles/searchMobile.scss";
 import { GrClose } from "react-icons/gr";
+import { BsSearch } from "react-icons/bs";
 
 export default function SearchMobile({
   search,
@@ -14,6 +15,7 @@ export default function SearchMobile({
         <GrClose />
       </div>
       <div className="input__search">
+        <BsSearch className="search-mobile__icon" />
         <input
           className="search-mobile__input"
           type="search"

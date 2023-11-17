@@ -3,7 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 7rem 4rem;
+  padding: 3rem;
+  margin: 5rem 0;
 }
 .Banner__content {
   display: flex;
@@ -101,9 +102,6 @@
 
 //sm size
 @media screen and (max-width: 640px) {
-  .Banner {
-    padding: 3rem 1.5rem;
-  }
   .banner__text {
     padding: 2rem;
     gap: 2rem;
@@ -123,5 +121,9 @@
 }
 
 //xs size
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 450px) {
+  .Banner {
+    padding: 0 1.5rem;
+    margin: 3rem 0;
+  }
 }

@@ -9,16 +9,59 @@
   cursor: pointer;
 }
 .search-mobile__input {
+  position: relative;
   width: 100%;
   padding: 0.5rem;
-  border-radius: 15px;
-  border: 2px solid #c4c4c4;
-  background: transparent;
+  text-indent: 0.5rem;
+  border-radius: 20px;
+  border: 2px solid #656565;
+  background-color: transparent;
   font-size: 1rem;
+  font-family: "Nunito Sans", sans-serif;
   outline: none;
-  &:focus {
-    border: 2px solid #333;
+  &::placeholder {
+    font-family: "Nunito Sans", sans-serif;
+    color: #242424;
   }
+
+  &:focus {
+    border: 2px solid #000;
+  }
+}
+.search-mobile__input::-webkit-search-cancel-button {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  right: 3rem;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  background: linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0) 43%,
+      #000 45%,
+      #000 55%,
+      rgba(0, 0, 0, 0) 57%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 43%,
+      #000 45%,
+      #000 55%,
+      transparent 57%,
+      transparent 100%
+    );
+}
+.search-mobile__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 1rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
 }
 .input__search {
   position: relative;

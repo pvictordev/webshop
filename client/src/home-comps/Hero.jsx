@@ -33,23 +33,19 @@ export default function Hero() {
               Webshop, <span ref={el} className="slogan"></span>{" "}
             </h1> */}
             <h1>
-              Webshop, pioneers in online selling {" "}
-              <span>
-                <FaArrowRight />
-              </span>
+              Webshop, pioneers in online selling <FaArrowRight />
             </h1>
             <h2>
               We deliver the best quality products at the best prices to your
               doorstep !
-            </h2>
+            </h2>{" "}
             <div className="shop__button">
-              {" "}
               <Link
-                className="shop__button"
+                className="button-shop"
                 to={"/categories"}
                 onClick={() => window.scrollTo(0, 0)}
               >
-                Shop now <FaArrowDown />
+                <span>Shop now</span> <FaArrowDown />
               </Link>
             </div>
           </div>

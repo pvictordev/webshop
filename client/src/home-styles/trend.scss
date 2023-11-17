@@ -1,6 +1,7 @@
 .Trend {
   width: 100%;
-  padding: 7rem 4rem;
+  padding: 3rem;
+  margin: 5rem 0;
 }
 .Trend__header {
   text-align: center;
@@ -30,18 +31,17 @@
   }
 }
 
-
 //sm size
 @media screen and (max-width: 640px) {
   .Trend__grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .Trend {
-    padding: 1.5rem;
+    grid-template-columns: 1fr;
   }
 }
 
 //xs size
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 450px) {
+  .Trend {
+    padding: 0 1.5rem;
+    margin: 3rem 0;
+  }
 }
-

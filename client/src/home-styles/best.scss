@@ -1,15 +1,14 @@
 .Best {
   width: 100%;
-  // margin: 5rem;
-  padding: 7rem 4rem;
+  padding: 3rem;
+  margin: 5rem 0;
   text-align: center;
 }
 .Best__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
-  margin-top:3rem ;
-  
+  margin-top: 3rem;
 }
 //xl size
 @media screen and (max-width: 1280px) {
@@ -18,30 +17,28 @@
 //lg size
 @media screen and (max-width: 1024px) {
   .Best__grid {
-      grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 //md size
 @media screen and (max-width: 768px) {
   .Best__grid {
-      grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-
 //sm size
 @media screen and (max-width: 640px) {
-  .Best {
-    padding: 1.5rem;
-  }
   .Best__grid {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
 //xs size
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 450px) {
+  .Best {
+    padding: 0 1.5rem;
+    margin: 3rem 0;
+  }
 }
-
-
