@@ -4,9 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("../assets/hero-bg.jpg") no-repeat center center/cover;
-
-  color: #242424;
+  background: linear-gradient(#ece6ea, #ffffff);
   margin-bottom: 7rem;
 }
 .Hero__container {
@@ -14,59 +12,67 @@
 }
 .Hero__content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 .content__text {
-  margin-top: 6rem;
+  margin-top: 4rem;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  text-align: left;
   gap: 3rem;
   h1 {
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 700;
+    svg {
+      padding-top: 15px;
+    }
   }
   h2 {
-    font-size: 3rem;
-    font-weight: 200;
-  }
-}
-.shop__button {
-  min-width: 30%;
-  align-self: center;
-  padding: 0.5rem;
-  border-radius: 15px;
-  font-size: 2rem;
-  background: transparent;
-  font-weight: 500;
-  border: 3px solid #242424;
-  cursor: pointer;
-  a {
-    color: #242424;
-    cursor: pointer;
-  }
-}
-.shop__button:hover,
-.shop__button:focus {
-  background-color: #242424;
-  transition: all 0.2s ease;
-  a {
-    color: #fff;
+    font-size: 2rem;
+    font-weight: 300;
   }
 }
 
+.content__img {
+  display: flex;
+  align-items: center;
+  img {
+    width: 32rem;
+    height: 25rem;
+  }
+}
+.shop__button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  a {
+    width: 25%;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 2rem;
+    border: 3.5px solid #242424;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  a:hover,
+  a:focus {
+    background-color: #242424;
+    transition: all 0.2s ease;
+    color: #fff;
+  }
+}
 //xl size
 @media screen and (max-width: 1280px) {
   .content__text {
     h1 {
       font-size: 4rem;
-      font-weight: 700;
     }
     h2 {
       font-size: 2rem;
-      font-weight: 200;
     }
   }
 }

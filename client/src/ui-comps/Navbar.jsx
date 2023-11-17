@@ -91,7 +91,7 @@ export default function Navbar({ open, toggleMenu, toggleCart, productsList }) {
     };
   }, []);
 
-  const navClass = `Navbar ${scrollY > 50 ? "fixedNav" : ""}`;
+  const navClass = `Navbar ${scrollY > 100 ? "fixedNav" : ""}`;
 
   const product = productsList[Math.floor(Math.random() * productsList.length)];
 
@@ -126,13 +126,7 @@ export default function Navbar({ open, toggleMenu, toggleCart, productsList }) {
 
           <div className="content__search">
             <BsSearch
-              style={{
-                marginLeft: "1rem",
-                position: "absolute",
-                top: "0.4rem",
-              }}
-              color="#333"
-              size="1.5rem"
+              className="search__icon"
             />
             <input
               className="search__input"
@@ -151,7 +145,7 @@ export default function Navbar({ open, toggleMenu, toggleCart, productsList }) {
                 className="Link link__categories"
                 to={"/categories"}
               >
-                <li>Cateogories</li>
+                Cateogories
               </Link>
 
               <Link

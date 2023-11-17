@@ -2,47 +2,59 @@ import React, { useEffect } from "react";
 import "../home-styles/hero.scss";
 import Typed from "typed.js";
 import { Link } from "react-router-dom";
+import heroImg from "../assets/hero-img(3).png";
+import { FaArrowDown, FaArrowRight } from "react-icons/fa";
 
 export default function Hero() {
-  const el = React.useRef(null);
-  useEffect(() => {
-    const typed = new Typed(el.current, {
-      strings: [
-        "pioneers in online selling",
-        // "the best in the business",
-        // "super fast delivery",
-      ],
-      typeSpeed: 40,
-      backSpeed: 40,
-      loop: false,
-    });
+  // const el = React.useRef(null);
+  // useEffect(() => {
+  //   const typed = new Typed(el.current, {
+  //     strings: [
+  //       "pioneers in online selling",
+  //       // "the best in the business",
+  //       // "super fast delivery",
+  //     ],
+  //     typeSpeed: 40,
+  //     backSpeed: 40,
+  //     loop: false,
+  //   });
 
-    return () => {
-      typed.destroy();
-    };
-  }, []);
+  //   return () => {
+  //     typed.destroy();
+  //   };
+  // }, []);
 
   return (
     <div className="Hero" id="hero">
       <div className="Hero__container">
         <div className="Hero__content">
           <div className="content__text">
-            <h1>
+            {/* <h1>
               Webshop, <span ref={el} className="slogan"></span>{" "}
+            </h1> */}
+            <h1>
+              Webshop, pioneers in online selling {" "}
+              <span>
+                <FaArrowRight />
+              </span>
             </h1>
             <h2>
-              We are different on the market, first E-commerce with it's own
-              shiping company.
+              We deliver the best quality products at the best prices to your
+              doorstep !
             </h2>
-            <button className="shop__button">
+            <div className="shop__button">
               {" "}
-              <Link to={"/categories"} onClick={() => window.scrollTo(0, 0)}>
-                Shop now
+              <Link
+                className="shop__button"
+                to={"/categories"}
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                Shop now <FaArrowDown />
               </Link>
-            </button>
+            </div>
           </div>
           <div className="content__img">
-            <img src="../assets/hero-img(3).jpg" alt="" />
+            <img src={heroImg} alt="" />
           </div>
         </div>
       </div>
