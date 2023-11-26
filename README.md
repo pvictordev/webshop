@@ -28,7 +28,6 @@ Webshop offers the following features:
 1. **Wishlist**: Customers can create and manage wishlists, making it convenient for them to save and revisit products they're interested in.
 
 2. **Shopping Cart**: Website feature is a user-friendly shopping cart system that allows customers to easily add and remove items, review their order, and proceed to checkout.
-3. **Order History**: Registered customers have access to their order history, simplifying the process of reordering or tracking previous purchases.
 
 4. **Simplified Product Catalog:** Webshop focuses on simplicity, offering a minimalistic product catalog that makes it easy for customers to browse and find products quickly.
 
